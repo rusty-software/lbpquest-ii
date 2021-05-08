@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "82085edd4a0190c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "1ada954b18d7304d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Mechanics.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3ff243b88fdfd68e",
+    "type": "split",
+    "children": [
+      {
+        "id": "f612b7d17ea2ea2d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d5c5a1f1ad341f27",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "65617c89a98933e4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b6f153a75e7f6ae4",
+    "type": "split",
+    "children": [
+      {
+        "id": "b3c2aec4ccd31716",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "58d550f1ef1327f5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Mechanics.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "1ada954b18d7304d",
+  "lastOpenFiles": [
+    "Mechanics.md",
+    "Venue notes.md",
+    "Untitled 1.md",
+    "Untitled.md"
+  ]
+}
