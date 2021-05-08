@@ -1,4 +1,4 @@
-Pool with grotto and hot tub overlooking pond beyond narrow guage fencing
+Pool with grotto and hot tub overlooking pond beyond narrow gauge fencing
 
 Circular driveway, covered porch, six half-columns, dormer windows on second level, fake window in far upper left, chimney attached?
 	In the middle of the circular drive are some shrubs surrounding a collection of stacked rocks

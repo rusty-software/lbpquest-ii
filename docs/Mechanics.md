@@ -13,6 +13,7 @@ Items
 		Cookie Dough
 		Powdered Sugar Donuts
 		Ice Oatmeal Cookies
+		Star Crunches
 		Ice Cream
 	Drinks
 		Marg
@@ -41,12 +42,31 @@ Items
 		(All Drinks)
 		(All Snacks)
 		(All Statuettes)
+	Arts and Crafts Supplies
+		Construction Paper
+		Yarn
+		Watercolor Paint
+		Crayons
+		Map Pencils
+		Glitter
+		Googly Eyes
+		Fuzzy Pipe Cleaner
+		Stickers
+		Magazines
+		Scissors
+		Glue
+		Scotch Tape
+		Dutch Tape
+		Macaroni
 	Miscellany
 		ATGolfcart
 		Screwdriver
 		Peach Candle
 		Red Candle
 		Alligator Rug
+		Winged Shoes
+		Lucky Golf Ball
+		Oar of Sluicing
 	
 Locations
 	Driveway
@@ -83,11 +103,16 @@ Locations
 	
 Challenges
 	40-yard dash
+		You have to win a race against ???. In order to do so, you have to be wearing the Winged Shoes
 	Score a hole in one
+		A hole in one is accomplished via the Lucky Golf Ball being hit with anything. On scoring the hole in one, the golf score card is automatically marked.
 	Bullseye
 	Boat race
+		* remove the alligator
+		* Oar of Sluicing
 	Make guac
 	Arts and crafts vs. George Bush
+		In order to win, you must include at least three different arts and crafts components.
 	One step, sensei!
 	Dodge it!
 	Shoot some pool
