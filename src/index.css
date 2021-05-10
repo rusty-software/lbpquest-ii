@@ -56,13 +56,24 @@ button {
   font-size: 1.75vw;
 }
 
-.events-container {
+.display-container {
   margin-bottom: 3em;
   padding: 1em;
 }
 
 .command-block {
   padding-left: 1em;
+}
+
+.header {
+  color: #111111;
+  background: #00ee00;
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+
+.alignRight {
+  float: right;
 }
 
 #input {
