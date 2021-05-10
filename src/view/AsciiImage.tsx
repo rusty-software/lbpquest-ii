@@ -6,7 +6,7 @@ interface AsciiImageProps {
     className?: string;
 }
 
-function AsciiImage(props: AsciiImageProps) {
+const AsciiImage = (props: AsciiImageProps) => {
     const lines = props.imageSrc.split('\n').map((line, index) => (
         <div className={classNames('imageLine', props.className)} key={index}>
             {line}

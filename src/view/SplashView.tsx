@@ -1,25 +1,7 @@
 import AsciiImage from "./AsciiImage";
 import { Title } from "./Title";
 
-interface SplashViewProps {
-  onStartGame(): void
-}
-
-export const SplashView = (props: SplashViewProps) => {
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Enter') {
-      props.onStartGame();
-    }
-  }
-
-  const handleTouch = (event: TouchEvent) => {
-    props.onStartGame();
-  }
-
-  document.addEventListener("keydown", handleKeyDown, false);
-  document.addEventListener("touchstart", handleTouch, false);
-
+export const SplashView = () => {
   return (
     <div className="game-intro">
       <AsciiImage className={"intro"} imageSrc={Title} alt={"LBPQuest II Logo"} />
