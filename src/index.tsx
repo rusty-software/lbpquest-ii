@@ -1,12 +1,10 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GameSplash from "./view/GameSplashView";
+import { Game } from "./view/Game";
 
 ReactDOM.render(
-  <GameSplash />,
+  <Game />,
   document.getElementById('root')
 );
 
