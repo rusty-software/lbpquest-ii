@@ -59,6 +59,10 @@ Items
 		Dutch Tape
 		Macaroni
 	Miscellany
+		Google Maps Alpha
+			Paper map found on the wall of the BilliardsRoom. 
+			Can be asked for locations of Items, but is pretty snarky about it.
+			Can be taken.
 		ATGolfcart
 		Screwdriver
 		Peach Candle
@@ -127,7 +131,6 @@ NPCs
 	Kids (splashpad)
 	Lord of the Mounted Stags (living room)
 	White Stag Twins
-	Google Maps
 	The Ghost of Messina Hof
 	George Bush
 	Bald Eagle (dining room)
