@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Game } from "./view/Game";
+import { GameView } from "./view/GameView";
 
 ReactDOM.render(
-  <Game />,
+  <GameView />,
   document.getElementById('root')
 );
 
