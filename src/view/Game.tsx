@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { SplashView } from './SplashView';
-import { GameView } from './GameView';
+import { useEffect, useState } from "react";
+import { SplashView } from "./SplashView";
+import { GameView } from "./GameView";
 
 // export const Game = () => {
 //   const [gameStarted, setGameStarted] = useState(false);
@@ -35,4 +35,3 @@ import { GameView } from './GameView';
 //     </>
 //   );
 // }
-

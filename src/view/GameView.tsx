@@ -1,9 +1,9 @@
-import React from 'react';
-import { PlayView } from './PlayView';
-import { SplashView } from './SplashView';
+import React from "react";
+import { PlayView } from "./PlayView";
+import { SplashView } from "./SplashView";
 
 interface StartState {
-  gameStarted: boolean
+  gameStarted: boolean;
 }
 
 export class GameView extends React.Component<any, StartState> {
@@ -22,7 +22,7 @@ export class GameView extends React.Component<any, StartState> {
   }
 
   public handleKeyDown(event: KeyboardEvent) {
-    if (!this.state.gameStarted && event.key === 'Enter') {
+    if (!this.state.gameStarted && event.key === "Enter") {
       this.setState({ gameStarted: true });
     }
   }
@@ -36,9 +36,7 @@ export class GameView extends React.Component<any, StartState> {
   public render() {
     return (
       <div id="game">
-        {
-          this.state.gameStarted ? <PlayView /> : <SplashView />
-        }
+        {this.state.gameStarted ? <PlayView /> : <SplashView />}
       </div>
     );
   }
