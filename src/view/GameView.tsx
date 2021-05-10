@@ -22,13 +22,15 @@ export class GameView extends React.Component<any, StartState> {
   }
 
   public handleKeyDown(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
+    if (!this.state.gameStarted && event.key === 'Enter') {
       this.setState({ gameStarted: true });
     }
   }
 
   public handleTouch(event: TouchEvent) {
-    this.setState({ gameStarted: true });
+    if (!this.state.gameStarted) {
+      this.setState({ gameStarted: true });
+    }
   }
 
   public render() {
