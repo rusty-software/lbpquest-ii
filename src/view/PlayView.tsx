@@ -38,15 +38,15 @@ interface GameState {
 export class PlayView extends Component<any, GameState> {
   private commandInput!: HTMLInputElement;
 
-    constructor(props: any) {
-        super(props);
-        this.onBlur = this.onBlur.bind(this);
-        this.handleKeyDown = this.handleKeyDown.bind(this);
-        this.state = {
-            events: [],
-            lastInputPointer: 0
-        };
-    }
+  constructor(props: any) {
+    super(props);
+    this.onBlur = this.onBlur.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.state = {
+      events: [],
+      lastInputPointer: 0,
+    };
+  }
 
   public onBlur() {
     setTimeout(() => this.commandInput.focus(), 0);
