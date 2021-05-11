@@ -115,7 +115,11 @@ export class PlayView extends Component<any, GameState> {
   public render() {
     return (
       <div id="game-content">
-        <HeaderView location="First Loc" score={40} moves={700} />
+        <HeaderView
+          location="First Loc"
+          score={this.gameEngine.score}
+          moves={this.gameEngine.actionCount}
+        />
         <DisplayView description="Some descripton" />
         <span id="input">
           <div id="input-tag">{"> "}</div>
