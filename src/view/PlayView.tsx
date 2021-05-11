@@ -116,11 +116,11 @@ export class PlayView extends Component<any, GameState> {
     return (
       <div id="game-content">
         <HeaderView
-          location="First Loc"
+          location={this.gameEngine.currentLocation!.title}
           score={this.gameEngine.score}
           moves={this.gameEngine.actionCount}
         />
-        <DisplayView description="Some descripton" />
+        <DisplayView description={this.gameEngine.display} />
         <span id="input">
           <div id="input-tag">{"> "}</div>
           <input
