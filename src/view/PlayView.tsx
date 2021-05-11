@@ -1,4 +1,6 @@
 import { Component, KeyboardEvent } from "react";
+import { GameEvent, GameEventType, NewInputEvent } from "../app/events";
+import { GameEngine } from "../app/game-engine";
 
 interface HeaderProps {
   location: string;
@@ -31,19 +33,21 @@ const DisplayView = (props: DisplayProps) => {
 };
 
 interface GameState {
-  events: [];
+  events: GameEvent[];
   lastInputPointer: number;
 }
 
 export class PlayView extends Component<any, GameState> {
   private commandInput!: HTMLInputElement;
+  private readonly gameEngine: GameEngine;
 
   constructor(props: any) {
     super(props);
     this.onBlur = this.onBlur.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.gameEngine = new GameEngine();
     this.state = {
-      events: [],
+      events: this.gameEngine.getEvents(),
       lastInputPointer: 0,
     };
   }
@@ -56,16 +60,55 @@ export class PlayView extends Component<any, GameState> {
     document.addEventListener("mousedown", this.onBlur);
   }
 
+  private getHistoryInput(pointer: number): string {
+    // if pointer points forward do nothing
+    if (pointer >= 0) {
+      this.setState({
+        lastInputPointer: 0,
+      });
+      return "";
+    }
+
+    // get all inputs
+    const newInputEvents = this.state.events.filter(
+      (gameEvent): gameEvent is NewInputEvent =>
+        gameEvent.type === GameEventType.NEW_INPUT
+    );
+
+    // if the pointer points to the beginning do not allow it to travel further
+    if (Math.abs(pointer) <= newInputEvents.length) {
+      this.setState({
+        lastInputPointer: pointer,
+      });
+    }
+
+    // return the input pointed at
+    return (
+      newInputEvents
+        .map((gameEvent) => gameEvent.input)
+        .slice(pointer)
+        .shift() || ""
+    );
+  }
+
   public handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter" && this.commandInput.value.length !== 0) {
-      console.log("Trying to:", this.commandInput.value);
+      this.gameEngine.send(this.commandInput.value);
+      this.setState({
+        events: this.gameEngine.getEvents(),
+        lastInputPointer: 0,
+      });
       this.commandInput.value = "";
     } else if (event.key === "ArrowUp") {
       event.preventDefault();
-      console.log("Arrowing up");
+      this.commandInput.value = this.getHistoryInput(
+        this.state.lastInputPointer - 1
+      );
     } else if (event.key === "ArrowDown") {
       event.preventDefault();
-      console.log("Arrowing down");
+      this.commandInput.value = this.getHistoryInput(
+        this.state.lastInputPointer + 1
+      );
     }
   }
 
