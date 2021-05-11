@@ -1,17 +1,7 @@
-import { Item } from "../Item";
-import { Screwdriver } from "../items/Screwdriver";
-import { Location } from "../Location";
+import { BaseLocation } from "./BaseLocation";
 
-export class Driveway implements Location {
+export class Driveway extends BaseLocation {
   public readonly title = "Driveway";
-  neighbors: Location[] = [];
-  items: Item[] = [];
-
-  constructor(neighbors: Location[], items: Item[]) {
-    const screwdriver = new Screwdriver();
-    this.items = items;
-    this.neighbors = neighbors;
-  }
 
   description(): string {
     let s =

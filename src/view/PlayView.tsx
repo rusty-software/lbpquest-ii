@@ -72,7 +72,7 @@ export class PlayView extends Component<any, GameState> {
     // get all inputs
     const newInputEvents = this.state.events.filter(
       (gameEvent): gameEvent is NewInputEvent =>
-        gameEvent.type === GameEventType.NEW_INPUT
+        gameEvent.type === GameEventType.NewInput
     );
 
     // if the pointer points to the beginning do not allow it to travel further

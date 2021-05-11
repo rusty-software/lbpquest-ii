@@ -2,7 +2,6 @@ import { GameEvent } from "./events";
 import { Item } from "./Item";
 import { ItemKey } from "./items/ItemKey";
 import { Location } from "./Location";
-import { Driveway } from "./locations/Driveway";
 import { LocationKey } from "./locations/LocationKey";
 import { Startup } from "./Startup";
 

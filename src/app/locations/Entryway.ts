@@ -1,9 +1,7 @@
-import { Item } from "../Item";
-import { Location } from "../Location";
+import { BaseLocation } from "./BaseLocation";
 
-export class Entryway implements Location {
-  title: string = "Entryway";
-  items: Item[] = [];
+export class Entryway extends BaseLocation {
+  public readonly title: string = "Entryway";
 
   description(): string {
     return "You are in the Entryway.";

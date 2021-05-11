@@ -1,41 +1,41 @@
 import { GameError } from "./GameError";
 
 export enum GameEventType {
-  LOCATION_CHANGE,
-  NEW_INPUT,
-  ITEM,
-  INVENTORY,
-  HELP,
-  ERROR,
+  LocationChange,
+  NewInput,
+  Item,
+  Inventory,
+  Help,
+  Error,
 }
 
 export class LocationChangeEvent {
-  public readonly type = GameEventType.LOCATION_CHANGE;
+  public readonly type = GameEventType.LocationChange;
   public constructor(public title: string, public description: string) {}
 }
 
 export class HelpEvent {
-  public readonly type = GameEventType.HELP;
+  public readonly type = GameEventType.Help;
   public constructor(public avaibleCommands: string[]) {}
 }
 
 export class NewInputEvent {
-  public readonly type = GameEventType.NEW_INPUT;
+  public readonly type = GameEventType.NewInput;
   public constructor(public input: string) {}
 }
 
 export class ItemEvent {
-  public readonly type = GameEventType.ITEM;
+  public readonly type = GameEventType.Item;
   public constructor(public customText: string) {}
 }
 
 export class InventoryEvent {
-  public readonly type = GameEventType.INVENTORY;
+  public readonly type = GameEventType.Inventory;
   public constructor(public items: string[]) {}
 }
 
 export class GameErrorEvent {
-  public readonly type = GameEventType.ERROR;
+  public readonly type = GameEventType.Error;
   public constructor(public errorType: GameError) {}
 }
 
@@ -47,4 +47,4 @@ export type GameEvent =
   | InventoryEvent
   | GameErrorEvent;
 
-export {}
+export {};
