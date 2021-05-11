@@ -1,6 +1,6 @@
 import { Component, KeyboardEvent } from "react";
 import { GameEvent, GameEventType, NewInputEvent } from "../app/events";
-import { GameEngine } from "../app/game-engine";
+import { GameEngine } from "../app/GameEngine";
 
 interface HeaderProps {
   location: string;

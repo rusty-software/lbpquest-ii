@@ -1,5 +1,5 @@
-import { GameEngine } from "../game-engine";
-import { Item } from "../item";
+import { GameEngine } from "../GameEngine";
+import { Item } from "../Item";
 
 export class Screwdriver implements Item {
   id = "screwdriver";

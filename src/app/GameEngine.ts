@@ -1,7 +1,7 @@
 import { GameEvent } from "./events";
-import { Item } from "./item";
-import { Location } from "./location";
-import { Driveway } from "./locations/driveway";
+import { Item } from "./Item";
+import { Location } from "./Location";
+import { Driveway } from "./locations/Driveway";
 
 export class GameEngine {
   public currentLocation?: Location;

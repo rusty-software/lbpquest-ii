@@ -1,4 +1,4 @@
-import { GameEngine } from "./game-engine";
+import { GameEngine } from "./GameEngine";
 
 export interface Item {
     id: string;

@@ -77,7 +77,7 @@ Locations
 	Pool
 	Grotto
 	HotTub
-	Lobby
+	Entryway
 	BilliardsRoom
 	SplashPad
 	SwingSet

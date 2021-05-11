@@ -1,4 +1,4 @@
-import { GameError } from "./game-error";
+import { GameError } from "./GameError";
 
 export enum GameEventType {
   LOCATION_CHANGE,

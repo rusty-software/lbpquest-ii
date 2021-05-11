@@ -1,6 +1,6 @@
-import { Item } from "../item";
-import { Screwdriver } from "../items/screwdriver";
-import { Location } from "../location";
+import { Item } from "../Item";
+import { Screwdriver } from "../items/Screwdriver";
+import { Location } from "../Location";
 
 export class Driveway implements Location {
   public readonly title = "Driveway";
