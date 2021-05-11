@@ -4,11 +4,13 @@ import { Location } from "../Location";
 
 export class Driveway implements Location {
   public readonly title = "Driveway";
-  items: Item[];
+  neighbors: Location[] = [];
+  items: Item[] = [];
 
-  constructor() {
+  constructor(neighbors: Location[], items: Item[]) {
     const screwdriver = new Screwdriver();
-    this.items = [screwdriver];
+    this.items = items;
+    this.neighbors = neighbors;
   }
 
   description(): string {
