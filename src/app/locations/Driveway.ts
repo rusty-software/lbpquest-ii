@@ -3,6 +3,10 @@ import { BaseLocation } from "./BaseLocation";
 export class Driveway extends BaseLocation {
   public readonly title = "Driveway";
 
+  enter(): void {
+    this.entered = true;
+  }
+
   description(): string {
     let s =
       "You are in the driveway. The heat boils off of the pavement in shimmering waves as the sun beats down on you from an unmerciful summer sky.";

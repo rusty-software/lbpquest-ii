@@ -28,10 +28,10 @@ export class Startup {
       Startup.getItem(ItemKey.Screwdriver),
     ]);
     const entryWay = new Entryway(
-      new Map<Direction, Location>([[Direction.S, driveWay]]),
+      new Map<Direction, Location>([["S" as Direction, driveWay]]),
       []
     );
-    driveWay.neighbors = new Map([[Direction.N, entryWay]]);
+    driveWay.neighbors = new Map([["N" as Direction, entryWay]]);
 
     Startup.locations.set(LocationKey.Driveway, driveWay);
     Startup.locations.set(LocationKey.Entryway, entryWay);
