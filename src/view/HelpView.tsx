@@ -7,6 +7,7 @@ const helpMapper: { [s: string]: string } = {
   look: " : describes the area in which you are, currently",
   take: " <object> : e.g. `take sword` to add an item to your haversack",
   use: " <object> : e.g. `use sword` to activate an item",
+  drop: " <object> : e.g. `drop sword` to remove an item from your haversack",
 };
 
 interface HelpViewProps {
@@ -33,10 +34,6 @@ export const HelpView = (props: HelpViewProps) => {
       <div className="help-description">
         But there may be more hidden commands available. Use "logic" to figure
         it out!
-        <br />
-        <br />
-        Also, words surrounded by "_" are typically interactive somehow. There,
-        I've pretty much given away the entire game. You're welcome.
       </div>
     </div>
   );

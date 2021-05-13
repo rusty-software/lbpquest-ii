@@ -3,6 +3,7 @@ import { Direction } from "./Direction";
 import {
   GameErrorEvent,
   GameEvent,
+  HelpEvent,
   InventoryEvent,
   ItemEvent,
   LocationChangeEvent,
@@ -94,6 +95,18 @@ export class GameEngine {
         this.events.push(new InventoryEvent(this.inventory));
         break;
       }
+
+      case CommandType.help: {
+        const commands = CommandType.values.map((type) => type.name);
+        this.events.push(new HelpEvent(commands));
+        break;
+      }
+
+      case CommandType.take:
+      case CommandType.use: {
+        console.log(`NOT IMPLEMENTED: ${cmd}`);
+        break;
+      }
     }
 
     console.log("sent:", input);
@@ -121,7 +134,8 @@ export class GameEngine {
   }
 
   private getItem(itemString: string) {
-    return this.currentLocation.items.find((i) => {
+    const availableItems = this.currentLocation.items.concat(this.inventory);
+    return availableItems.find((i) => {
       return i.name === itemString;
     });
   }
