@@ -5,7 +5,7 @@ export class Screwdriver implements Item {
   id = "screwdriver";
   name = "screwdriver";
 
-  takeable(): boolean {
+  takeable(gameEngine: GameEngine): boolean {
     return true;
   }
   take(gameEngine: GameEngine): string {
@@ -17,7 +17,7 @@ export class Screwdriver implements Item {
   examine(gameEngine: GameEngine): string {
     return "The screwdriver looks like it can be used to screw things.";
   }
-  use(gameEngine: GameEngine): void {
-    console.log("screwdriver used");
+  use(gameEngine: GameEngine): string {
+    return "You've used the screwdriver.";
   }
 }

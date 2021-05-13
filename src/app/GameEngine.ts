@@ -105,7 +105,7 @@ export class GameEngine {
       case CommandType.take: {
         const item = this.getLocationItem(rest);
         if (item) {
-          if (item.takeable()) {
+          if (item.takeable(this)) {
             this.inventory.push(item);
             this.currentLocation.items.splice(
               this.currentLocation.items.indexOf(item),
@@ -148,8 +148,19 @@ export class GameEngine {
       }
 
       case CommandType.use: {
-        console.log(`NOT IMPLEMENTED: ${cmd}`);
+        const item = this.getAvailableItem(rest);
+        if (item) {
+          this.events.push(new ItemEvent(item.use(this)));
+        } else {
+          this.events.push(new GameErrorEvent(GameError.NoItem, ""));
+        }
         break;
+      }
+
+      default: {
+        console.log(
+          "TODO: check for custom command on either the location or item"
+        );
       }
     }
 
