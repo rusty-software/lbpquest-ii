@@ -37,7 +37,7 @@ export class InventoryEvent {
 
 export class GameErrorEvent {
   public readonly type = GameEventType.Error;
-  public constructor(public errorType: GameError) {}
+  public constructor(public errorType: GameError, public customText: string) {}
 }
 
 export type GameEvent =

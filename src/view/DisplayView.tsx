@@ -81,11 +81,21 @@ export class DisplayView extends React.Component<DisplayViewProps, any> {
                 );
               }
               case GameEventType.Error: {
-                return <ErrorView key={index} error={event.errorType} />;
+                return (
+                  <ErrorView
+                    key={index}
+                    error={event.errorType}
+                    customText={event.customText}
+                  />
+                );
               }
               default: {
                 return (
-                  <ErrorView key={index} error={GameError.UnknownCommand} />
+                  <ErrorView
+                    key={index}
+                    error={GameError.UnknownCommand}
+                    customText=""
+                  />
                 );
               }
             }

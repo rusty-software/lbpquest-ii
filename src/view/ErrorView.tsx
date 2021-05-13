@@ -24,29 +24,30 @@ const unknowns: string[] = [
   "Run away! RUN AWAY! Or type something meaningful.",
 ];
 
-const errorMessage = (error: GameError): string => {
+const errorMessage = (error: GameError, customText: string): string => {
   switch (error) {
     case GameError.InvalidPath:
-      return "You can't move that way...";
+      return customText ? customText : "You can't move that way...";
     case GameError.UnknownCommand:
-      return (
-        unknowns[Math.floor(Math.random() * unknowns.length)] +
-        "\n\nFor a list of common commands, type HELP."
-      );
+      return customText
+        ? customText
+        : unknowns[Math.floor(Math.random() * unknowns.length)] +
+            "\n\nFor a list of common commands, type HELP.";
     case GameError.NoItem:
-      return "Invalid command. There is no item there.";
+      return customText ? customText : "Sorry, I don't see that item.";
   }
 };
 
 interface ErrorViewProps {
   error: GameError;
+  customText: string;
 }
 export const ErrorView = (props: ErrorViewProps) => {
-  const { error } = props;
+  const { error, customText } = props;
 
   return (
     <div className="error">
-      <TextView text={errorMessage(error)} />
+      <TextView text={errorMessage(error, customText)} />
     </div>
   );
 };

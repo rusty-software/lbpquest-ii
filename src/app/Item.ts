@@ -3,9 +3,9 @@ import { GameEngine } from "./GameEngine";
 export interface Item {
   id: string;
   name: string;
-  description(): string;
   takeable(): boolean;
-  take(gameEngine: GameEngine): void;
+  take(gameEngine: GameEngine): string;
+  drop(gameEngine: GameEngine): string;
   examine(gameEngine: GameEngine): string;
   use(gameEngine: GameEngine): void;
 }

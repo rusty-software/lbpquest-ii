@@ -84,7 +84,7 @@ export class GameEngine {
       }
 
       case CommandType.examine: {
-        const item = this.getItem(rest);
+        const item = this.getAvailableItem(rest);
         if (item) {
           this.events.push(new ItemEvent(item!.examine(this)));
         }
@@ -102,7 +102,51 @@ export class GameEngine {
         break;
       }
 
-      case CommandType.take:
+      case CommandType.take: {
+        const item = this.getLocationItem(rest);
+        if (item) {
+          if (item.takeable()) {
+            this.inventory.push(item);
+            this.currentLocation.items.splice(
+              this.currentLocation.items.indexOf(item),
+              1
+            );
+          }
+          this.events.push(new ItemEvent(item.take(this)));
+        } else if (this.getInventoryItem(rest)) {
+          this.events.push(
+            new ItemEvent(`You're already carrying the ${rest}.`)
+          );
+        } else {
+          this.events.push(
+            new GameErrorEvent(
+              GameError.NoItem,
+              `Sorry, there is no ${rest} here.`
+            )
+          );
+        }
+        break;
+      }
+
+      case CommandType.drop: {
+        const item = this.getInventoryItem(rest);
+        if (item) {
+          this.currentLocation.items.push(item);
+          this.inventory.splice(this.inventory.indexOf(item), 1);
+          this.events.push(new ItemEvent(item.drop(this)));
+        } else if (this.getLocationItem(rest)) {
+          this.events.push(
+            new GameErrorEvent(
+              GameError.NoItem,
+              "Maybe try taking it first...?"
+            )
+          );
+        } else {
+          this.events.push(new GameErrorEvent(GameError.NoItem, ""));
+        }
+        break;
+      }
+
       case CommandType.use: {
         console.log(`NOT IMPLEMENTED: ${cmd}`);
         break;
@@ -129,14 +173,25 @@ export class GameEngine {
       }
       this.changeLocation(newLocation);
     } else {
-      this.events.push(new GameErrorEvent(GameError.InvalidPath));
+      this.events.push(new GameErrorEvent(GameError.InvalidPath, ""));
     }
   }
 
-  private getItem(itemString: string) {
+  private getAvailableItem(itemName: string) {
     const availableItems = this.currentLocation.items.concat(this.inventory);
     return availableItems.find((i) => {
-      return i.name === itemString;
+      return i.name === itemName;
+    });
+  }
+
+  private getLocationItem(itemName: string) {
+    return this.currentLocation.items.find((i) => {
+      return i.name === itemName;
+    });
+  }
+  private getInventoryItem(itemName: string) {
+    return this.inventory.find((i) => {
+      return i.name === itemName;
     });
   }
 }

@@ -6,11 +6,11 @@ interface InventoryViewProps {
 
 const inventoryString = (items: Item[]): string => {
   if (items.length === 0) {
-    return "Your inventory is empty.";
+    return "Your inventory is empty.  ";
   }
   let s = "Your inventory contains: ";
-  items.map((item) => (s += item.description() + ", "));
-  s = s.slice(0, -1);
+  items.map((item) => (s += item.name + ", "));
+  s = s.slice(0, -2);
   return s;
 };
 
