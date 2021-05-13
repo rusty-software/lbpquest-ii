@@ -3,6 +3,8 @@ import { Direction } from "./Direction";
 import {
   GameErrorEvent,
   GameEvent,
+  InventoryEvent,
+  ItemEvent,
   LocationChangeEvent,
   NewInputEvent,
 } from "./events";
@@ -20,7 +22,7 @@ export class GameEngine {
   public display: string;
   public events: GameEvent[];
 
-  private inventory: Map<string, Item>;
+  private inventory: Item[];
   private items: Map<ItemKey, Item> = new Map();
   private locations: Map<LocationKey, Location> = new Map();
 
@@ -38,7 +40,7 @@ export class GameEngine {
 
     this.currentLocation = this.locations.get(LocationKey.Driveway)!;
     this.display = this.currentLocation.description();
-    this.inventory = new Map<string, Item>();
+    this.inventory = [];
     this.events = [];
   }
 
@@ -58,20 +60,38 @@ export class GameEngine {
 
     this.events.push(new NewInputEvent(input));
     switch (cmd) {
-      case CommandType.N:
-      case CommandType.S:
-      case CommandType.E:
-      case CommandType.W:
-      case CommandType.NE:
-      case CommandType.NW:
-      case CommandType.SE:
-      case CommandType.SW: {
+      case CommandType.n:
+      case CommandType.s:
+      case CommandType.e:
+      case CommandType.w:
+      case CommandType.ne:
+      case CommandType.nw:
+      case CommandType.se:
+      case CommandType.sw: {
         this.move(lowerInput as Direction);
         break;
       }
 
-      case CommandType.GO: {
+      case CommandType.go: {
         this.move(rest as Direction);
+        break;
+      }
+
+      case CommandType.look: {
+        this.changeLocation(this.currentLocation);
+        break;
+      }
+
+      case CommandType.examine: {
+        const item = this.getItem(rest);
+        if (item) {
+          this.events.push(new ItemEvent(item!.examine(this)));
+        }
+        break;
+      }
+
+      case CommandType.inventory: {
+        this.events.push(new InventoryEvent(this.inventory));
         break;
       }
     }
@@ -87,6 +107,7 @@ export class GameEngine {
   }
 
   public move(direction: Direction) {
+    console.log("neighbors", this.currentLocation.neighbors);
     const newLocation = this.currentLocation.neighbors.get(direction);
     if (newLocation) {
       if (!newLocation.entered) {
@@ -97,5 +118,11 @@ export class GameEngine {
     } else {
       this.events.push(new GameErrorEvent(GameError.InvalidPath));
     }
+  }
+
+  private getItem(itemString: string) {
+    return this.currentLocation.items.find((i) => {
+      return i.name === itemString;
+    });
   }
 }

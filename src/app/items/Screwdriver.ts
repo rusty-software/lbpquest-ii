@@ -14,8 +14,8 @@ export class Screwdriver implements Item {
   take(gameEngine: GameEngine): void {
     console.log("screwdriver taken.");
   }
-  examine(gameEngine: GameEngine): void {
-    console.log("screwdriver examined");
+  examine(gameEngine: GameEngine): string {
+    return "The screwdriver looks like it can be used to screw things.";
   }
   use(gameEngine: GameEngine): void {
     console.log("screwdriver used");

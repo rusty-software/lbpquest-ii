@@ -1,1 +1,1 @@
-export type Direction = "N" | "S" | "E" | "W" | "NE" | "NW" | "SE" | "SW";
+export type Direction = "n" | "s" | "e" | "w" | "ne" | "nw" | "se" | "sw";

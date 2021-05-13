@@ -1,12 +1,12 @@
 const helpMapper: { [s: string]: string } = {
-  GO: " <SOMEWHERE> : e.g. `go through door` to move somewhere other than cardinal or ordinal directions",
-  HELP: " : shows this help text",
-  INVENTORY: " : lists the items in your rucksack",
-  EXAMINE:
-    " <OBJECT> : e.g. `examine sword` to take a closer look at the sword",
-  LOOK: " : describes the area which you are currently in",
-  TAKE: " <OBJECT> : e.g. `take sword` to add an item to your rucksack",
-  USE: " <OBJECT> : e.g. `use sword` to activate an item",
+  go: " <somewhere> : e.g. `go through door` to move somewhere other than cardinal or ordinal directions",
+  help: " : shows this help text",
+  inventory: " : lists the items in your haversack",
+  examine:
+    " <object> : e.g. `examine sword` to take a closer look at the sword",
+  look: " : describes the area in which you are, currently",
+  take: " <object> : e.g. `take sword` to add an item to your haversack",
+  use: " <object> : e.g. `use sword` to activate an item",
 };
 
 interface HelpViewProps {
