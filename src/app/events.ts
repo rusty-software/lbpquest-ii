@@ -1,4 +1,5 @@
 import { GameError } from "./GameError";
+import { Item } from "./Item";
 
 export enum GameEventType {
   LocationChange,
@@ -16,7 +17,7 @@ export class LocationChangeEvent {
 
 export class HelpEvent {
   public readonly type = GameEventType.Help;
-  public constructor(public avaibleCommands: string[]) {}
+  public constructor(public availableCommands: string[]) {}
 }
 
 export class NewInputEvent {
@@ -31,7 +32,7 @@ export class ItemEvent {
 
 export class InventoryEvent {
   public readonly type = GameEventType.Inventory;
-  public constructor(public items: string[]) {}
+  public constructor(public items: Item[]) {}
 }
 
 export class GameErrorEvent {

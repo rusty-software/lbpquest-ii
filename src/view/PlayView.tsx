@@ -1,6 +1,7 @@
 import { Component, KeyboardEvent } from "react";
 import { GameEvent, GameEventType, NewInputEvent } from "../app/events";
 import { GameEngine } from "../app/GameEngine";
+import { DisplayView } from "./DisplayView";
 
 interface HeaderProps {
   location: string;
@@ -22,16 +23,6 @@ const HeaderView = (props: HeaderProps) => {
   );
 };
 
-interface DisplayProps {
-  description: string;
-}
-
-const DisplayView = (props: DisplayProps) => {
-  const { description } = props;
-
-  return <div className="display-container">{description}</div>;
-};
-
 interface GameState {
   events: GameEvent[];
   lastInputPointer: number;
@@ -50,6 +41,7 @@ export class PlayView extends Component<any, GameState> {
       events: this.gameEngine.getEvents(),
       lastInputPointer: 0,
     };
+    this.gameEngine.changeLocation(this.gameEngine.currentLocation);
   }
 
   public onBlur() {
@@ -120,7 +112,7 @@ export class PlayView extends Component<any, GameState> {
           score={this.gameEngine.score}
           moves={this.gameEngine.actionCount}
         />
-        <DisplayView description={this.gameEngine.display} />
+        <DisplayView events={this.gameEngine.events} />
         <span id="input">
           <div id="input-tag">{"> "}</div>
           <input

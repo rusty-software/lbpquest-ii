@@ -18,11 +18,11 @@ export class GameEngine {
   public score: number;
   public actionCount: number;
   public display: string;
+  public events: GameEvent[];
 
   private inventory: Map<string, Item>;
   private items: Map<ItemKey, Item> = new Map();
   private locations: Map<LocationKey, Location> = new Map();
-  private events: GameEvent[];
 
   init() {
     Startup.init();
@@ -79,7 +79,7 @@ export class GameEngine {
     console.log("sent:", input);
   }
 
-  private changeLocation(location: Location) {
+  public changeLocation(location: Location) {
     this.currentLocation = location;
     this.events.push(
       new LocationChangeEvent(location.title, location.description())
