@@ -1,10 +1,10 @@
-import { Direction } from "./Direction";
 import { Item } from "./Item";
+import { NeighborMap } from "./NeighborMap";
 
 export interface Location {
   title: string;
   items: Item[];
-  neighbors: Map<Direction, Location>;
+  neighbors: NeighborMap;
   entered: boolean;
 
   enter(): void;

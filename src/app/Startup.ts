@@ -1,19 +1,13 @@
 import { Item } from "./Item";
 import { ItemKey } from "./items/ItemKey";
-import { Screwdriver } from "./items";
 import { Location } from "./Location";
 import { LocationKey, Driveway, Entryway } from "./locations";
-import { Direction } from "./Direction";
+import { NeighborMap } from "./NeighborMap";
+import { Screwdriver } from "./items";
 
 export class Startup {
-  private static items: Map<ItemKey, Item> = new Map();
-  private static locations: Map<LocationKey, Location> = new Map();
-
-  public static setupItems(): Map<ItemKey, Item> {
-    Startup.items.set(ItemKey.Screwdriver, new Screwdriver());
-
-    return Startup.items;
-  }
+  public static readonly items: Map<ItemKey, Item> = new Map();
+  public static readonly locations: Map<LocationKey, Location> = new Map();
 
   private static getItem(itemKey: ItemKey): Item {
     return Startup.items.get(itemKey)!;
@@ -23,19 +17,32 @@ export class Startup {
     return Startup.locations.get(locationKey)!;
   }
 
-  public static setupLocations(): Map<LocationKey, Location> {
-    const driveWay = new Driveway(new Map(), [
-      Startup.getItem(ItemKey.Screwdriver),
-    ]);
-    const entryWay = new Entryway(
-      new Map<Direction, Location>([["S" as Direction, driveWay]]),
-      []
-    );
-    driveWay.neighbors = new Map([["N" as Direction, entryWay]]);
-
-    Startup.locations.set(LocationKey.Driveway, driveWay);
-    Startup.locations.set(LocationKey.Entryway, entryWay);
-
-    return Startup.locations;
+  public static init() {
+    Startup.instantiateLocations();
+    Startup.instantiateItems();
+    Startup.arrange();
   }
+  private static instantiateLocations() {
+    Startup.locations.set(
+      LocationKey.Driveway,
+      new Driveway(new NeighborMap(), [])
+    );
+    Startup.locations.set(
+      LocationKey.Entryway,
+      new Entryway(new NeighborMap(), [])
+    );
+  }
+
+  private static instantiateItems() {
+    Startup.items.set(ItemKey.Screwdriver, new Screwdriver());
+  }
+
+  private static arrange() {
+    Startup.arrangeDriveway();
+    Startup.arrangeEntryway();
+  }
+
+  private static arrangeDriveway() {}
+
+  private static arrangeEntryway() {}
 }

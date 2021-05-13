@@ -24,13 +24,14 @@ export class GameEngine {
   private locations: Map<LocationKey, Location> = new Map();
   private events: GameEvent[];
 
-  setup() {
-    this.items = Startup.setupItems();
-    this.locations = Startup.setupLocations();
+  init() {
+    Startup.init();
+    this.items = Startup.items;
+    this.locations = Startup.locations;
   }
 
   constructor() {
-    this.setup();
+    this.init();
 
     this.score = 0;
     this.actionCount = 0;
@@ -56,24 +57,24 @@ export class GameEngine {
     const rest = lowerInput.substr(!!cmd ? cmd.name.length + 1 : 0);
 
     this.events.push(new NewInputEvent(input));
-        switch (cmd) {
-            case CommandType.N:
-            case CommandType.S: 
-            case CommandType.E: 
-            case CommandType.W: 
-            case CommandType.NE: 
-            case CommandType.NW: 
-            case CommandType.SE: 
-            case CommandType.SW: { 
-                this.move(lowerInput as Direction);
-                break;
-            }
+    switch (cmd) {
+      case CommandType.N:
+      case CommandType.S:
+      case CommandType.E:
+      case CommandType.W:
+      case CommandType.NE:
+      case CommandType.NW:
+      case CommandType.SE:
+      case CommandType.SW: {
+        this.move(lowerInput as Direction);
+        break;
+      }
 
-            case CommandType.GO: {
-                this.move(rest as Direction);
-                break;
-            }
-          }
+      case CommandType.GO: {
+        this.move(rest as Direction);
+        break;
+      }
+    }
 
     console.log("sent:", input);
   }
