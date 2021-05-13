@@ -10,7 +10,7 @@ import { GameError } from "./GameError";
 import { Item } from "./Item";
 import { ItemKey } from "./items/ItemKey";
 import { Location } from "./Location";
-import { LocationKey } from "./locations/LocationKey";
+import { LocationKey } from "./locations";
 import { Startup } from "./Startup";
 
 export class GameEngine {

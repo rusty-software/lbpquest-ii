@@ -1,9 +1,10 @@
 import { Item } from "./Item";
 import { ItemKey } from "./items/ItemKey";
 import { Location } from "./Location";
-import { LocationKey, Driveway, Entryway } from "./locations";
+import { Driveway, Entryway, LocationKey } from "./locations";
 import { NeighborMap } from "./NeighborMap";
 import { Screwdriver } from "./items";
+import { Direction } from "./Direction";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
@@ -42,7 +43,18 @@ export class Startup {
     Startup.arrangeEntryway();
   }
 
-  private static arrangeDriveway() {}
+  private static arrangeDriveway() {
+    const driveway = Startup.getLocation(LocationKey.Driveway);
+    driveway.neighbors = new NeighborMap([
+      ["N" as Direction, Startup.getLocation(LocationKey.Entryway)],
+    ]);
+    driveway.items = [Startup.getItem(ItemKey.Screwdriver)];
+  }
 
-  private static arrangeEntryway() {}
+  private static arrangeEntryway() {
+    const entryway = Startup.getLocation(LocationKey.Entryway);
+    entryway.neighbors = new NeighborMap([
+      ["S" as Direction, Startup.getLocation(LocationKey.Driveway)],
+    ]);
+  }
 }
