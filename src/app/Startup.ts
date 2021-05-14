@@ -46,7 +46,7 @@ export class Startup {
   private static arrangeDriveway() {
     const driveway = Startup.getLocation(LocationKey.Driveway);
     driveway.neighbors = new NeighborMap([
-      ["N" as Direction, Startup.getLocation(LocationKey.Entryway)],
+      ["n" as Direction, Startup.getLocation(LocationKey.Entryway)],
     ]);
     driveway.items = [Startup.getItem(ItemKey.Screwdriver)];
   }
@@ -54,7 +54,7 @@ export class Startup {
   private static arrangeEntryway() {
     const entryway = Startup.getLocation(LocationKey.Entryway);
     entryway.neighbors = new NeighborMap([
-      ["S" as Direction, Startup.getLocation(LocationKey.Driveway)],
+      ["s" as Direction, Startup.getLocation(LocationKey.Driveway)],
     ]);
   }
 }
