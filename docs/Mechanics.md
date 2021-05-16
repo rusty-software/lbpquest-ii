@@ -1,5 +1,8 @@
 Ultimate goal is to get into the grotto. The Grotto Troll keeps you out until you have filled the shelf with N randomly-selected trophies.
 
+Every item taken is worth +5.
+Every contest won is worth +10.
+
 BONUS POINTS if you collect all of the collectible items and trophies.
 
 Create a header with current location, score, and moves.
@@ -8,69 +11,60 @@ Get clues by asking the various statuettes and taxidermy.
 
 Items
 	Snacks
-		Cheetos
-		Nutter Butters
-		Cookie Dough
-		Powdered Sugar Donuts
-		Ice Oatmeal Cookies
-		Star Crunches
-		Ice Cream
+		~~Cheetos~~
+		~~Nutter Butters~~
+		~~Cookie Dough~~
+		~~Powdered Sugar Donuts~~
+		~~Ice Oatmeal Cookies~~
+		~~Ice Cream~~
 	Drinks
-		Marg
-		Box Wine
-		Lite Beer
-		Cider
-		Fireball
-		Four Loko
-	Statuettes
-		Turkey
-		Quail
-		Duck
-		Deer
+		~~Marg~~
+		~~Lite Beer~~
+		~~Cider~~
+		~~Fireball~~
+		~~Peach Four Loko~~
 	Trophies
-		Hole In One Scorecard
-		40-Yard Dash Blue Ribbon
-		Bullseye Log
-		Best Arts and Crafts Entry
-		Small Bowl of Guac
-		Black Belt
-		Dodgeball
-		Captain's Hat
-		Pool Cue Ball
-		Gauntlet Gold Medal
-		VHS Tape
-		(All Drinks)
-		(All Snacks)
-		(All Statuettes)
+		~~Hole In One Scorecard~~
+		~~40-Yard Dash Blue Ribbon~~
+		~~Bullseye Log~~
+		~~Ex-Presidential Medal of Artistry~~
+		~~Black Belt~~
+		~~Dodgeball~~
+		~~Captain's Hat~~
+		~~Pool Cue Ball~~
+		~~Gauntlet Gold Medal~~
+		~~VHS Tape~~
+		~~Dark Sweet Wine~~
 	Arts and Crafts Supplies
-		Construction Paper
-		Yarn
-		Watercolor Paint
-		Crayons
-		Map Pencils
-		Glitter
-		Googly Eyes
-		Fuzzy Pipe Cleaner
-		Stickers
-		Magazines
-		Scissors
-		Glue
-		Scotch Tape
-		Dutch Tape
-		Macaroni
+		~~Construction Paper~~
+		~~Crayons~~
+		~~Yarn~~
+		~~Map Pencils~~
+		~~Googly Eyes~~
+		~~Fuzzy Pipe Cleaner~~
+		~~Magazine of Questionable Content~~
+		~~Scissors~~
+		~~Glue~~
+		~~Scotch Tape~~
+		~~Duct Tape~~
 	Miscellany
-		Google Maps Alpha
+		~~Google Maps Alpha~~
 			Paper map found on the wall of the BilliardsRoom. 
 			Can be asked for locations of Items, but is pretty snarky about it.
 			Can be taken.
-		ATGolfcart
-		Screwdriver
-		Peach Candle
-		Red Candle
-		Alligator Rug
-		Winged Shoes
-		Lucky Golf Ball
-		Oar of Sluicing
+		~~Screwdriver~~
+		~~Blue Book~~
+		~~Alligator Rug~~
+		~~Winged Shoes~~
+		~~Lucky Golf Ball~~
+		~~Oar of Sluicing~~
+		~~Sure Shot Bow~~
+		~~Slippery Shorts~~
+		~~Chastity Belt~~
+		~~Shrinking Potion~~
+		~~Cowskin Rug of Elusiveness~~
+		~~Religious Iconography~~
+		~~Matches~~
 	
 Locations
 	Driveway
@@ -104,24 +98,6 @@ Locations
 	MasterBedroom
 	StagedBedroom
 	Kitchen
-	
-Challenges
-	40-yard dash
-		You have to win a race against ???. In order to do so, you have to be wearing the Winged Shoes
-	Score a hole in one
-		A hole in one is accomplished via the Lucky Golf Ball being hit with anything. On scoring the hole in one, the golf score card is automatically marked.
-	Bullseye
-	Boat race
-		* remove the alligator
-		* Oar of Sluicing
-	Make guac
-	Arts and crafts vs. George Bush
-		In order to win, you must include at least three different arts and crafts components.
-	One step, sensei!
-	Dodge it!
-	Shoot some pool
-	Run the gauntlet
-	Fix the VCR
 	
 NPCs
 	Grotto Troll
