@@ -1,3 +1,6 @@
+### link to game map
+https://app.diagrams.net/#G1CZALgBejggX4tIfdwnCwikYuN0OH5-d2
+
 ### Driveway
 Starting point. 
 * The hybrid All-Terrain Golf Cart is here. Inside is hidden the **Lucky Golfball**.
