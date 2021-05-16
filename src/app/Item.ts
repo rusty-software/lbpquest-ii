@@ -4,6 +4,8 @@ export interface Item {
   id: number;
   name: string;
   isShown: boolean;
+  value: number;
+  taken: boolean;
   canTake(gameEngine: GameEngine): boolean;
   take(gameEngine: GameEngine): string;
   drop(gameEngine: GameEngine): string;

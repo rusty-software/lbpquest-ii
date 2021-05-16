@@ -55,7 +55,7 @@ Canoe is here. Alligator is in it. Can be moved by throwing the *alligator rug* 
 * The **Oar of Sluicing** can be found on the shore here, hidden in some long grass.
 
 ### Golf Course
-* A rough tee box is at one end of an open field that looks like a driving range. A single flag extends from what is presumed to be a golf cup.  If the player has the *lucky golf ball*, they can simply use it to obtain the **Hole In One Scorecard**
+* A rough tee box is at one end of an open field that looks like a driving range. A single flag extends from what is presumed to be a golf cup.  If the player has the *Lucky Golf Ball* and the *Utility Stick*, they can simply use it to obtain the **Hole In One Scorecard**
 
 ### North Woods
 White Stag brothers are here, will challenge the player to a game of Dodge It. If the player has picked up the *cowskin rug of elusiveness*, they will win the game, and be rewarded with a **Dodgeball**.
@@ -66,8 +66,7 @@ The desk is here. Hidden in the desk is a **Magazine of Questionable Content** a
 ### Billiards Room
 * **Google Maps Alpha** is here. 
 * **Cowskin rug of elusiveness** is here, always visible on first entry, but with a 50% chance of not being visible subsequently.  When the rug isn't visible, the game should remind the player that they thought there was a rug in here. 
-* The pool table is set to be played, but no cue stick can be found. If the player has constructed the *Makeshift Cue Stick*, they can use it to break the rack, sinking all of the balls in a single stroke. the **Cue Ball** will hop into their duffle bag.
-* Hidden in the pockets is the **cue ball**.
+* The pool table is set to be played, but no cue stick can be found. If the player has constructed the *Utility Stick*, they can use it to break the rack, sinking all of the balls in a single stroke. the **Cue Ball** will hop into their duffle bag.
 
 ### Kitchen
 * **Undead Lord of the Mounted Bulls** is here.
@@ -87,13 +86,14 @@ The desk is here. Hidden in the desk is a **Magazine of Questionable Content** a
 
 ### Dining Room
 * **Lord of the Mounted Birds** is here.
+* It's eyes are covered with **Googly Eyes**. They must be taken before the bird will say anything useful.
 * It looks like the the eagle has been glued to the stand. The leftover **Glue** is in the china cabinet.
 
 ### Mismatched Bedroom
 The nightstand has four drawers. In the striped drawer, the player finds **Iced Oatmeal Cookies**. In the red drawer, they find some **Nutter Butters**.
 
 ### Upstairs Landing
-Two of the **Balusters** are loose, and can be used to form a **Makeshift Cue Stick**.
+Two of the **Balusters** are loose, and can be combined with *Duct Tape* to form a **Utility Stick**.
 
 ### Staged Bedroom
 * The **Shrinking Potion** is here, disguised as a **Red Candle**. It's only revealed by burning the candle. **Matches** can be found on the nightstand.

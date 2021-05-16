@@ -1,11 +1,14 @@
 import { GameEngine } from "../GameEngine";
-import { Item } from "../Item";
+import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 
-export class Screwdriver implements Item {
-  id = ItemKey.Screwdriver;
-  name = "screwdriver";
-  isShown = false;
+export class Screwdriver extends BaseItem {
+  constructor() {
+    super();
+    this.id = ItemKey.Screwdriver;
+    this.name = "screwdriver";
+    this.value = 5;
+  }
 
   canTake(gameEngine: GameEngine): boolean {
     return true;

@@ -106,6 +106,8 @@ export class GameEngine {
         const item = this.getLocationItem(rest);
         if (item) {
           if (item.canTake(this)) {
+            this.score += !item.taken ? item.value : 0;
+            item.taken = true;
             this.inventory.push(item);
             this.currentLocation.items.splice(
               this.currentLocation.items.indexOf(item),
@@ -193,7 +195,6 @@ export class GameEngine {
   }
 
   private getAvailableItem(itemName: string) {
-    console.log("finding item name:", itemName);
     const availableItems = this.currentLocation.items.concat(this.inventory);
     return availableItems.find((i) => {
       return i.name === itemName;

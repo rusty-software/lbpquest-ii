@@ -1,11 +1,15 @@
 import { GameEngine } from "../GameEngine";
-import { Item } from "../Item";
+import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 
-export class GolfBall implements Item {
-  id = ItemKey.GolfBall;
-  name = "golf ball";
-  isShown = false;
+export class GolfBall extends BaseItem {
+  constructor() {
+    super();
+    this.id = ItemKey.GolfBall;
+    this.name = "golf ball";
+    this.value = 5;
+  }
+
   canTake(gameEngine: GameEngine): boolean {
     return true;
   }
