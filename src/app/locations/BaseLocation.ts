@@ -10,8 +10,6 @@ export abstract class BaseLocation implements Location {
   neighbors = new NeighborMap();
   items: Item[] = [];
 
-  constructor() {}
-
   showItem(itemKey: ItemKey) {
     this.items.find((item) => item.id === itemKey)!.isShown = true;
   }
