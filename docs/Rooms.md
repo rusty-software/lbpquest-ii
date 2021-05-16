@@ -23,6 +23,9 @@ Wild children are here. The child leader asks the player if they want to run the
 * **Fireball** is hidden here in the left-hand bench.
 * **Cider** is hidden in the right-hand bench.
 
+### Fort
+* A **Bottle of Glitter** is hidden in the fort.
+
 ### South Woods
 Tan Stag is here. Is standing upright, wearing a black belt, and doing what appears as some one-step shadow practice. The stag will challenge the player to move "to the line" for some sparring. If the player has watched the *NRNS training*,  they will win the sparring match, and the Tan Stag will hand over the **Black Belt**.
 

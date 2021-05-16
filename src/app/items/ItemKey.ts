@@ -21,6 +21,7 @@ export enum ItemKey {
   DuctTape,
   ExPresidentialMedal,
   Fireball,
+  Glitter,
   Glue,
   GoldMedal,
   GolfBall,
