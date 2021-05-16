@@ -20,6 +20,7 @@ export { LivingRoom } from "./LivingRoom";
 export { MasterBedroom } from "./MasterBedroom";
 export { MismatchedBedroom } from "./MismatchedBedroom";
 export { NorthPondShore } from "./NorthPondShore";
+export { NorthWoods } from "./NorthWoods";
 export { Pool } from "./Pool";
 export { RacingField } from "./RacingField";
 export { RevivalHut } from "./RevivalHut";

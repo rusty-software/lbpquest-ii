@@ -1,5 +1,61 @@
 import { Item } from "./Item";
-import { ItemKey } from "./items/ItemKey";
+import {
+  AlligatorRug,
+  AllTerrainGolfCart,
+  Balusters,
+  BlackBelt,
+  BlueRibbon,
+  Bow,
+  Canoe,
+  CaptainsHat,
+  ChastityBelt,
+  Cheetos,
+  Cider,
+  ConstructionPaper,
+  CookieDough,
+  CowskinRug,
+  Crayons,
+  CueBall,
+  DarkSweetWine,
+  DodgeBall,
+  DuctTape,
+  ExPresidentialMedal,
+  Fireball,
+  Glitter,
+  Glue,
+  GoldMedal,
+  GolfBall,
+  GoogleMap,
+  GooglyEyes,
+  IceCream,
+  ItemKey,
+  LiteBeer,
+  Log,
+  Magazine,
+  Marg,
+  Matches,
+  Mothers,
+  NutterButters,
+  Oar,
+  PeachCandle,
+  PeachFourLoko,
+  Pencils,
+  PipeCleaners,
+  PSDs,
+  RedCandle,
+  ReligiousIcons,
+  Scissors,
+  Scorecard,
+  ScotchTape,
+  Screwdriver,
+  ShrinkingPotion,
+  SlipperyShorts,
+  TrophyCase,
+  UtilityStick,
+  VHSTape,
+  WingedShoes,
+  Yarn,
+} from "./items";
 import { Location } from "./Location";
 import {
   Bar,
@@ -25,6 +81,7 @@ import {
   MasterBedroom,
   MismatchedBedroom,
   NorthPondShore,
+  NorthWoods,
   Pool,
   RacingField,
   RevivalHut,
@@ -37,11 +94,8 @@ import {
   Winery,
 } from "./locations";
 import { NeighborMap } from "./NeighborMap";
-import { Screwdriver } from "./items";
 import { Direction } from "./Direction";
-import { AllTerrainGolfCart } from "./items/AllTerrainGolfCart";
-import { GolfBall } from "./items/GolfBall";
-import { NorthWoods } from "./locations/NorthWoods";
+import { BlueBook } from "./items/BlueBook";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
@@ -60,6 +114,7 @@ export class Startup {
     Startup.instantiateItems();
     Startup.arrange();
   }
+
   private static instantiateLocations() {
     Startup.locations.set(LocationKey.BBQTrailer, new BBQTrailer());
     Startup.locations.set(LocationKey.Bar, new Bar());
@@ -101,8 +156,60 @@ export class Startup {
 
   private static instantiateItems() {
     Startup.items.set(ItemKey.AllTerrainGolfCart, new AllTerrainGolfCart());
+    Startup.items.set(ItemKey.AlligatorRug, new AlligatorRug());
+    Startup.items.set(ItemKey.Balusters, new Balusters());
+    Startup.items.set(ItemKey.BlackBelt, new BlackBelt());
+    Startup.items.set(ItemKey.BlueBook, new BlueBook());
+    Startup.items.set(ItemKey.BlueRibbon, new BlueRibbon());
+    Startup.items.set(ItemKey.Bow, new Bow());
+    Startup.items.set(ItemKey.Canoe, new Canoe());
+    Startup.items.set(ItemKey.CaptainsHat, new CaptainsHat());
+    Startup.items.set(ItemKey.ChastityBelt, new ChastityBelt());
+    Startup.items.set(ItemKey.Cheetos, new Cheetos());
+    Startup.items.set(ItemKey.Cider, new Cider());
+    Startup.items.set(ItemKey.ConstructionPaper, new ConstructionPaper());
+    Startup.items.set(ItemKey.CookieDough, new CookieDough());
+    Startup.items.set(ItemKey.CowskinRug, new CowskinRug());
+    Startup.items.set(ItemKey.Crayons, new Crayons());
+    Startup.items.set(ItemKey.CueBall, new CueBall());
+    Startup.items.set(ItemKey.DarkSweetWine, new DarkSweetWine());
+    Startup.items.set(ItemKey.DodgeBall, new DodgeBall());
+    Startup.items.set(ItemKey.DuctTape, new DuctTape());
+    Startup.items.set(ItemKey.ExPresidentialMedal, new ExPresidentialMedal());
+    Startup.items.set(ItemKey.Fireball, new Fireball());
+    Startup.items.set(ItemKey.Glitter, new Glitter());
+    Startup.items.set(ItemKey.Glue, new Glue());
+    Startup.items.set(ItemKey.GoldMedal, new GoldMedal());
     Startup.items.set(ItemKey.GolfBall, new GolfBall());
+    Startup.items.set(ItemKey.GoogleMap, new GoogleMap());
+    Startup.items.set(ItemKey.GooglyEyes, new GooglyEyes());
+    Startup.items.set(ItemKey.IceCream, new IceCream());
+    Startup.items.set(ItemKey.LiteBeer, new LiteBeer());
+    Startup.items.set(ItemKey.Log, new Log());
+    Startup.items.set(ItemKey.Magazine, new Magazine());
+    Startup.items.set(ItemKey.Marg, new Marg());
+    Startup.items.set(ItemKey.Matches, new Matches());
+    Startup.items.set(ItemKey.Mothers, new Mothers());
+    Startup.items.set(ItemKey.NutterButters, new NutterButters());
+    Startup.items.set(ItemKey.Oar, new Oar());
+    Startup.items.set(ItemKey.PSDs, new PSDs());
+    Startup.items.set(ItemKey.PeachCandle, new PeachCandle());
+    Startup.items.set(ItemKey.PeachFourLoko, new PeachFourLoko());
+    Startup.items.set(ItemKey.Pencils, new Pencils());
+    Startup.items.set(ItemKey.PipeCleaners, new PipeCleaners());
+    Startup.items.set(ItemKey.RedCandle, new RedCandle());
+    Startup.items.set(ItemKey.ReligiousIcons, new ReligiousIcons());
+    Startup.items.set(ItemKey.Scissors, new Scissors());
+    Startup.items.set(ItemKey.Scorecard, new Scorecard());
+    Startup.items.set(ItemKey.ScotchTape, new ScotchTape());
     Startup.items.set(ItemKey.Screwdriver, new Screwdriver());
+    Startup.items.set(ItemKey.ShrinkingPotion, new ShrinkingPotion());
+    Startup.items.set(ItemKey.SlipperyShorts, new SlipperyShorts());
+    Startup.items.set(ItemKey.TrophyCase, new TrophyCase());
+    Startup.items.set(ItemKey.UtilityStick, new UtilityStick());
+    Startup.items.set(ItemKey.VHSTape, new VHSTape());
+    Startup.items.set(ItemKey.WingedShoes, new WingedShoes());
+    Startup.items.set(ItemKey.Yarn, new Yarn());
   }
 
   private static arrange() {
