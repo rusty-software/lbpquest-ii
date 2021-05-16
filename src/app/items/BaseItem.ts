@@ -2,19 +2,11 @@ import { GameEngine } from "../GameEngine";
 import { Item } from "../Item";
 
 export class BaseItem implements Item {
-  id: number;
-  name: string;
-  isShown: boolean;
-  value: number;
-  taken: boolean;
-
-  constructor() {
-    this.id = 0;
-    this.name = "";
-    this.isShown = false;
-    this.value = 0;
-    this.taken = false;
-  }
+  id: number = 0;
+  name: string = "";
+  isShown: boolean = false;
+  value: number = 0;
+  taken: boolean = false;
 
   canTake(gameEngine: GameEngine): boolean {
     throw new Error("Method not implemented.");

@@ -3,12 +3,9 @@ import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 
 export class Screwdriver extends BaseItem {
-  constructor() {
-    super();
-    this.id = ItemKey.Screwdriver;
-    this.name = "screwdriver";
-    this.value = 5;
-  }
+  id = ItemKey.Screwdriver;
+  name = "screwdriver";
+  value = 5;
 
   canTake(gameEngine: GameEngine): boolean {
     return true;

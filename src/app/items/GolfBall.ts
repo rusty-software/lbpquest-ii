@@ -3,12 +3,9 @@ import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 
 export class GolfBall extends BaseItem {
-  constructor() {
-    super();
-    this.id = ItemKey.GolfBall;
-    this.name = "golf ball";
-    this.value = 5;
-  }
+  id = ItemKey.GolfBall;
+  name = "golf ball";
+  value = 5;
 
   canTake(gameEngine: GameEngine): boolean {
     return true;
