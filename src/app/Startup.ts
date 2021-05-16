@@ -26,14 +26,8 @@ export class Startup {
     Startup.arrange();
   }
   private static instantiateLocations() {
-    Startup.locations.set(
-      LocationKey.Driveway,
-      new Driveway(new NeighborMap(), [])
-    );
-    Startup.locations.set(
-      LocationKey.Entryway,
-      new Entryway(new NeighborMap(), [])
-    );
+    Startup.locations.set(LocationKey.Driveway, new Driveway());
+    Startup.locations.set(LocationKey.Entryway, new Entryway());
   }
 
   private static instantiateItems() {

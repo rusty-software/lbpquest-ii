@@ -7,11 +7,13 @@ export abstract class BaseLocation implements Location {
   title: string = "";
   entered: boolean = false;
   descriptionText = "";
+  neighbors = new NeighborMap();
+  items: Item[] = [];
 
-  constructor(public neighbors: NeighborMap, public items: Item[]) {}
+  constructor() {}
 
   showItem(itemKey: ItemKey) {
-    this.items.find((item) => (item.id === itemKey))!.isShown = true;
+    this.items.find((item) => item.id === itemKey)!.isShown = true;
   }
 
   abstract enter(): void;
@@ -22,12 +24,12 @@ export abstract class BaseLocation implements Location {
       .filter((item) => item.isShown)
       .map((item) => (s += `\n\nThere is a(n) ${item.name} here.`));
     return s;
-  };
+  }
 
   public addItem(item: Item): void {
     this.items.push(item);
   }
-  
+
   public removeItem(item: Item): void {
     this.items.splice(this.items.indexOf(item), 1);
   }
