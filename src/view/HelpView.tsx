@@ -1,13 +1,13 @@
 const helpMapper: { [s: string]: string } = {
   go: " <somewhere> : e.g. `go through door` to move somewhere other than cardinal or ordinal directions",
   help: " : shows this help text",
-  inventory: " : lists the items in your haversack",
+  inventory: " : lists the items in your duffle bag",
   examine:
     " <object> : e.g. `examine sword` to take a closer look at the sword",
   look: " : describes the area in which you are, currently",
-  take: " <object> : e.g. `take sword` to add an item to your haversack",
+  take: " <object> : e.g. `take sword` to add an item to your duffle bag",
   use: " <object> : e.g. `use sword` to activate an item",
-  drop: " <object> : e.g. `drop sword` to remove an item from your haversack",
+  drop: " <object> : e.g. `drop sword` to remove an item from your duffle bag",
 };
 
 interface HelpViewProps {

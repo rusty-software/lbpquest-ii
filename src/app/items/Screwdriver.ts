@@ -1,12 +1,13 @@
 import { GameEngine } from "../GameEngine";
 import { Item } from "../Item";
+import { ItemKey } from "./ItemKey";
 
 export class Screwdriver implements Item {
-  id = "screwdriver";
+  id = ItemKey.Screwdriver;
   name = "screwdriver";
-  displayable = true;
+  isShown = false;
 
-  takeable(gameEngine: GameEngine): boolean {
+  canTake(gameEngine: GameEngine): boolean {
     return true;
   }
   take(gameEngine: GameEngine): string {

@@ -105,7 +105,7 @@ export class GameEngine {
       case CommandType.take: {
         const item = this.getLocationItem(rest);
         if (item) {
-          if (item.takeable(this)) {
+          if (item.canTake(this)) {
             this.inventory.push(item);
             this.currentLocation.items.splice(
               this.currentLocation.items.indexOf(item),
@@ -193,6 +193,7 @@ export class GameEngine {
   }
 
   private getAvailableItem(itemName: string) {
+    console.log("finding item name:", itemName);
     const availableItems = this.currentLocation.items.concat(this.inventory);
     return availableItems.find((i) => {
       return i.name === itemName;

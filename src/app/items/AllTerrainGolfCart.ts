@@ -3,12 +3,12 @@ import { Item } from "../Item";
 import { ItemKey } from "./ItemKey";
 
 export class AllTerrainGolfCart implements Item {
-  id = "allterraingolfcart";
+  id = ItemKey.AllTerrainGolfCart;
   name = "golf cart";
 
-  displayable = false;
+  isShown = false;
 
-  takeable(gameEngine: GameEngine): boolean {
+  canTake(gameEngine: GameEngine): boolean {
     return false;
   }
 
@@ -23,7 +23,7 @@ export class AllTerrainGolfCart implements Item {
   examine(gameEngine: GameEngine): string {
     const desc = "The cart looks well used, being at least as muddy as it is swanky. You notice that there's a golf ball in one of the cup holders next to an empty beer can.";
     
-    gameEngine.currentLocation.addItem(gameEngine.getItem(ItemKey.Screwdriver));
+    gameEngine.currentLocation.showItem(ItemKey.GolfBall);
 
     return desc;
   }
