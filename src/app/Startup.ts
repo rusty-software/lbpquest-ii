@@ -5,6 +5,7 @@ import { Driveway, Entryway, LocationKey } from "./locations";
 import { NeighborMap } from "./NeighborMap";
 import { Screwdriver } from "./items";
 import { Direction } from "./Direction";
+import { AllTerrainGolfCart } from "./items/AllTerrainGolfCart";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
@@ -35,6 +36,7 @@ export class Startup {
   }
 
   private static instantiateItems() {
+    Startup.items.set(ItemKey.AllTerrainGolfCart, new AllTerrainGolfCart());
     Startup.items.set(ItemKey.Screwdriver, new Screwdriver());
   }
 
@@ -48,7 +50,7 @@ export class Startup {
     driveway.neighbors = new NeighborMap([
       ["n" as Direction, Startup.getLocation(LocationKey.Entryway)],
     ]);
-    driveway.items = [Startup.getItem(ItemKey.Screwdriver)];
+    driveway.items = [Startup.getItem(ItemKey.AllTerrainGolfCart)];
   }
 
   private static arrangeEntryway() {

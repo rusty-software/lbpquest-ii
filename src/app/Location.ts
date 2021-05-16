@@ -9,4 +9,6 @@ export interface Location {
 
   enter(): void;
   description(): string;
+  addItem(item: Item): void;
+  removeItem(item: Item): void;
 }

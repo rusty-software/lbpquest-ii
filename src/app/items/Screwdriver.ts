@@ -4,12 +4,13 @@ import { Item } from "../Item";
 export class Screwdriver implements Item {
   id = "screwdriver";
   name = "screwdriver";
+  displayable = true;
 
   takeable(gameEngine: GameEngine): boolean {
     return true;
   }
   take(gameEngine: GameEngine): string {
-    return "You have successfully put the screwdriver into your haversack!";
+    return "You have successfully put the screwdriver into your duffle bag!";
   }
   drop(gameEngine: GameEngine): string {
     return "You have successfully dropped the screwdriver.";

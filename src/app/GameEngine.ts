@@ -188,6 +188,10 @@ export class GameEngine {
     }
   }
 
+  public getItem(itemKey: ItemKey): Item {
+    return this.items.get(itemKey)!;
+  }
+
   private getAvailableItem(itemName: string) {
     const availableItems = this.currentLocation.items.concat(this.inventory);
     return availableItems.find((i) => {
