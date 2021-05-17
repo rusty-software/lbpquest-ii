@@ -21,6 +21,7 @@ import {
   DuctTape,
   ExPresidentialMedal,
   Fireball,
+  Freezer,
   Glitter,
   Glue,
   GoldMedal,
@@ -177,6 +178,7 @@ export class Startup {
     Startup.items.set(ItemKey.DuctTape, new DuctTape());
     Startup.items.set(ItemKey.ExPresidentialMedal, new ExPresidentialMedal());
     Startup.items.set(ItemKey.Fireball, new Fireball());
+    Startup.items.set(ItemKey.Freezer, new Freezer());
     Startup.items.set(ItemKey.Glitter, new Glitter());
     Startup.items.set(ItemKey.Glue, new Glue());
     Startup.items.set(ItemKey.GoldMedal, new GoldMedal());
@@ -215,12 +217,24 @@ export class Startup {
   private static arrange() {
     Startup.arrangeDriveway();
     Startup.arrangeEntryway();
+    Startup.arrangeFreezerPort();
+  }
+
+  private static arrangeFreezerPort() {
+    const freezerPort = Startup.getLocation(LocationKey.FreezerPort);
+    freezerPort.neighbors = new NeighborMap([
+      ["se" as Direction, Startup.getLocation(LocationKey.Driveway)],
+    ]);
+    freezerPort.items = [Startup.getItem(ItemKey.Freezer)];
   }
 
   private static arrangeDriveway() {
     const driveway = Startup.getLocation(LocationKey.Driveway);
     driveway.neighbors = new NeighborMap([
       ["n" as Direction, Startup.getLocation(LocationKey.Entryway)],
+      ["ne" as Direction, Startup.getLocation(LocationKey.DirtPath)],
+      ["se" as Direction, Startup.getLocation(LocationKey.Splashpad)],
+      ["nw" as Direction, Startup.getLocation(LocationKey.FreezerPort)],
     ]);
     driveway.items = [
       Startup.getItem(ItemKey.AllTerrainGolfCart),

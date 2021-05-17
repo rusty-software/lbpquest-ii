@@ -20,6 +20,7 @@ export { DodgeBall } from "./DodgeBall";
 export { DuctTape } from "./DuctTape";
 export { ExPresidentialMedal } from "./ExPresidentialMedal";
 export { Fireball } from "./Fireball";
+export { Freezer } from "./Freezer";
 export { Glitter } from "./Glitter";
 export { Glue } from "./Glue";
 export { GoldMedal } from "./GoldMedal";
