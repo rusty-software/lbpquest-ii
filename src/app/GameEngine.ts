@@ -136,7 +136,12 @@ export class GameEngine {
           this.currentLocation.items.push(item);
           this.inventory.splice(this.inventory.indexOf(item), 1);
           this.events.push(new ItemEvent(item.drop(this)));
-        } else if (this.getLocationItem(rest)) {
+        } else if (
+          () => {
+            const locationItem = this.getLocationItem(rest);
+            return locationItem && locationItem.canTake(this);
+          }
+        ) {
           this.events.push(
             new GameErrorEvent(
               GameError.NoItem,
