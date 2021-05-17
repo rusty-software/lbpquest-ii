@@ -11,7 +11,7 @@ import {
 } from "./events";
 import { GameError } from "./GameError";
 import { Item } from "./Item";
-import { ItemKey } from "./items/ItemKey";
+import { ItemKey } from "./items";
 import { Location } from "./Location";
 import { LocationKey } from "./locations";
 import { Startup } from "./Startup";
@@ -23,7 +23,7 @@ export class GameEngine {
   public display: string;
   public events: GameEvent[];
 
-  private inventory: Item[];
+  private readonly inventory: Item[];
   private items: Map<ItemKey, Item> = new Map();
   private locations: Map<LocationKey, Location> = new Map();
 
@@ -39,7 +39,7 @@ export class GameEngine {
     this.score = 0;
     this.actionCount = 0;
 
-    this.currentLocation = this.locations.get(LocationKey.Driveway)!;
+    this.currentLocation = this.getLocation(LocationKey.Driveway);
     this.display = this.currentLocation.description();
     this.inventory = [];
     this.events = [];
@@ -165,9 +165,22 @@ export class GameEngine {
       }
 
       default: {
-        console.log(
-          "TODO: check for custom command on either the location or item"
-        );
+        const targetItem = this.currentLocation.items
+          .concat(this.inventory)
+          .find((item) => input.endsWith(item.name));
+
+        if (targetItem) {
+          console.log("targeting an available item");
+          const customVerbText = lowerInput.substr(
+            0,
+            lowerInput.length - (targetItem.name.length + 1)
+          );
+          const customVerb = targetItem.customVerbs.get(customVerbText);
+          if (customVerb) {
+            this.events.push(new ItemEvent(customVerb(this)));
+          }
+        }
+        break;
       }
     }
 
@@ -193,6 +206,10 @@ export class GameEngine {
     } else {
       this.events.push(new GameErrorEvent(GameError.InvalidPath, ""));
     }
+  }
+
+  public getLocation(locationKey: LocationKey): Location {
+    return this.locations.get(locationKey)!;
   }
 
   public getItem(itemKey: ItemKey): Item {

@@ -7,6 +7,7 @@ export class BaseItem implements Item {
   isShown: boolean = false;
   value: number = 0;
   taken: boolean = false;
+  customVerbs: Map<string, (gameEngine: GameEngine) => string> = new Map();
 
   canTake(gameEngine: GameEngine): boolean {
     throw new Error("Method not implemented.");
