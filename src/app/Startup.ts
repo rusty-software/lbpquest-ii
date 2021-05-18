@@ -4,6 +4,7 @@ import {
   AllTerrainGolfCart,
   Balusters,
   BlackBelt,
+  BlueBook,
   BlueRibbon,
   Bow,
   Canoe,
@@ -71,6 +72,7 @@ import {
   Entryway,
   FirePit,
   Fort,
+  Freezer,
   FreezerPort,
   GolfCourse,
   Grotto,
@@ -95,8 +97,6 @@ import {
 } from "./locations";
 import { NeighborMap } from "./NeighborMap";
 import { Direction } from "./Direction";
-import { BlueBook } from "./items/BlueBook";
-import { Freezer } from "./locations/Freezer";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();

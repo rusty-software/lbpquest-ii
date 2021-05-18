@@ -37,7 +37,7 @@ export abstract class BaseLocation implements Location {
     this.items.splice(this.items.indexOf(item), 1);
   }
 
-  public enterLocation(
+  protected enterLocation(
     gameEngine: GameEngine,
     locationKey: LocationKey
   ): string {
