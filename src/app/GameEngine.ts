@@ -209,7 +209,6 @@ export class GameEngine {
     const newLocation = this.currentLocation.neighbors.get(direction);
     if (newLocation) {
       if (!newLocation.entered) {
-        newLocation.entered = true;
         newLocation.enter();
       }
       this.changeLocation(newLocation);

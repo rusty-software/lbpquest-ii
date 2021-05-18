@@ -3,6 +3,7 @@ import { Item } from "../Item";
 import { ItemKey } from "../items/ItemKey";
 import { Location } from "../Location";
 import { NeighborMap } from "../NeighborMap";
+import { LocationKey } from "./LocationKey";
 
 export abstract class BaseLocation implements Location {
   customVerbs: Map<string, (gameEngine: GameEngine) => string> = new Map();
@@ -34,5 +35,15 @@ export abstract class BaseLocation implements Location {
 
   public removeItem(item: Item): void {
     this.items.splice(this.items.indexOf(item), 1);
+  }
+
+  public enterLocation(
+    gameEngine: GameEngine,
+    locationKey: LocationKey
+  ): string {
+    const location = gameEngine.getLocation(locationKey);
+    location.enter();
+    gameEngine.changeLocation(location);
+    return "";
   }
 }
