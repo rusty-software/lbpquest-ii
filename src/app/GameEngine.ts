@@ -179,6 +179,12 @@ export class GameEngine {
           if (customVerb) {
             this.events.push(new ItemEvent(customVerb(this)));
           }
+        } else {
+          const customVerb = this.currentLocation.customVerbs.get(lowerInput);
+          if (customVerb) {
+            // TODO: ItemEvent from Location verb feels odd
+            this.events.push(new ItemEvent(customVerb(this)));
+          }
         }
         break;
       }

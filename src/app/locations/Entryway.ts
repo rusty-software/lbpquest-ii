@@ -4,7 +4,4 @@ export class Entryway extends BaseLocation {
   public readonly title: string = "Entryway";
 
   descriptionText = "You are in the entryway.";
-  enter(): void {
-    this.entered = true;
-  }
 }

@@ -11,6 +11,7 @@ export { EastWoods } from "./EastWoods";
 export { Entryway } from "./Entryway";
 export { FirePit } from "./FirePit";
 export { Fort } from "./Fort";
+export { Freezer } from "./Freezer";
 export { FreezerPort } from "./FreezerPort";
 export { GolfCourse } from "./GolfCourse";
 export { Grotto } from "./Grotto";

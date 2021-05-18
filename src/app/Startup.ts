@@ -21,7 +21,6 @@ import {
   DuctTape,
   ExPresidentialMedal,
   Fireball,
-  Freezer,
   Glitter,
   Glue,
   GoldMedal,
@@ -97,6 +96,7 @@ import {
 import { NeighborMap } from "./NeighborMap";
 import { Direction } from "./Direction";
 import { BlueBook } from "./items/BlueBook";
+import { Freezer } from "./locations/Freezer";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
@@ -130,6 +130,7 @@ export class Startup {
     Startup.locations.set(LocationKey.Entryway, new Entryway());
     Startup.locations.set(LocationKey.FirePit, new FirePit());
     Startup.locations.set(LocationKey.Fort, new Fort());
+    Startup.locations.set(LocationKey.Freezer, new Freezer());
     Startup.locations.set(LocationKey.FreezerPort, new FreezerPort());
     Startup.locations.set(LocationKey.GolfCourse, new GolfCourse());
     Startup.locations.set(LocationKey.Grotto, new Grotto());
@@ -178,7 +179,6 @@ export class Startup {
     Startup.items.set(ItemKey.DuctTape, new DuctTape());
     Startup.items.set(ItemKey.ExPresidentialMedal, new ExPresidentialMedal());
     Startup.items.set(ItemKey.Fireball, new Fireball());
-    Startup.items.set(ItemKey.Freezer, new Freezer());
     Startup.items.set(ItemKey.Glitter, new Glitter());
     Startup.items.set(ItemKey.Glue, new Glue());
     Startup.items.set(ItemKey.GoldMedal, new GoldMedal());
@@ -225,7 +225,6 @@ export class Startup {
     freezerPort.neighbors = new NeighborMap([
       ["se" as Direction, Startup.getLocation(LocationKey.Driveway)],
     ]);
-    freezerPort.items = [Startup.getItem(ItemKey.Freezer)];
   }
 
   private static arrangeDriveway() {

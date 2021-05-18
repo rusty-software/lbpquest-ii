@@ -1,9 +1,11 @@
+import { GameEngine } from "../GameEngine";
 import { Item } from "../Item";
 import { ItemKey } from "../items/ItemKey";
 import { Location } from "../Location";
 import { NeighborMap } from "../NeighborMap";
 
 export abstract class BaseLocation implements Location {
+  customVerbs: Map<string, (gameEngine: GameEngine) => string> = new Map();
   title: string = "";
   entered: boolean = false;
   descriptionText = "";
@@ -14,7 +16,9 @@ export abstract class BaseLocation implements Location {
     this.items.find((item) => item.id === itemKey)!.isShown = true;
   }
 
-  abstract enter(): void;
+  public enter(): void {
+    this.entered = true;
+  }
 
   public description(): string {
     let s = this.descriptionText;

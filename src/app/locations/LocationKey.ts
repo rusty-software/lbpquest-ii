@@ -12,6 +12,7 @@ export enum LocationKey {
   Entryway,
   FirePit,
   Fort,
+  Freezer,
   FreezerPort,
   GolfCourse,
   Grotto,
