@@ -6,6 +6,7 @@ import { NeighborMap } from "../NeighborMap";
 import { LocationKey } from "./LocationKey";
 
 export abstract class BaseLocation implements Location {
+  id: LocationKey = -1;
   customVerbs: Map<string, (gameEngine: GameEngine) => string> = new Map();
   title: string = "";
   entered: boolean = false;

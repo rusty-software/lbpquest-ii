@@ -43,6 +43,9 @@ export class GameEngine {
     this.display = this.currentLocation.description();
     this.inventory = [];
     this.events = [];
+
+    // HACK ZONE
+    this.inventory.push(this.getItem(ItemKey.BlueBook));
   }
 
   public getEvents(): GameEvent[] {
@@ -174,7 +177,6 @@ export class GameEngine {
           .find((item) => input.endsWith(item.name));
 
         if (targetItem) {
-          console.log("targeting an available item");
           const customVerbText = lowerInput.substr(
             0,
             lowerInput.length - (targetItem.name.length + 1)

@@ -4,13 +4,12 @@ import { ItemKey } from "../items";
 import { LocationKey } from "./LocationKey";
 
 export class Winery extends BaseLocation {
+  id = LocationKey.Winery;
   public readonly title = "Messina Hof Winery";
-  private bookGiven = false;
+  public bookGiven = false;
   private bookTasked = false;
 
   customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
-    ["give book", this.give],
-    ["give book to ghost", this.give],
     ["exit", this.exit],
     ["exit winery", this.exit],
     ["leave", this.exit],
@@ -37,14 +36,11 @@ export class Winery extends BaseLocation {
         '\n\nThe ghost, for what else could it be, drifts towards you, a sad look on its face.\n\n"My book..." she says, her voice a mournful wail. "I can\'t find my book... Can you help me find my book?"';
     }
 
-    return s;
-  }
+    this.items
+      .filter((item) => item.isShown)
+      .map((item) => (s += `\n\nThere is a(n) ${item.name} here.`));
 
-  public give(gameEngine: GameEngine): string {
-    gameEngine.removeFromInventory(ItemKey.BlueBook);
-    gameEngine.addToInventory(ItemKey.DarkSweetWine);
-    this.bookGiven = true;
-    return 'She accepts the book lovingly, stroking a semi-skeletal hand over the cover. "Thank you. You have done me a great service. In return, please take this..." She hands you a bottle of Dark Sweet Wine, which you gently put into your duffle bag.';
+    return s;
   }
 
   private exit(gameEngine: GameEngine) {
