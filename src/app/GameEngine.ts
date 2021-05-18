@@ -68,7 +68,9 @@ export class GameEngine {
       case CommandType.ne:
       case CommandType.nw:
       case CommandType.se:
-      case CommandType.sw: {
+      case CommandType.sw:
+      case CommandType.up:
+      case CommandType.down: {
         this.move(lowerInput as Direction);
         break;
       }
@@ -78,11 +80,13 @@ export class GameEngine {
         break;
       }
 
+      case CommandType.l:
       case CommandType.look: {
         this.changeLocation(this.currentLocation);
         break;
       }
 
+      case CommandType.ex:
       case CommandType.examine: {
         const item = this.getAvailableItem(rest);
         if (item) {
