@@ -197,6 +197,15 @@ export class GameEngine {
     console.log("sent:", input);
   }
 
+  public removeFromInventory(itemKey: ItemKey) {
+    const item = this.getItem(itemKey);
+    this.inventory.splice(this.inventory.indexOf(item), 1);
+  }
+
+  public addToInventory(itemKey: ItemKey) {
+    this.inventory.push(this.getItem(itemKey));
+  }
+
   public changeLocation(location: Location) {
     this.currentLocation = location;
     this.events.push(
