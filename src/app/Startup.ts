@@ -220,6 +220,7 @@ export class Startup {
     Startup.arrangeDriveway();
     Startup.arrangeEntryway();
     Startup.arrangeFreezerPort();
+    Startup.arrangeFreezer();
   }
 
   private static arrangeFreezerPort() {
@@ -248,5 +249,10 @@ export class Startup {
     entryway.neighbors = new NeighborMap([
       ["s" as Direction, Startup.getLocation(LocationKey.Driveway)],
     ]);
+  }
+
+  private static arrangeFreezer() {
+    const freezer = Startup.getLocation(LocationKey.Freezer);
+    freezer.items = [Startup.getItem(ItemKey.IceCream)];
   }
 }
