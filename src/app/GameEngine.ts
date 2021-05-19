@@ -45,7 +45,9 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.inventory.push(this.getItem(ItemKey.ArtsAndCrafts));
+    this.inventory.push(this.getItem(ItemKey.SlipperyShorts));
+    this.inventory.push(this.getItem(ItemKey.ChastityBelt));
+    this.inventory.push(this.getItem(ItemKey.ShrinkingPotion));
   }
 
   public getEvents(): GameEvent[] {

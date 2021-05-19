@@ -30,7 +30,6 @@ export enum ItemKey {
   GoogleMap,
   GooglyEyes,
   IceCream,
-  LibraryButton,
   LiteBeer,
   Log,
   Magazine,
@@ -55,7 +54,6 @@ export enum ItemKey {
   TrophyCase,
   UtilityStick,
   VHSTape,
-  WineryButton,
   WingedShoes,
   Yarn,
 }
