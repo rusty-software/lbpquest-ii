@@ -221,6 +221,7 @@ export class Startup {
     Startup.arrangeEntryway();
     Startup.arrangeFreezerPort();
     Startup.arrangeFreezer();
+    Startup.arrangeSplashpad();
   }
 
   private static arrangeFreezerPort() {
@@ -254,5 +255,14 @@ export class Startup {
   private static arrangeFreezer() {
     const freezer = Startup.getLocation(LocationKey.Freezer);
     freezer.items = [Startup.getItem(ItemKey.IceCream)];
+  }
+
+  private static arrangeSplashpad() {
+    const splashpad = Startup.getLocation(LocationKey.Splashpad);
+    splashpad.neighbors = new NeighborMap([
+      ["nw" as Direction, Startup.getLocation(LocationKey.Driveway)],
+      ["s" as Direction, Startup.getLocation(LocationKey.Fort)],
+      ["se" as Direction, Startup.getLocation(LocationKey.RevivalHut)],
+    ]);
   }
 }

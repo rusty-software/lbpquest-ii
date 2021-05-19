@@ -26,6 +26,7 @@ export class GameEngine {
   private readonly inventory: Item[];
   private items: Map<ItemKey, Item> = new Map();
   private locations: Map<LocationKey, Location> = new Map();
+  public wearingShorts: boolean = false;
 
   init() {
     Startup.init();
