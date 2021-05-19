@@ -7,37 +7,9 @@ export class IceCream extends BaseItem {
   name = "ice cream";
   value = 5;
   isShown = true;
-  bitesEaten = 0;
-  // "eat" handler defined inline because "this" semantics require such
+  public bitesEaten = 0;
   customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
-    [
-      "eat",
-      (gameEngine: GameEngine) => {
-        this.bitesEaten++;
-        if (this.bitesEaten === 5) {
-          gameEngine.score -= this.value;
-          return "With that bite, you feel something change in your tummy. You're not exactly sure what it was, but you hope that you can still excrete in your normal fashion.";
-        } else if (this.bitesEaten > 5) {
-          return "Your tummy in no uncertain terms tells your brain that you've had quite enough of the ice cream. You wisely do NOT take another bite.";
-        }
-        const herbs: string[] = [
-          "basil",
-          "bay leaf",
-          "chives",
-          "cilantro",
-          "dill",
-          "hemp",
-          "marjoram",
-          "mugwort",
-          "oregano",
-          "sage",
-        ];
-
-        return `You take a bite of the ice cream. It tastes not entirely unlike bread pudding, with a dash of... ${
-          herbs[Math.floor(Math.random() * herbs.length)]
-        }?`;
-      },
-    ],
+    ["eat", this.eat],
   ]);
 
   canTake(gameEngine: GameEngine): boolean {
@@ -54,5 +26,33 @@ export class IceCream extends BaseItem {
   }
   use(gameEngine: GameEngine): string {
     return "Aside from eating it, there doesn't seem to be another use for the ice cream.";
+  }
+
+  // getting a reference to the ice cream object since "this" semantics are vague here
+  private eat(gameEngine: GameEngine) {
+    const iceCream = gameEngine.getItem(ItemKey.IceCream) as IceCream;
+    iceCream.bitesEaten++;
+    if (iceCream.bitesEaten === 5) {
+      gameEngine.score -= iceCream.value;
+      return "With that bite, you feel something change in your tummy. You're not exactly sure what it was, but you hope that you can still excrete in your normal fashion.";
+    } else if (iceCream.bitesEaten > 5) {
+      return "Your tummy in no uncertain terms tells your brain that you've had quite enough of the ice cream. You wisely do NOT take another bite.";
+    }
+    const herbs: string[] = [
+      "basil",
+      "bay leaf",
+      "chives",
+      "cilantro",
+      "dill",
+      "hemp",
+      "marjoram",
+      "mugwort",
+      "oregano",
+      "sage",
+    ];
+
+    return `You take a bite of the ice cream. It tastes not entirely unlike bread pudding, with a dash of... ${
+      herbs[Math.floor(Math.random() * herbs.length)]
+    }?`;
   }
 }
