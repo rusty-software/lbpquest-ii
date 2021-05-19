@@ -5,7 +5,7 @@ import { GameEngine } from "../GameEngine";
 export class DarkSweetWine extends BaseItem {
   id = ItemKey.DarkSweetWine;
   name = "wine";
-  value = 5;
+  value = 10;
   isShown = true;
 
   canTake(gameEngine: GameEngine): boolean {

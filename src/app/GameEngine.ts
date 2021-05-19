@@ -43,9 +43,8 @@ export class GameEngine {
     this.display = this.currentLocation.description();
     this.inventory = [];
     this.events = [];
-
     // HACK ZONE
-    this.inventory.push(this.getItem(ItemKey.BlueBook));
+    this.inventory.push(this.getItem(ItemKey.ArtsAndCrafts));
   }
 
   public getEvents(): GameEvent[] {

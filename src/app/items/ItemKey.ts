@@ -1,6 +1,7 @@
 export enum ItemKey {
   AllTerrainGolfCart,
   AlligatorRug,
+  ArtsAndCrafts,
   Balusters,
   BlackBelt,
   BlueBook,

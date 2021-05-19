@@ -1,5 +1,6 @@
 export { AllTerrainGolfCart } from "./AllTerrainGolfCart";
 export { AlligatorRug } from "./AlligatorRug";
+export { ArtsAndCrafts } from "./ArtsAndCrafts";
 export { Balusters } from "./Balusters";
 export { BlackBelt } from "./BlackBelt";
 export { BlueBook } from "./BlueBook";

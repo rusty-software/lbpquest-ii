@@ -2,6 +2,7 @@ import { Item } from "./Item";
 import {
   AlligatorRug,
   AllTerrainGolfCart,
+  ArtsAndCrafts,
   Balusters,
   BlackBelt,
   BlueBook,
@@ -159,6 +160,7 @@ export class Startup {
   private static instantiateItems() {
     Startup.items.set(ItemKey.AllTerrainGolfCart, new AllTerrainGolfCart());
     Startup.items.set(ItemKey.AlligatorRug, new AlligatorRug());
+    Startup.items.set(ItemKey.ArtsAndCrafts, new ArtsAndCrafts());
     Startup.items.set(ItemKey.Balusters, new Balusters());
     Startup.items.set(ItemKey.BlackBelt, new BlackBelt());
     Startup.items.set(ItemKey.BlueBook, new BlueBook());
