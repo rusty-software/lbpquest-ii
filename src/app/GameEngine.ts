@@ -221,9 +221,7 @@ export class GameEngine {
     console.log("neighbors", this.currentLocation.neighbors);
     const newLocation = this.currentLocation.neighbors.get(direction);
     if (newLocation) {
-      if (!newLocation.entered) {
-        newLocation.enter();
-      }
+      newLocation.enter();
       this.changeLocation(newLocation);
     } else {
       this.events.push(new GameErrorEvent(GameError.InvalidPath, ""));
