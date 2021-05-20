@@ -7,7 +7,6 @@ import {
   ShrinkingPotion,
   SlipperyShorts,
 } from "../items";
-import { Library } from "./Library";
 
 export class Splashpad extends BaseLocation {
   id = LocationKey.Splashpad;
