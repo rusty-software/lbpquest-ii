@@ -37,7 +37,7 @@ export class Splashpad extends BaseLocation {
         '\n\nThe owner of the gold medal glares at you. "What are you waiting for?! FINISH IT!" they scream. The rest of the wild children cheer you on.';
     } else if (this.challengeGiven) {
       s +=
-        '\n\nThe owner of the gold medal calls out to you over the splashing of their companions. "You ready to give The Gauntlet a try?" they yell to you, waving vaguely toward the fort near the splashpad. "Remember: slide the slide, loop-diddy-loop the swing, and crawl through the bridge to win!"';
+        '\n\nThe owner of the gold medal calls out to you over the splashing of their companions. "You ready to give The Gauntlet a try?" they yell to you, waving vaguely toward the fort near the splash pad. "Remember: slide the slide, loop-diddy-loop the swing, and crawl through the bridge to win!"';
     } else {
       this.challengeGiven = true;
       s +=
@@ -62,7 +62,7 @@ export class Splashpad extends BaseLocation {
     splashpad.inGauntlet = true;
     const shorts = gameEngine.getItem(ItemKey.SlipperyShorts) as SlipperyShorts;
     if (!shorts.currentlyWearing) {
-      return 'You begin The Gauntlet by trying to slide down the slide. Try as you might, you can\'t manage to get your butt to make rapid progress, or in fact any progress. The gold medal bearer looks at you with ultimately disdain, shouting "Your butt needs to be slippery to get down that slide!"\n\nYou have failed to complete The Gauntlet.';
+      return 'You begin The Gauntlet by trying to slide down the slide. Try as you might, you can\'t manage to get your butt to make rapid progress, or in fact any progress. The gold medal bearer looks at you with ultimate disdain, shouting "Your butt needs to be slippery to get down that slide!"\n\nYou have failed to complete The Gauntlet.';
     }
 
     splashpad.slideDone = true;
@@ -85,7 +85,7 @@ export class Splashpad extends BaseLocation {
     splashpad.swingsDone = true;
     belt.currentlyWearing = false;
     s +=
-      " you find that the chastity belt holds you firmly in place as your feet point straight up, then backwards as your head points to the earth below, then finally, with the blood rushing to your head from the massive g-forces, you glide to a gentle stop. You remove the chastity belt and tuck it into your duffle bag. Cheers come from the children as the gold medal bears screams in mock outrage. They point to the bridge between the kiddy forts and looks at you expectantly.\n\nTo proceed to the bridge, type _bridge_. You can also perform other actions, or _quit_ The Gauntlet.";
+      " you find that the chastity belt holds you firmly in place as your feet point straight up, then backwards as your head points to the earth below, then finally, with the blood rushing to your head from the massive g-forces, you glide to a gentle stop. You remove the chastity belt and tuck it into your duffle bag. Cheers come from the children as the gold medal bearer screams in mock outrage. They point to the bridge between the kiddy forts and look at you expectantly.\n\nTo proceed to the bridge, type _bridge_. You can also perform other actions, or _quit_ The Gauntlet.";
     return s;
   }
 
@@ -97,7 +97,7 @@ export class Splashpad extends BaseLocation {
     ) as ShrinkingPotion;
 
     if (!potion.currentlyConsumed) {
-      return "You approach the bridge, and try as you might, you simply cannot squeeze your girth through its childlike dimensions. The children shout encouragement, excited to see you struggle, but the gold medal bearer takes pity on you, yelling \"You won't fit that way! Looks like you'll have to ungrow a little bit!";
+      return "You approach the bridge, and try as you might, you simply cannot squeeze your girth through its childlike dimensions. The children shout encouragement, excited to see you struggle, but the gold medal bearer takes pity on you, yelling \"You won't fit that way! Looks like you'll have to ungrow a little bit!\n\nYou have failed to complete The Gauntlet.";
     }
 
     potion.currentlyConsumed = false;
@@ -106,14 +106,14 @@ export class Splashpad extends BaseLocation {
     gameEngine.score += !medal.taken ? medal.value : 0;
     medal.taken = true;
     splashpad.challengeWon = true;
-    return 'In your more diminutive statue, you wriggle through the bridge with no problem, sliding down the tiny slide on the other side. As you head back to the splashpad, you return to your normal size.\n\nThe children are howling and cheering their approval, and the gold medal bearer is smiling at you. "Here," they say, taking off the medal and handing it to you. "You earned it!" With that, the children let forth one more cheer for you, then return to their splashpad games.';
+    return 'In your more diminutive stature, you wriggle through the bridge with no problem, sliding down the tiny slide on the other side. As you head back to the splash pad, you return to your normal size.\n\nThe children are howling and cheering their approval, and the gold medal bearer is smiling at you. "Here," they say, taking off the medal and handing it to you. "You earned it!" With that, the children let forth one more cheer for you, then return to their splash pad games.';
   }
 
   private quitGauntlet(gameEngine: GameEngine): string {
     const splashpad = gameEngine.currentLocation as Splashpad;
     if (splashpad.inGauntlet) {
       splashpad.inGauntlet = false;
-      return 'The gold medal bearer shakes their head at you and yells "Come back when you\'re serious about getting this medal!" They return to playing on the splashpad.';
+      return 'The gold medal bearer shakes their head at you and yells "Come back when you\'re serious about getting this medal!" They return to playing on the splash pad.';
     }
     return "Um... maybe you should try running it first?";
   }
