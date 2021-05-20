@@ -43,6 +43,7 @@ export enum ItemKey {
   PeachFourLoko,
   Pencils,
   PipeCleaners,
+  Pulpit,
   RedCandle,
   ReligiousIcons,
   Scissors,

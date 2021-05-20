@@ -41,6 +41,7 @@ export { PeachCandle } from "./PeachCandle";
 export { PeachFourLoko } from "./PeachFourLoko";
 export { Pencils } from "./Pencils";
 export { PipeCleaners } from "./PipeCleaners";
+export { Pulpit } from "./Pulpit";
 export { RedCandle } from "./RedCandle";
 export { ReligiousIcons } from "./ReligiousIcons";
 export { Scissors } from "./Scissors";

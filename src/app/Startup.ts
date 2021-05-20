@@ -44,6 +44,7 @@ import {
   Pencils,
   PipeCleaners,
   PSDs,
+  Pulpit,
   RedCandle,
   ReligiousIcons,
   Scissors,
@@ -201,6 +202,7 @@ export class Startup {
     Startup.items.set(ItemKey.PeachFourLoko, new PeachFourLoko());
     Startup.items.set(ItemKey.Pencils, new Pencils());
     Startup.items.set(ItemKey.PipeCleaners, new PipeCleaners());
+    Startup.items.set(ItemKey.Pulpit, new Pulpit());
     Startup.items.set(ItemKey.RedCandle, new RedCandle());
     Startup.items.set(ItemKey.ReligiousIcons, new ReligiousIcons());
     Startup.items.set(ItemKey.Scissors, new Scissors());
