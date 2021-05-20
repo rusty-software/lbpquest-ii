@@ -1,7 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { Library, LocationKey, Winery } from "../locations";
+import { Library, LocationKey } from "../locations";
 
 export class ArtsAndCrafts extends BaseItem {
   id = ItemKey.ArtsAndCrafts;

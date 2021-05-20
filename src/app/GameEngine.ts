@@ -26,6 +26,7 @@ export class GameEngine {
   private readonly inventory: Item[];
   private items: Map<ItemKey, Item> = new Map();
   private locations: Map<LocationKey, Location> = new Map();
+  public wearingShorts: boolean = false;
 
   init() {
     Startup.init();
@@ -44,7 +45,9 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.inventory.push(this.getItem(ItemKey.ArtsAndCrafts));
+    this.inventory.push(this.getItem(ItemKey.SlipperyShorts));
+    this.inventory.push(this.getItem(ItemKey.ChastityBelt));
+    this.inventory.push(this.getItem(ItemKey.ShrinkingPotion));
   }
 
   public getEvents(): GameEvent[] {
