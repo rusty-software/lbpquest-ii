@@ -12,6 +12,20 @@ export class SlipperyShorts extends BaseItem {
     ["remove", this.remove],
   ]);
 
+  canTake(gameEngine: GameEngine): boolean {
+    return true;
+  }
+
+  take(gameEngine: GameEngine) {
+    this.taken = true;
+    return "You pick up the shorts. They're quite slippery, but you manage to get the into your duffle bag.";
+  }
+
+  drop(gameEngine: GameEngine) {
+    this.currentlyWearing = false;
+    return "Dropped. You're not sure you'll be able to pick them up again.";
+  }
+
   private wear(gameEngine: GameEngine) {
     const shorts = gameEngine.getItem(ItemKey.SlipperyShorts) as SlipperyShorts;
     shorts.currentlyWearing = true;

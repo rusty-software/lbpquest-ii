@@ -11,6 +11,7 @@ export class GolfBall extends BaseItem {
     return true;
   }
   take(gameEngine: GameEngine): string {
+    this.taken = true;
     return "You take the Lucky golf ball and put it in your duffle bag.";
   }
   drop(gameEngine: GameEngine): string {

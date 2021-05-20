@@ -13,10 +13,11 @@ export class BaseItem implements Item {
     throw new Error("Method not implemented.");
   }
   take(gameEngine: GameEngine): string {
-    throw new Error("Method not implemented.");
+    this.taken = true;
+    return "Taken.";
   }
   drop(gameEngine: GameEngine): string {
-    throw new Error("Method not implemented.");
+    return "Dropped.";
   }
   examine(gameEngine: GameEngine): string {
     throw new Error("Method not implemented.");
