@@ -27,6 +27,10 @@ export class ChastityBelt extends BaseItem {
     return "Dropped. Chastity belts at LBP are definitely NOT on the menu.";
   }
 
+  examine(gameEngine: GameEngine): string {
+    return "The belt looks like a jock strap made of steel. It looks as if it could secure pretty much anything you put into it, even DK's loins or Chase's crypto investments.";
+  }
+
   use(gameEngine: GameEngine) {
     return this.wear(gameEngine);
   }

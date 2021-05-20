@@ -26,6 +26,14 @@ export class SlipperyShorts extends BaseItem {
     return "Dropped. You're not sure you'll be able to pick them up again.";
   }
 
+  examine(gameEngine: GameEngine): string {
+    return "The shorts have a shiny shimmer to them, and looks like greased lightning.";
+  }
+
+  use(gameEngine: GameEngine): string {
+    return this.wear(gameEngine);
+  }
+
   private wear(gameEngine: GameEngine) {
     const shorts = gameEngine.getItem(ItemKey.SlipperyShorts) as SlipperyShorts;
     shorts.currentlyWearing = true;

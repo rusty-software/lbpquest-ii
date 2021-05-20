@@ -1,7 +1,13 @@
 import { BaseLocation } from "./BaseLocation";
 import { LocationKey } from "./LocationKey";
 import { GameEngine } from "../GameEngine";
-import { ChastityBelt, ItemKey, SlipperyShorts } from "../items";
+import {
+  ChastityBelt,
+  ItemKey,
+  ShrinkingPotion,
+  SlipperyShorts,
+} from "../items";
+import { Library } from "./Library";
 
 export class Splashpad extends BaseLocation {
   id = LocationKey.Splashpad;
@@ -17,6 +23,7 @@ export class Splashpad extends BaseLocation {
     ["try gauntlet", this.runGauntlet],
     ["run gauntlet", this.runGauntlet],
     ["swing", this.swing],
+    ["bridge", this.bridge],
   ]);
 
   description(): string {
@@ -50,7 +57,7 @@ export class Splashpad extends BaseLocation {
     }
   }
 
-  private runGauntlet(gameEngine: GameEngine) {
+  private runGauntlet(gameEngine: GameEngine): string {
     const splashpad = gameEngine.currentLocation as Splashpad;
     splashpad.inGauntlet = true;
     const shorts = gameEngine.getItem(ItemKey.SlipperyShorts) as SlipperyShorts;
@@ -63,7 +70,7 @@ export class Splashpad extends BaseLocation {
     return "The shorts make your butt as slippery as an eel, and you slip down the slide in slightly less than nothing, flat! Removing the shorts and storing them in the duffle bag, you notice the gold medal bearer raising their eyebrows in mild surprise, but still looking skeptical that you'll successfully complete the next challenge: loop-diddy-loop on the swings!\n\nTo proceed to the swings, type _swing_. You can also perform other actions, or _quit_ The Gauntlet.";
   }
 
-  private swing(gameEngine: GameEngine) {
+  private swing(gameEngine: GameEngine): string {
     const splashpad = gameEngine.currentLocation as Splashpad;
     splashpad.inGauntlet = true;
     const belt = gameEngine.getItem(ItemKey.ChastityBelt) as ChastityBelt;
@@ -82,7 +89,27 @@ export class Splashpad extends BaseLocation {
     return s;
   }
 
-  private quitGauntlet(gameEngine: GameEngine) {
+  private bridge(gameEngine: GameEngine): string {
+    const splashpad = gameEngine.currentLocation as Splashpad;
+    splashpad.inGauntlet = true;
+    const potion = gameEngine.getItem(
+      ItemKey.ShrinkingPotion
+    ) as ShrinkingPotion;
+
+    if (!potion.currentlyConsumed) {
+      return "You approach the bridge, and try as you might, you simply cannot squeeze your girth through its childlike dimensions. The children shout encouragement, excited to see you struggle, but the gold medal bearer takes pity on you, yelling \"You won't fit that way! Looks like you'll have to ungrow a little bit!";
+    }
+
+    potion.currentlyConsumed = false;
+    const medal = gameEngine.getItem(ItemKey.GoldMedal);
+    gameEngine.addToInventory(ItemKey.GoldMedal);
+    gameEngine.score += !medal.taken ? medal.value : 0;
+    medal.taken = true;
+    splashpad.challengeWon = true;
+    return 'In your more diminutive statue, you wriggle through the bridge with no problem, sliding down the tiny slide on the other side. As you head back to the splashpad, you return to your normal size.\n\nThe children are howling and cheering their approval, and the gold medal bearer is smiling at you. "Here," they say, taking off the medal and handing it to you. "You earned it!" With that, the children let forth one more cheer for you, then return to their splashpad games.';
+  }
+
+  private quitGauntlet(gameEngine: GameEngine): string {
     const splashpad = gameEngine.currentLocation as Splashpad;
     if (splashpad.inGauntlet) {
       splashpad.inGauntlet = false;
