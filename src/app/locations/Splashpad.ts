@@ -11,12 +11,12 @@ import {
 export class Splashpad extends BaseLocation {
   id = LocationKey.Splashpad;
   title = "Splash Pad";
-  public challengeWon = false;
+  challengeWon = false;
+  inGauntlet = false;
+  slideDone = false;
+  swingsDone = false;
+  bridgeDone = false;
   private challengeGiven = false;
-  public inGauntlet: boolean = false;
-  public slideDone: boolean = false;
-  public swingsDone: boolean = false;
-  public bridgeDone: boolean = false;
 
   customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["try gauntlet", this.runGauntlet],

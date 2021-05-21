@@ -5,8 +5,8 @@ import { ItemKey } from "../items";
 
 export class Library extends BaseLocation {
   id = LocationKey.Library;
-  public readonly title = "George Bush Library";
-  public artsGiven = false;
+  title = "George Bush Library";
+  artsGiven = false;
   private artsTasked = false;
 
   customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
