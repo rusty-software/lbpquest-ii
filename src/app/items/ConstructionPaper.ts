@@ -6,6 +6,7 @@ export class ConstructionPaper extends BaseItem {
   public id = ItemKey.ConstructionPaper;
   public name = "construction paper";
   public value = 5;
+  public isShown = true;
 
   public canTake(gameEngine: GameEngine): boolean {
     return true;

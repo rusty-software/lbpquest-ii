@@ -108,6 +108,7 @@ export class GameEngine {
       }
 
       case CommandType.take: {
+        // TODO: consider adding "all" option
         const item = this.getLocationItemByName(rest);
         if (item) {
           if (item.canTake(this)) {

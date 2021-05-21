@@ -6,6 +6,7 @@ export class Crayons extends BaseItem {
   public id = ItemKey.Crayons;
   public name = "crayons";
   public value = 5;
+  public isShown = true;
 
   public canTake(gameEngine: GameEngine): boolean {
     return true;
