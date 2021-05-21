@@ -18,9 +18,9 @@ export class GoldMedal extends BaseItem {
     return "You drop the gold medal. It's probably not REAL gold anyway.";
   }
   examine(gameEngine: GameEngine): string {
-    return "The wine is a very dark color, somewhere between burgundy and black. The cork is sealed with a waxy coating that you feel uncomfortable messing with.";
+    return "The gold medal looks untarnished despite the fact that it's been in the possession of a wild child for who knows how long.";
   }
   use(gameEngine: GameEngine): string {
-    return "TODO: using the wine should place it on the trophy case.";
+    return "TODO: using the gold medal should place it on the trophy case.";
   }
 }
