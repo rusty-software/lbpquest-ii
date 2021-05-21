@@ -36,10 +36,7 @@ export class Winery extends BaseLocation {
         '\n\nThe ghost, for what else could it be, drifts towards you, a sad look on its face.\n\n"My book..." she says, her voice a mournful wail. "I can\'t find my book... Can you help me find my book?"';
     }
 
-    this.items
-      .filter((item) => item.isShown)
-      .map((item) => (s += `\n\nThere is a(n) ${item.name} here.`));
-
+    s += super.appendItems(s);
     return s;
   }
 

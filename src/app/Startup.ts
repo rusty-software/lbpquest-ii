@@ -228,6 +228,7 @@ export class Startup {
     Startup.arrangeSplashpad();
     Startup.arrangeRevivalHut();
     Startup.arrangeFort();
+    Startup.arrangeSouthWoods();
   }
 
   private static arrangeFreezerPort() {
@@ -294,5 +295,12 @@ export class Startup {
       ["s" as Direction, Startup.getLocation(LocationKey.SouthWoods)],
     ]);
     fort.items = [Startup.getItem(ItemKey.Glitter)];
+  }
+
+  private static arrangeSouthWoods() {
+    const woods = Startup.getLocation(LocationKey.SouthWoods);
+    woods.neighbors = new NeighborMap([
+      ["n" as Direction, Startup.getLocation(LocationKey.Fort)],
+    ]);
   }
 }

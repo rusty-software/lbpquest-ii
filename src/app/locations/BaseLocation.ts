@@ -22,11 +22,17 @@ export abstract class BaseLocation implements Location {
     this.entered = true;
   }
 
-  public description(): string {
-    let s = this.descriptionText;
+  protected appendItems(s: string): string {
     this.items
       .filter((item) => item.isShown)
       .map((item) => (s += `\n\nThere is a(n) ${item.name} here.`));
+
+    return s;
+  }
+
+  public description(): string {
+    let s = this.descriptionText;
+    s += this.appendItems(s);
     return s;
   }
 

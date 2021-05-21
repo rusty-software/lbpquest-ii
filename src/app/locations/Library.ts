@@ -35,9 +35,8 @@ export class Library extends BaseLocation {
       s +=
         '\n\nGeorge Bush is here. He gives you as shrewd a look as he can, then states: "You look like the type of person that could produce some great arts and crafts. Tell you what -- if you can bring me some, I\'ll award you one of these Ex-Presidential Medals of Artistry. How does that sound?"';
     }
-    this.items
-      .filter((item) => item.isShown)
-      .map((item) => (s += `\n\nThere is a(n) ${item.name} here.`));
+
+    s += super.appendItems(s);
 
     return s;
   }
