@@ -37,6 +37,7 @@ export enum ItemKey {
   Marg,
   Matches,
   Mothers,
+  NRNSTraining,
   NutterButters,
   Oar,
   PSDs,

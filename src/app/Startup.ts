@@ -38,6 +38,7 @@ import {
   Marg,
   Matches,
   Mothers,
+  NRNSTraining,
   NutterButters,
   Oar,
   PeachCandle,
@@ -197,6 +198,7 @@ export class Startup {
     Startup.items.set(ItemKey.Marg, new Marg());
     Startup.items.set(ItemKey.Matches, new Matches());
     Startup.items.set(ItemKey.Mothers, new Mothers());
+    Startup.items.set(ItemKey.NRNSTraining, new NRNSTraining());
     Startup.items.set(ItemKey.NutterButters, new NutterButters());
     Startup.items.set(ItemKey.Oar, new Oar());
     Startup.items.set(ItemKey.PSDs, new PSDs());
@@ -291,7 +293,7 @@ export class Startup {
     const fort = Startup.getLocation(LocationKey.Fort);
     fort.neighbors = new NeighborMap([
       ["n" as Direction, Startup.getLocation(LocationKey.Splashpad)],
-      ["e" as Direction, Startup.getLocation(LocationKey.Splashpad)],
+      ["e" as Direction, Startup.getLocation(LocationKey.RevivalHut)],
       ["s" as Direction, Startup.getLocation(LocationKey.SouthWoods)],
     ]);
     fort.items = [Startup.getItem(ItemKey.Glitter)];

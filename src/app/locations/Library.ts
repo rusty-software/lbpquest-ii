@@ -36,7 +36,7 @@ export class Library extends BaseLocation {
         '\n\nGeorge Bush is here. He gives you as shrewd a look as he can, then states: "You look like the type of person that could produce some great arts and crafts. Tell you what -- if you can bring me some, I\'ll award you one of these Ex-Presidential Medals of Artistry. How does that sound?"';
     }
 
-    s += super.appendItems(s);
+    s += super.appendItems();
 
     return s;
   }

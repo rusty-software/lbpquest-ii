@@ -26,15 +26,14 @@ export class GameEngine {
   private readonly inventory: Item[];
   private items: Map<ItemKey, Item> = new Map();
   private locations: Map<LocationKey, Location> = new Map();
-  public wearingShorts: boolean = false;
 
-  init() {
+  public init(): void {
     Startup.init();
     this.items = Startup.items;
     this.locations = Startup.locations;
   }
 
-  constructor() {
+  public constructor() {
     this.init();
 
     this.score = 0;
@@ -45,9 +44,7 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.inventory.push(this.getItem(ItemKey.SlipperyShorts));
-    this.inventory.push(this.getItem(ItemKey.ChastityBelt));
-    this.inventory.push(this.getItem(ItemKey.ShrinkingPotion));
+    this.inventory.push(this.getItem(ItemKey.NRNSTraining));
   }
 
   public getEvents(): GameEvent[] {
@@ -93,7 +90,7 @@ export class GameEngine {
 
       case CommandType.ex:
       case CommandType.examine: {
-        const item = this.getAvailableItem(rest);
+        const item = this.getAvailableItemByName(rest);
         if (item) {
           this.events.push(new ItemEvent(item!.examine(this)));
         }
@@ -112,7 +109,7 @@ export class GameEngine {
       }
 
       case CommandType.take: {
-        const item = this.getLocationItem(rest);
+        const item = this.getLocationItemByName(rest);
         if (item) {
           if (item.canTake(this)) {
             this.score += !item.taken ? item.value : 0;
@@ -124,7 +121,7 @@ export class GameEngine {
             );
           }
           this.events.push(new ItemEvent(item.take(this)));
-        } else if (this.getInventoryItem(rest)) {
+        } else if (this.getInventoryItemByName(rest)) {
           this.events.push(
             new ItemEvent(`You're already carrying the ${rest}.`)
           );
@@ -140,14 +137,14 @@ export class GameEngine {
       }
 
       case CommandType.drop: {
-        const item = this.getInventoryItem(rest);
+        const item = this.getInventoryItemByName(rest);
         if (item) {
           this.currentLocation.items.push(item);
           this.inventory.splice(this.inventory.indexOf(item), 1);
           this.events.push(new ItemEvent(item.drop(this)));
         } else if (
           () => {
-            const locationItem = this.getLocationItem(rest);
+            const locationItem = this.getLocationItemByName(rest);
             return locationItem && locationItem.canTake(this);
           }
         ) {
@@ -164,7 +161,7 @@ export class GameEngine {
       }
 
       case CommandType.use: {
-        const item = this.getAvailableItem(rest);
+        const item = this.getAvailableItemByName(rest);
         if (item) {
           this.events.push(new ItemEvent(item.use(this)));
         } else {
@@ -197,27 +194,25 @@ export class GameEngine {
         break;
       }
     }
-
-    console.log("sent:", input);
   }
 
-  public removeFromInventory(itemKey: ItemKey) {
+  public removeFromInventory(itemKey: ItemKey): void {
     const item = this.getItem(itemKey);
     this.inventory.splice(this.inventory.indexOf(item), 1);
   }
 
-  public addToInventory(itemKey: ItemKey) {
+  public addToInventory(itemKey: ItemKey): void {
     this.inventory.push(this.getItem(itemKey));
   }
 
-  public changeLocation(location: Location) {
+  public changeLocation(location: Location): void {
     this.currentLocation = location;
     this.events.push(
       new LocationChangeEvent(location.title, location.description())
     );
   }
 
-  public move(direction: Direction) {
+  public move(direction: Direction): void {
     console.log("neighbors", this.currentLocation.neighbors);
     const newLocation = this.currentLocation.neighbors.get(direction);
     if (newLocation) {
@@ -236,21 +231,29 @@ export class GameEngine {
     return this.items.get(itemKey)!;
   }
 
-  private getAvailableItem(itemName: string) {
+  public hasKarateTraining(): boolean {
+    return this.getInventoryItemByKey(ItemKey.NRNSTraining) !== undefined;
+  }
+
+  private getAvailableItemByName(itemName: string): Item | undefined {
     const availableItems = this.currentLocation.items.concat(this.inventory);
     return availableItems.find((i) => {
       return i.name === itemName;
     });
   }
 
-  private getLocationItem(itemName: string) {
+  private getLocationItemByName(itemName: string): Item | undefined {
     return this.currentLocation.items.find((i) => {
       return i.name === itemName;
     });
   }
-  private getInventoryItem(itemName: string) {
+  private getInventoryItemByName(itemName: string): Item | undefined {
     return this.inventory.find((i) => {
       return i.name === itemName;
     });
+  }
+
+  private getInventoryItemByKey(itemKey: ItemKey): Item | undefined {
+    return this.inventory.find((i) => i.id === itemKey);
   }
 }

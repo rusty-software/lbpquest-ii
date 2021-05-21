@@ -6,7 +6,7 @@ import { LocationKey, Splashpad } from "../locations";
 export class ChastityBelt extends BaseItem {
   id = ItemKey.ChastityBelt;
   name = "chastity belt";
-  public currentlyWearing = false;
+  currentlyWearing = false;
 
   customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["wear", this.wear],

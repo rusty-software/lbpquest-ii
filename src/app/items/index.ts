@@ -35,6 +35,7 @@ export { GoogleMap } from "./GoogleMap";
 export { Marg } from "./Marg";
 export { Matches } from "./Matches";
 export { Mothers } from "./Mothers";
+export { NRNSTraining } from "./NRNSTraining";
 export { NutterButters } from "./NutterButters";
 export { Oar } from "./Oar";
 export { PSDs } from "./PSDs";

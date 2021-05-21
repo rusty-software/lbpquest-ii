@@ -22,7 +22,8 @@ export abstract class BaseLocation implements Location {
     this.entered = true;
   }
 
-  protected appendItems(s: string): string {
+  protected appendItems(): string {
+    let s = "";
     this.items
       .filter((item) => item.isShown)
       .map((item) => (s += `\n\nThere is a(n) ${item.name} here.`));
@@ -32,7 +33,7 @@ export abstract class BaseLocation implements Location {
 
   public description(): string {
     let s = this.descriptionText;
-    s += this.appendItems(s);
+    s += this.appendItems();
     return s;
   }
 
