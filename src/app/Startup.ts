@@ -232,6 +232,7 @@ export class Startup {
     Startup.arrangeFort();
     Startup.arrangeSouthWoods();
     Startup.arrangeDirtPath();
+    Startup.arrangeFirePit();
   }
 
   private static arrangeFreezerPort() {
@@ -318,6 +319,19 @@ export class Startup {
     dirtPath.items = [
       Startup.getItem(ItemKey.ConstructionPaper),
       Startup.getItem(ItemKey.Crayons),
+    ];
+  }
+
+  private static arrangeFirePit() {
+    const firePit = Startup.getLocation(LocationKey.FirePit);
+    firePit.neighbors = new NeighborMap([
+      ["e" as Direction, Startup.getLocation(LocationKey.Shed)],
+      ["s" as Direction, Startup.getLocation(LocationKey.BBQTrailer)],
+      ["w" as Direction, Startup.getLocation(LocationKey.Entryway)],
+    ]);
+    firePit.items = [
+      Startup.getItem(ItemKey.Marg),
+      Startup.getItem(ItemKey.ScotchTape),
     ];
   }
 }
