@@ -2,8 +2,7 @@ import { BaseLocation } from "./BaseLocation";
 import { LocationKey } from "./LocationKey";
 
 export class Entryway extends BaseLocation {
-  id = LocationKey.Entryway;
-  title = "Entryway";
-
-  descriptionText = "You are in the entryway.";
+  public id = LocationKey.Entryway;
+  public title = "Entryway";
+  public descriptionText = "TODO: You are in the entryway.";
 }

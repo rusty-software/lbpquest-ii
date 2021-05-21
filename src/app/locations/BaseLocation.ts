@@ -6,15 +6,16 @@ import { NeighborMap } from "../NeighborMap";
 import { LocationKey } from "./LocationKey";
 
 export abstract class BaseLocation implements Location {
-  id: LocationKey = -1;
-  customVerbs: Map<string, (gameEngine: GameEngine) => string> = new Map();
-  title: string = "";
-  entered: boolean = false;
-  descriptionText = "";
-  neighbors = new NeighborMap();
-  items: Item[] = [];
+  public id = LocationKey._Nowhere;
+  public customVerbs: Map<string, (gameEngine: GameEngine) => string> =
+    new Map();
+  public title = "";
+  public entered = false;
+  public descriptionText = "";
+  public neighbors = new NeighborMap();
+  public items: Item[] = [];
 
-  showItem(itemKey: ItemKey) {
+  public showItem(itemKey: ItemKey): void {
     this.items.find((item) => item.id === itemKey)!.isShown = true;
   }
 

@@ -1,4 +1,5 @@
 export enum LocationKey {
+  _Nowhere,
   BBQTrailer,
   Bar,
   BilliardsRoom,

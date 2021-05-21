@@ -1,8 +1,9 @@
 import { GameEngine } from "../GameEngine";
 import { Item } from "../Item";
+import { ItemKey } from "./ItemKey";
 
 export class BaseItem implements Item {
-  public id = 0;
+  public id = ItemKey._Nothing;
   public name = "";
   public isShown = false;
   public value = 0;

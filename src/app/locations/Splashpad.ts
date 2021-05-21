@@ -9,23 +9,23 @@ import {
 } from "../items";
 
 export class Splashpad extends BaseLocation {
-  id = LocationKey.Splashpad;
-  title = "Splash Pad";
-  challengeWon = false;
-  inGauntlet = false;
-  slideDone = false;
-  swingsDone = false;
-  bridgeDone = false;
+  public id = LocationKey.Splashpad;
+  public title = "Splash Pad";
+  public challengeWon = false;
+  public inGauntlet = false;
+  public slideDone = false;
+  public swingsDone = false;
+  public bridgeDone = false;
   private challengeGiven = false;
 
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["try gauntlet", this.runGauntlet],
     ["run gauntlet", this.runGauntlet],
     ["swing", this.swing],
     ["bridge", this.bridge],
   ]);
 
-  description(): string {
+  public description(): string {
     let s =
       "The splash pad is obviously designed for children. It's obvious because there is a group of children here, at least a dozen, splashing about. Even though they're playing as children should, there's a very feral look to them -- their movements are quick, sharp, almost animalistic.";
     if (this.challengeWon) {
@@ -51,7 +51,7 @@ export class Splashpad extends BaseLocation {
     return s;
   }
 
-  enter() {
+  public enter(): void {
     super.enter();
     this.inGauntlet = false;
     if (!this.challengeWon) {

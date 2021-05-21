@@ -1,4 +1,5 @@
 export enum ItemKey {
+  _Nothing,
   AllTerrainGolfCart,
   AlligatorRug,
   ArtsAndCrafts,

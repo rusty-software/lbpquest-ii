@@ -4,19 +4,19 @@ import { GameEngine } from "../GameEngine";
 import { ItemKey } from "../items";
 
 export class Library extends BaseLocation {
-  id = LocationKey.Library;
-  title = "George Bush Library";
-  artsGiven = false;
+  public id = LocationKey.Library;
+  public title = "George Bush Library";
+  public artsGiven = false;
   private artsTasked = false;
 
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["exit", this.exit],
     ["exit winery", this.exit],
     ["leave", this.exit],
     ["leave winery", this.exit],
   ]);
 
-  description() {
+  public description(): string {
     let s =
       'You find yourself in the George Bush Library. Instead of books, however, the walls are covered with various pieces of art. Most of them look as if they were painted by a rank amateur. A closer look at the artist\'s signature reveals the name "George Bush".';
     if (this.artsGiven) {
@@ -40,8 +40,10 @@ export class Library extends BaseLocation {
 
     return s;
   }
-  private exit(gameEngine: GameEngine) {
+
+  private exit(gameEngine: GameEngine): string {
     const freezer = gameEngine.getLocation(LocationKey.Freezer);
+    freezer.enter();
     gameEngine.changeLocation(freezer);
     return "";
   }

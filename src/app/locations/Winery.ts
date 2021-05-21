@@ -4,19 +4,19 @@ import { ItemKey } from "../items";
 import { LocationKey } from "./LocationKey";
 
 export class Winery extends BaseLocation {
-  id = LocationKey.Winery;
-  title = "Messina Hof Winery";
-  bookGiven = false;
+  public id = LocationKey.Winery;
+  public title = "Messina Hof Winery";
+  public bookGiven = false;
   private bookTasked = false;
 
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["exit", this.exit],
     ["exit winery", this.exit],
     ["leave", this.exit],
     ["leave winery", this.exit],
   ]);
 
-  description(): string {
+  public description(): string {
     let s =
       "You find yourself in the tasting room of the Messina Hof Winery. The room is strangely empty except for a spectral figure standing in the corner.";
     if (this.bookGiven) {

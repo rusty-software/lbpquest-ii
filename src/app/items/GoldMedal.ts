@@ -5,7 +5,7 @@ import { GameEngine } from "../GameEngine";
 export class GoldMedal extends BaseItem {
   public id = ItemKey.GoldMedal;
   public name = "gold medal";
-  public value = 10;
+  public value = 15;
   public isShown = true;
 
   public canTake(gameEngine: GameEngine): boolean {
