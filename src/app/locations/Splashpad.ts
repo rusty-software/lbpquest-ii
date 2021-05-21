@@ -43,6 +43,9 @@ export class Splashpad extends BaseLocation {
         '\n\nOne of the children, this one wearing a gold medal around their neck, calls to you. "Hey there! If you finish The Gauntlet by sliding the slide, loop-diddy-looping the swing, and crawling through the fort bridge, I\'ll give you this medal! You wanna try running it?"';
     }
 
+    s +=
+      "\n\nTo your south, there is a kid's fort. To the southeast is some kind of covered sitting area.";
+
     return s;
   }
 

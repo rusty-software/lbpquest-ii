@@ -30,6 +30,7 @@ export enum ItemKey {
   GoogleMap,
   GooglyEyes,
   IceCream,
+  KeyboardBench,
   LiteBeer,
   Log,
   Magazine,

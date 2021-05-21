@@ -31,6 +31,7 @@ import {
   GooglyEyes,
   IceCream,
   ItemKey,
+  KeyboardBench,
   LiteBeer,
   Log,
   Magazine,
@@ -189,6 +190,7 @@ export class Startup {
     Startup.items.set(ItemKey.GoogleMap, new GoogleMap());
     Startup.items.set(ItemKey.GooglyEyes, new GooglyEyes());
     Startup.items.set(ItemKey.IceCream, new IceCream());
+    Startup.items.set(ItemKey.KeyboardBench, new KeyboardBench());
     Startup.items.set(ItemKey.LiteBeer, new LiteBeer());
     Startup.items.set(ItemKey.Log, new Log());
     Startup.items.set(ItemKey.Magazine, new Magazine());
@@ -224,6 +226,7 @@ export class Startup {
     Startup.arrangeFreezerPort();
     Startup.arrangeFreezer();
     Startup.arrangeSplashpad();
+    Startup.arrangeRevivalHut();
   }
 
   private static arrangeFreezerPort() {
@@ -266,5 +269,19 @@ export class Startup {
       ["s" as Direction, Startup.getLocation(LocationKey.Fort)],
       ["se" as Direction, Startup.getLocation(LocationKey.RevivalHut)],
     ]);
+  }
+
+  private static arrangeRevivalHut() {
+    const hut = Startup.getLocation(LocationKey.RevivalHut);
+    hut.neighbors = new NeighborMap([
+      ["nw" as Direction, Startup.getLocation(LocationKey.Splashpad)],
+      ["w" as Direction, Startup.getLocation(LocationKey.Fort)],
+    ]);
+    hut.items = [
+      Startup.getItem(ItemKey.Pulpit),
+      Startup.getItem(ItemKey.Fireball),
+      Startup.getItem(ItemKey.KeyboardBench),
+      Startup.getItem(ItemKey.Cider),
+    ];
   }
 }

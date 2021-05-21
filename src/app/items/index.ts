@@ -27,6 +27,7 @@ export { GoldMedal } from "./GoldMedal";
 export { GolfBall } from "./GolfBall";
 export { GooglyEyes } from "./GooglyEyes";
 export { IceCream } from "./IceCream";
+export { KeyboardBench } from "./KeyboardBench";
 export { LiteBeer } from "./LiteBeer";
 export { Log } from "./Log";
 export { Magazine } from "./Magazine";
