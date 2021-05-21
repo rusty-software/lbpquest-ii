@@ -227,6 +227,7 @@ export class Startup {
     Startup.arrangeFreezer();
     Startup.arrangeSplashpad();
     Startup.arrangeRevivalHut();
+    Startup.arrangeFort();
   }
 
   private static arrangeFreezerPort() {
@@ -283,5 +284,15 @@ export class Startup {
       Startup.getItem(ItemKey.KeyboardBench),
       Startup.getItem(ItemKey.Cider),
     ];
+  }
+
+  private static arrangeFort() {
+    const fort = Startup.getLocation(LocationKey.Fort);
+    fort.neighbors = new NeighborMap([
+      ["n" as Direction, Startup.getLocation(LocationKey.Splashpad)],
+      ["e" as Direction, Startup.getLocation(LocationKey.Splashpad)],
+      ["s" as Direction, Startup.getLocation(LocationKey.SouthWoods)],
+    ]);
+    fort.items = [Startup.getItem(ItemKey.Glitter)];
   }
 }
