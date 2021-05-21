@@ -24,6 +24,6 @@ export class GolfBall extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "You attempt to use the golf ball.";
+    return "TODO: golf ball can be used on golf course";
   }
 }

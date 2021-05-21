@@ -1,6 +1,7 @@
 import { GameEngine } from "../GameEngine";
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
+import { GolfBall } from "./GolfBall";
 
 export class AllTerrainGolfCart extends BaseItem {
   public id = ItemKey.AllTerrainGolfCart;
@@ -19,8 +20,16 @@ export class AllTerrainGolfCart extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    gameEngine.currentLocation.showItem(ItemKey.GolfBall);
-    return "The cart looks well used, being at least as muddy as it is swanky. You notice that there's a golf ball in one of the cup holders next to an empty beer can.";
+    let s =
+      "The cart looks well used, being at least as muddy as it is swanky.";
+    const golfBall = gameEngine.getItem(ItemKey.GolfBall) as GolfBall;
+    if (!golfBall.isShown) {
+      gameEngine.currentLocation.showItem(ItemKey.GolfBall);
+      s +=
+        " You notice that there's a golf ball in one of the cup holders next to an empty beer can.";
+    }
+
+    return s;
   }
 
   public use(gameEngine: GameEngine): string {

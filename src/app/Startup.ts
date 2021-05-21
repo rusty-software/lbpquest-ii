@@ -32,6 +32,7 @@ import {
   IceCream,
   ItemKey,
   KeyboardBench,
+  LeftSmoker,
   LiteBeer,
   Log,
   Magazine,
@@ -49,6 +50,7 @@ import {
   Pulpit,
   RedCandle,
   ReligiousIcons,
+  RightSmoker,
   Scissors,
   Scorecard,
   ScotchTape,
@@ -192,6 +194,7 @@ export class Startup {
     Startup.items.set(ItemKey.GooglyEyes, new GooglyEyes());
     Startup.items.set(ItemKey.IceCream, new IceCream());
     Startup.items.set(ItemKey.KeyboardBench, new KeyboardBench());
+    Startup.items.set(ItemKey.LeftSmoker, new LeftSmoker());
     Startup.items.set(ItemKey.LiteBeer, new LiteBeer());
     Startup.items.set(ItemKey.Log, new Log());
     Startup.items.set(ItemKey.Magazine, new Magazine());
@@ -209,6 +212,7 @@ export class Startup {
     Startup.items.set(ItemKey.Pulpit, new Pulpit());
     Startup.items.set(ItemKey.RedCandle, new RedCandle());
     Startup.items.set(ItemKey.ReligiousIcons, new ReligiousIcons());
+    Startup.items.set(ItemKey.RightSmoker, new RightSmoker());
     Startup.items.set(ItemKey.Scissors, new Scissors());
     Startup.items.set(ItemKey.Scorecard, new Scorecard());
     Startup.items.set(ItemKey.ScotchTape, new ScotchTape());
@@ -233,6 +237,7 @@ export class Startup {
     Startup.arrangeSouthWoods();
     Startup.arrangeDirtPath();
     Startup.arrangeFirePit();
+    Startup.arrangeBBQTrailer();
   }
 
   private static arrangeFreezerPort() {
@@ -332,6 +337,20 @@ export class Startup {
     firePit.items = [
       Startup.getItem(ItemKey.Marg),
       Startup.getItem(ItemKey.ScotchTape),
+    ];
+  }
+
+  private static arrangeBBQTrailer() {
+    const trailer = Startup.getLocation(LocationKey.BBQTrailer);
+    trailer.neighbors = new NeighborMap([
+      ["n" as Direction, Startup.getLocation(LocationKey.FirePit)],
+      ["ne" as Direction, Startup.getLocation(LocationKey.Shed)],
+    ]);
+    trailer.items = [
+      Startup.getItem(ItemKey.LeftSmoker),
+      Startup.getItem(ItemKey.RightSmoker),
+      Startup.getItem(ItemKey.PipeCleaners),
+      Startup.getItem(ItemKey.LiteBeer),
     ];
   }
 }

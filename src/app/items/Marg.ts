@@ -28,7 +28,7 @@ export class Marg extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "TODO: can be used in combination with other arts and crafts supplies";
+    return this.drink(gameEngine);
   }
 
   private drink(gameEngine: GameEngine): string {
