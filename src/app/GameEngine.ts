@@ -44,7 +44,6 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.inventory.push(this.getItem(ItemKey.NRNSTraining));
   }
 
   public getEvents(): GameEvent[] {

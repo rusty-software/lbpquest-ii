@@ -3,28 +3,32 @@ import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
 
 export class IceCream extends BaseItem {
-  id = ItemKey.IceCream;
-  name = "ice cream";
-  value = 5;
-  isShown = true;
+  public id = ItemKey.IceCream;
+  public name = "ice cream";
+  public value = 5;
+  public isShown = true;
   public bitesEaten = 0;
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["eat", this.eat],
   ]);
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
-  take(gameEngine: GameEngine): string {
+
+  public take(gameEngine: GameEngine): string {
     return "You take the ice cream and put it into the refrigerated part of your duffle bag.";
   }
-  drop(gameEngine: GameEngine): string {
+
+  public drop(gameEngine: GameEngine): string {
     return "You drop the ice cream. It probably won't melt and/or make a mess right there...";
   }
-  examine(gameEngine: GameEngine): string {
+
+  public examine(gameEngine: GameEngine): string {
     return "The ice cream is labeled \"Blue Bell Bread Pudding\", and it looks like it's had a bite or two taken from it. It's only slightly fuzzy, so can probably be safely eaten.";
   }
-  use(gameEngine: GameEngine): string {
+
+  public use(gameEngine: GameEngine): string {
     return "Aside from eating it, there doesn't seem to be another use for the ice cream.";
   }
 

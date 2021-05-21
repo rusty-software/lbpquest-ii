@@ -4,34 +4,33 @@ import { GameEngine } from "../GameEngine";
 import { LocationKey, Splashpad } from "../locations";
 
 export class ChastityBelt extends BaseItem {
-  id = ItemKey.ChastityBelt;
-  name = "chastity belt";
-  currentlyWearing = false;
+  public id = ItemKey.ChastityBelt;
+  public name = "chastity belt";
+  public currentlyWearing = false;
 
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["wear", this.wear],
     ["remove", this.remove],
   ]);
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
 
-  take(gameEngine: GameEngine) {
-    this.taken = true;
+  public take(gameEngine: GameEngine): string {
     return "You pick up the chastity belt. It feels heavier than you expected, and looks snug. You put it into your duffle bag.";
   }
 
-  drop(gameEngine: GameEngine) {
+  public drop(gameEngine: GameEngine): string {
     this.currentlyWearing = false;
     return "Dropped. Chastity belts at LBP are definitely NOT on the menu.";
   }
 
-  examine(gameEngine: GameEngine): string {
+  public examine(gameEngine: GameEngine): string {
     return "The belt looks like a jock strap made of steel. It looks as if it could secure pretty much anything you put into it, even DK's loins or Chase's crypto investments.";
   }
 
-  use(gameEngine: GameEngine) {
+  public use(gameEngine: GameEngine): string {
     return this.wear(gameEngine);
   }
 

@@ -2,27 +2,32 @@ import { GameEngine } from "../GameEngine";
 import { Item } from "../Item";
 
 export class BaseItem implements Item {
-  id: number = 0;
-  name: string = "";
-  isShown: boolean = false;
-  value: number = 0;
-  taken: boolean = false;
-  customVerbs: Map<string, (gameEngine: GameEngine) => string> = new Map();
+  public id = 0;
+  public name = "";
+  public isShown = false;
+  public value = 0;
+  public taken = false;
+  public customVerbs: Map<string, (gameEngine: GameEngine) => string> =
+    new Map();
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     throw new Error("Method not implemented.");
   }
-  take(gameEngine: GameEngine): string {
+
+  public take(gameEngine: GameEngine): string {
     this.taken = true;
     return "Taken.";
   }
-  drop(gameEngine: GameEngine): string {
+
+  public drop(gameEngine: GameEngine): string {
     return "Dropped.";
   }
-  examine(gameEngine: GameEngine): string {
+
+  public examine(gameEngine: GameEngine): string {
     throw new Error("Method not implemented.");
   }
-  use(gameEngine: GameEngine): string {
+
+  public use(gameEngine: GameEngine): string {
     throw new Error("Method not implemented.");
   }
 }

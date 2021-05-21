@@ -3,30 +3,30 @@ import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
 
 export class Cider extends BaseItem {
-  id = ItemKey.Cider;
-  name = "cider";
-  value = 5;
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public id = ItemKey.Cider;
+  public name = "cider";
+  public value = 5;
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["drink", this.drink],
   ]);
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
 
-  take(gameEngine: GameEngine): string {
+  public take(gameEngine: GameEngine): string {
     return "You take the cider and put it ashamedly into your duffle bag.";
   }
 
-  drop(gameEngine: GameEngine): string {
+  public drop(gameEngine: GameEngine): string {
     return "You drop the cider. You can always pick it up later, if you're desperate.";
   }
 
-  examine(gameEngine: GameEngine): string {
+  public examine(gameEngine: GameEngine): string {
     return 'The can of cider reads "Austin Eastciders Spiced Sweet Corn". ';
   }
 
-  use(gameEngine: GameEngine): string {
+  public use(gameEngine: GameEngine): string {
     return this.drink(gameEngine);
   }
 

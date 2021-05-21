@@ -3,23 +3,27 @@ import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
 
 export class NRNSTraining extends BaseItem {
-  id = ItemKey.NRNSTraining;
-  name = "NRNS training";
-  value = 5;
+  public id = ItemKey.NRNSTraining;
+  public name = "NRNS training";
+  public value = 5;
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     return false;
   }
-  take(gameEngine: GameEngine): string {
+
+  public take(gameEngine: GameEngine): string {
     return "";
   }
-  drop(gameEngine: GameEngine): string {
+
+  public drop(gameEngine: GameEngine): string {
     return "";
   }
-  examine(gameEngine: GameEngine): string {
+
+  public examine(gameEngine: GameEngine): string {
     return "";
   }
-  use(gameEngine: GameEngine): string {
+
+  public use(gameEngine: GameEngine): string {
     return "";
   }
 }

@@ -3,30 +3,30 @@ import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
 
 export class Fireball extends BaseItem {
-  id = ItemKey.Fireball;
-  name = "fireball";
-  value = 5;
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public id = ItemKey.Fireball;
+  public name = "fireball";
+  public value = 5;
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["drink", this.drink],
   ]);
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
 
-  take(gameEngine: GameEngine): string {
+  public take(gameEngine: GameEngine): string {
     return "You take the fireball and put it lovingly into your duffle bag.";
   }
 
-  drop(gameEngine: GameEngine): string {
+  public drop(gameEngine: GameEngine): string {
     return "You drop the fireball. You're not sure why you did that, but there it is.";
   }
 
-  examine(gameEngine: GameEngine): string {
+  public examine(gameEngine: GameEngine): string {
     return "The bottle of fireball is about half full of delicious smelling liquid cinnamon.";
   }
 
-  use(gameEngine: GameEngine): string {
+  public use(gameEngine: GameEngine): string {
     return this.drink(gameEngine);
   }
 

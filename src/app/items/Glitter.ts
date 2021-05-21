@@ -3,28 +3,28 @@ import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
 
 export class Glitter extends BaseItem {
-  id = ItemKey.Glitter;
-  name = "glitter";
-  isShown = true;
-  value = 5;
+  public id = ItemKey.Glitter;
+  public name = "glitter";
+  public isShown = true;
+  public value = 5;
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
 
-  take(gameEngine: GameEngine): string {
+  public take(gameEngine: GameEngine): string {
     return "You take the glitter and put it into the duffle bag. Hopefully it won't dump out and cover everything else in there.";
   }
 
-  drop(gameEngine: GameEngine): string {
+  public drop(gameEngine: GameEngine): string {
     return "You drop the glitter. Amazingly, not a single flake is disbursed.";
   }
 
-  examine(gameEngine: GameEngine): string {
+  public examine(gameEngine: GameEngine): string {
     return "The glitter brightly reflects every color of the rainbow in tiny shiny squares.";
   }
 
-  use(gameEngine: GameEngine): string {
-    return "TODO: glitter can be used if you have enough arts and crafts supplies.";
+  public use(gameEngine: GameEngine): string {
+    return "TODO: can be used in combination with other arts and crafts supplies";
   }
 }

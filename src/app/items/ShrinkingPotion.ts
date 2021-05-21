@@ -4,32 +4,30 @@ import { GameEngine } from "../GameEngine";
 import { LocationKey, Splashpad } from "../locations";
 
 export class ShrinkingPotion extends BaseItem {
-  id = ItemKey.ShrinkingPotion;
-  name = "potion";
+  public id = ItemKey.ShrinkingPotion;
+  public name = "potion";
   public currentlyConsumed = false;
-
-  customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["drink", this.drink],
   ]);
 
-  canTake(gameEngine: GameEngine): boolean {
+  public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
 
-  take(gameEngine: GameEngine) {
-    this.taken = true;
+  public take(gameEngine: GameEngine): string {
     return "You pick up the chastity belt. It feels heavier than you expected, and looks snug. You put it into your duffle bag.";
   }
 
-  drop(gameEngine: GameEngine) {
+  public drop(gameEngine: GameEngine): string {
     return "Dropped. Chastity belts at LBP are definitely NOT on the menu.";
   }
 
-  examine(gameEngine: GameEngine): string {
+  public examine(gameEngine: GameEngine): string {
     return "The potion is a dark red color, and smells like cherry cough syrup.";
   }
 
-  use(gameEngine: GameEngine) {
+  public use(gameEngine: GameEngine): string {
     return this.drink(gameEngine);
   }
 
