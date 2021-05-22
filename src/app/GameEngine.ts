@@ -165,7 +165,12 @@ export class GameEngine {
         if (item) {
           this.events.push(new ItemEvent(item.use(this)));
         } else {
-          this.events.push(new GameErrorEvent(GameError.NoItem, ""));
+          this.events.push(
+            new GameErrorEvent(
+              GameError.NoItem,
+              `Sorry, there is no ${rest} here.`
+            )
+          );
         }
         break;
       }
@@ -233,6 +238,10 @@ export class GameEngine {
 
   public hasKarateTraining(): boolean {
     return this.getInventoryItemByKey(ItemKey.NRNSTraining) !== undefined;
+  }
+
+  public hasBow(): boolean {
+    return this.getInventoryItemByKey(ItemKey.Bow) !== undefined;
   }
 
   private getAvailableItemByName(itemName: string): Item | undefined {

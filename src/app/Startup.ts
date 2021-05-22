@@ -239,6 +239,7 @@ export class Startup {
     Startup.arrangeFirePit();
     Startup.arrangeBBQTrailer();
     Startup.arrangeShed();
+    Startup.arrangeEastWoods();
   }
 
   private static arrangeFreezerPort() {
@@ -333,7 +334,7 @@ export class Startup {
     firePit.neighbors = new NeighborMap([
       ["e" as Direction, Startup.getLocation(LocationKey.Shed)],
       ["s" as Direction, Startup.getLocation(LocationKey.BBQTrailer)],
-      ["w" as Direction, Startup.getLocation(LocationKey.Entryway)],
+      ["w" as Direction, Startup.getLocation(LocationKey.DirtPath)],
     ]);
     firePit.items = [
       Startup.getItem(ItemKey.Marg),
@@ -366,5 +367,14 @@ export class Startup {
       Startup.getItem(ItemKey.Screwdriver),
       Startup.getItem(ItemKey.Scissors),
     ];
+  }
+
+  private static arrangeEastWoods() {
+    const woods = Startup.getLocation(LocationKey.EastWoods);
+    woods.neighbors = new NeighborMap([
+      ["nw", Startup.getLocation(LocationKey.Bridge)],
+      ["w", Startup.getLocation(LocationKey.RacingField)],
+      ["s", Startup.getLocation(LocationKey.DirtPath)],
+    ]);
   }
 }

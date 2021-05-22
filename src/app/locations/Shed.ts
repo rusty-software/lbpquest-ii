@@ -21,6 +21,9 @@ export class Shed extends BaseLocation {
       s += " On the wall, you see hanging a dust covered yet ornate bow.";
     }
 
+    s +=
+      "\n\nThe fire pit is to the west of here, and the trailer to the southwest.";
+
     s += super.appendItems();
     return s;
   }
