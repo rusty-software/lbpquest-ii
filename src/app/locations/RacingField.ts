@@ -29,6 +29,9 @@ export class RacingField extends BaseLocation {
         '\n\nThe Brown Stag jogs over to you. "Hey there, wanna race? If you win, I\'ll let you have this blue ribbon," it says, pointing to a field day-style blue ribbon pinned to its warmup top.';
     }
 
+    s +=
+      "\n\nTo the north, a bridge crosses over the pond feeder. To the east lie some thick woods, and to the south are the pool behind the house.";
+
     s += super.appendItems();
     return s;
   }
