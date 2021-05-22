@@ -20,10 +20,10 @@ export class Screwdriver extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The screwdriver looks like it can be used to screw things.";
+    return "The screwdriver looks like it can be used to screw or poke things.";
   }
 
   public use(gameEngine: GameEngine): string {
-    return "TODO";
+    return "TODO: can be used on the VCR";
   }
 }
