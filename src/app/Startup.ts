@@ -241,6 +241,7 @@ export class Startup {
     Startup.arrangeShed();
     Startup.arrangeEastWoods();
     Startup.arrangeRacingField();
+    Startup.arrangeBridge();
   }
 
   private static arrangeFreezerPort() {
@@ -386,5 +387,15 @@ export class Startup {
       ["e", Startup.getLocation(LocationKey.EastWoods)],
       ["s", Startup.getLocation(LocationKey.Pool)],
     ]);
+  }
+
+  private static arrangeBridge() {
+    const field = Startup.getLocation(LocationKey.Bridge);
+    field.neighbors = new NeighborMap([
+      ["nw", Startup.getLocation(LocationKey.GolfCourse)],
+      ["se", Startup.getLocation(LocationKey.EastWoods)],
+      ["s", Startup.getLocation(LocationKey.RacingField)],
+    ]);
+    field.items = [Startup.getItem(ItemKey.DuctTape)];
   }
 }
