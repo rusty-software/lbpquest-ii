@@ -1,6 +1,7 @@
 import { GameEngine } from "../GameEngine";
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
+import { GolfCourse, LocationKey } from "../locations";
 
 export class GolfBall extends BaseItem {
   public id = ItemKey.GolfBall;
@@ -24,6 +25,6 @@ export class GolfBall extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "TODO: golf ball can be used on golf course";
+    return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
   }
 }

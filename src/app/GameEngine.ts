@@ -44,7 +44,8 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.addToInventory(ItemKey.WingedShoes);
+    this.addToInventory(ItemKey.UtilityStick);
+    this.addToInventory(ItemKey.GolfBall);
   }
 
   public getEvents(): GameEvent[] {
@@ -237,12 +238,8 @@ export class GameEngine {
     return this.items.get(itemKey)!;
   }
 
-  public hasKarateTraining(): boolean {
-    return this.getInventoryItemByKey(ItemKey.NRNSTraining) !== undefined;
-  }
-
-  public hasBow(): boolean {
-    return this.getInventoryItemByKey(ItemKey.Bow) !== undefined;
+  public inventoryContains(itemKey: ItemKey): boolean {
+    return this.getInventoryItemByKey(itemKey) !== undefined;
   }
 
   private getAvailableItemByName(itemName: string): Item | undefined {

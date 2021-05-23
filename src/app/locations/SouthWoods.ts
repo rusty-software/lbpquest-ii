@@ -35,7 +35,7 @@ export class SouthWoods extends BaseLocation {
     const woods = gameEngine.currentLocation as SouthWoods;
     if (woods.challengeWon) {
       return "You have already defeated the Tan Stag. Beating it again would only tarnish your honor.";
-    } else if (!gameEngine.hasKarateTraining()) {
+    } else if (!gameEngine.inventoryContains(ItemKey.NRNSTraining)) {
       return "You step up to fight the stag. They punch you, and while you try to block it, it gets through your defenses and leaves a mark. They then execute a forward snap kick which hits you in the gut like a sledgehammer. You feel the breath leave your body. They step back and, with a flying spinning side kick in splits style, finish you off. You lay on the ground a moment, feeling defeated.\n\n\"That wasn't much of a contest. Come back when you've gotten some training.\" They straighten the black belt, then return to their practicing.";
     }
     woods.challengeWon = true;

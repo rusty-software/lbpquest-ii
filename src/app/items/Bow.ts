@@ -34,7 +34,7 @@ export class Bow extends BaseItem {
   }
 
   private fire(gameEngine: GameEngine): string {
-    if (gameEngine.hasBow()) {
+    if (gameEngine.inventoryContains(ItemKey.Bow)) {
       const woods = gameEngine.currentLocation as EastWoods;
       if (woods.id === LocationKey.EastWoods) {
         if (!woods.challengeWon) {
