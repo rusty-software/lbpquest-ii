@@ -26,7 +26,7 @@ export class Reeds extends BaseItem {
     if (!oar.isShown) {
       gameEngine.currentLocation.showItem(ItemKey.Oar);
       s +=
-        "The thing hidden in the reeds appears to be an oar, a pretty nice one at that.";
+        " The thing hidden in the reeds appears to be an oar, a pretty nice one at that.";
     }
 
     return s;

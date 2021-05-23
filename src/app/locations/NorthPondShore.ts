@@ -1,6 +1,6 @@
 import { BaseLocation } from "./BaseLocation";
 import { LocationKey } from "./LocationKey";
-import { ItemKey } from "../items";
+import { Canoe, ItemKey } from "../items";
 import { GameEngine } from "../GameEngine";
 
 export class NorthPondShore extends BaseLocation {
@@ -29,28 +29,21 @@ export class NorthPondShore extends BaseLocation {
 
   public sail(gameEngine: GameEngine): string {
     const shore = gameEngine.currentLocation as NorthPondShore;
-    const canoeHere =
-      shore.items.find((i) => i.id === ItemKey.Canoe) !== undefined;
+    const canoe = shore.items.find((i) => i.id === ItemKey.Canoe);
+    const canoeHere = canoe !== undefined;
     const hasOar = gameEngine.inventoryContains(ItemKey.Oar);
     if (canoeHere && hasOar) {
-      let s =
-        "You strike out from the north shore at a breakneck pace, aiming towards the south shore.";
-
-      if (!gameEngine.getItem(ItemKey.CaptainsHat).taken) {
-        gameEngine.addToInventory(ItemKey.CaptainsHat);
-        const hat = gameEngine.getItem(ItemKey.CaptainsHat);
-        gameEngine.score += hat.value;
-        hat.taken = true;
-        s +=
-          " On your way to the other shore, you slow as you pass the branch sticking up in the middle of the pond. There's a captains hat hanging from it, which you promptly snatch and put into your duffle bag before continuing your journey.";
-      }
-      return s;
-    } else if (!canoeHere && hasOar) {
-      return "You wave the oar around a bit, but it doesn't seem as useful on its own. Maybe if you had a watercraft...?";
-    } else if (canoeHere && !hasOar) {
-      return "You begin to climb into the canoe, but realize you have nothing with which to propel it on hand...";
+      const northShore = gameEngine.getLocation(LocationKey.NorthPondShore);
+      gameEngine.changeLocation(northShore);
+      return "You strike out from the north shore at a breakneck pace, aiming towards the south shore, arriving mere moments later.";
     } else {
-      return "You have neither water craft nor something with which to propel said craft. Sailing is not an option currently.";
+      if (!canoeHere && hasOar) {
+        return "You wave the oar around a bit, but it doesn't seem as useful on its own. Maybe if you had a watercraft...?";
+      } else if (canoeHere && !hasOar) {
+        return "You move to climb into the canoe, but realize you have nothing with which to propel it on hand...";
+      } else {
+        return "You have neither water craft nor something with which to propel said craft. Sailing is not an option currently.";
+      }
     }
   }
 

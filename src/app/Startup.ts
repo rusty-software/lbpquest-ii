@@ -411,6 +411,7 @@ export class Startup {
     course.neighbors = new NeighborMap([
       ["n", Startup.getLocation(LocationKey.NorthWoods)],
       ["s", Startup.getLocation(LocationKey.NorthPondShore)],
+      ["se", Startup.getLocation(LocationKey.Bridge)],
     ]);
   }
 
