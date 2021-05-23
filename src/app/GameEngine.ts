@@ -44,6 +44,8 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
+    this.addToInventory(ItemKey.AlligatorRug);
+    this.addToInventory(ItemKey.Oar);
   }
 
   public getEvents(): GameEvent[] {

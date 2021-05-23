@@ -29,16 +29,21 @@ export class SouthPondShore extends BaseLocation {
 
   public sail(gameEngine: GameEngine): string {
     const shore = gameEngine.currentLocation as SouthPondShore;
-    const canoe = shore.items.find((i) => i.id === ItemKey.Canoe);
-    const canoeHere = canoe !== undefined;
-    if (canoeHere && !(canoe as Canoe).alligatorMoved) {
+    const maybeCanoe = shore.items.find((i) => i.id === ItemKey.Canoe);
+    const canoe = maybeCanoe as Canoe;
+    const canoeHere = maybeCanoe !== undefined;
+    if (canoeHere && !canoe.alligatorMoved) {
       return "Your attempts to use the canoe are blocked by the large alligator that is laying in it. If only it could be convinced to move...";
     }
 
     const hasOar = gameEngine.inventoryContains(ItemKey.Oar);
     if (canoeHere && hasOar) {
+      const southShore = gameEngine.getLocation(LocationKey.SouthPondShore);
       const northShore = gameEngine.getLocation(LocationKey.NorthPondShore);
       gameEngine.changeLocation(northShore);
+      southShore.removeItem(canoe);
+      northShore.addItem(canoe);
+
       let s =
         "You strike out from the south shore at a breakneck pace, aiming towards the north shore, and arriving mere moments later.";
 

@@ -39,7 +39,17 @@ export class AlligatorRug extends BaseItem {
       const canoe = shore.items.find((i) => i.id === ItemKey.Canoe) as Canoe;
       if (canoe && !canoe.alligatorMoved) {
         canoe.alligatorMoved = true;
-        gameEngine.removeFromInventory(this.id);
+        if (gameEngine.inventoryContains(this.id)) {
+          gameEngine.removeFromInventory(this.id);
+        } else if (
+          gameEngine.currentLocation.items.find((i) => i.id === this.id)
+        ) {
+          const rug = gameEngine.getItem(this.id);
+          gameEngine.currentLocation.items.splice(
+            gameEngine.currentLocation.items.indexOf(rug),
+            1
+          );
+        }
         return "You toss the alligator rug into the pond. The large alligator sees it floating there, looks back to you, then seems to smile for the first time ever as they enter the water and swim up to the rug. They appear to be talking to the rug and no longer quite so forlorn.";
       } else {
         return "I don't know how you got the rug back from the alligator, but you definitely don't need to use it again.";

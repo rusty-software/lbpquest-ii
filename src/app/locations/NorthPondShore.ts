@@ -33,8 +33,12 @@ export class NorthPondShore extends BaseLocation {
     const canoeHere = canoe !== undefined;
     const hasOar = gameEngine.inventoryContains(ItemKey.Oar);
     if (canoeHere && hasOar) {
+      const southShore = gameEngine.getLocation(LocationKey.SouthPondShore);
       const northShore = gameEngine.getLocation(LocationKey.NorthPondShore);
-      gameEngine.changeLocation(northShore);
+      const canoe = gameEngine.getItem(ItemKey.Canoe) as Canoe;
+      gameEngine.changeLocation(southShore);
+      northShore.removeItem(canoe);
+      southShore.addItem(canoe);
       return "You strike out from the north shore at a breakneck pace, aiming towards the south shore, arriving mere moments later.";
     } else {
       if (!canoeHere && hasOar) {
