@@ -3,10 +3,10 @@ import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
 
 export class Log extends BaseItem {
-  id = ItemKey.Log;
-  name = "log";
-  value = 10;
-  isShown = true;
+  public id = ItemKey.Log;
+  public name = "log";
+  public value = 10;
+  public isShown = true;
 
   public canTake(gameEngine: GameEngine): boolean {
     return true;

@@ -103,6 +103,7 @@ import {
 } from "./locations";
 import { NeighborMap } from "./NeighborMap";
 import { Direction } from "./Direction";
+import { Reeds } from "./items/Reeds";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
@@ -211,6 +212,7 @@ export class Startup {
     Startup.items.set(ItemKey.PipeCleaners, new PipeCleaners());
     Startup.items.set(ItemKey.Pulpit, new Pulpit());
     Startup.items.set(ItemKey.RedCandle, new RedCandle());
+    Startup.items.set(ItemKey.Reeds, new Reeds());
     Startup.items.set(ItemKey.ReligiousIcons, new ReligiousIcons());
     Startup.items.set(ItemKey.RightSmoker, new RightSmoker());
     Startup.items.set(ItemKey.Scissors, new Scissors());
@@ -244,6 +246,7 @@ export class Startup {
     Startup.arrangeBridge();
     Startup.arrangeGolfCourse();
     Startup.arrangeNorthWoods();
+    Startup.arrangeNorthPondShort();
   }
 
   private static arrangeFreezerPort() {
@@ -414,5 +417,16 @@ export class Startup {
     woods.neighbors = new NeighborMap([
       ["s", Startup.getLocation(LocationKey.GolfCourse)],
     ]);
+  }
+
+  private static arrangeNorthPondShort() {
+    const shore = Startup.getLocation(LocationKey.NorthPondShore);
+    shore.neighbors = new NeighborMap([
+      ["n", Startup.getLocation(LocationKey.GolfCourse)],
+    ]);
+    shore.items = [
+      Startup.getItem(ItemKey.Reeds),
+      Startup.getItem(ItemKey.Oar),
+    ];
   }
 }

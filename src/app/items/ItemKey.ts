@@ -49,6 +49,7 @@ export enum ItemKey {
   PipeCleaners,
   Pulpit,
   RedCandle,
+  Reeds,
   ReligiousIcons,
   RightSmoker,
   Scissors,

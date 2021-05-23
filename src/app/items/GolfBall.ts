@@ -24,6 +24,7 @@ export class GolfBall extends BaseItem {
     return "The golf ball looks pristine. It's a brand you haven't heard of -- Lucky -- and has a number of 1.";
   }
 
+  // TODO: test using not at the golf course
   public use(gameEngine: GameEngine): string {
     return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
   }

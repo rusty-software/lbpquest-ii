@@ -32,10 +32,8 @@ export class Shed extends BaseLocation {
     const shed = gameEngine.currentLocation as Shed;
     if (!shed.drawerOpened) {
       shed.drawerOpened = true;
-      const scissors = gameEngine.getItem(ItemKey.Scissors);
-      const screwdriver = gameEngine.getItem(ItemKey.Screwdriver);
-      scissors.isShown = true;
-      screwdriver.isShown = true;
+      gameEngine.currentLocation.showItem(ItemKey.Scissors);
+      gameEngine.currentLocation.showItem(ItemKey.Screwdriver);
       return "You pull the drawer open. The contents looks mostly as useless as the rest of the junk in the shed, except for the scissors and screwdriver.";
     } else {
       return "Opening the drawer again does not reveal anything else.";

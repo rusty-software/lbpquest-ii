@@ -68,6 +68,7 @@ The desk is here. Hidden in the desk is a **Magazine of Questionable Content** a
 
 ### Billiards Room
 * **Google Maps Alpha** is here. 
+	* can be used with the phrase "ok google find"
 * **Cowskin rug of elusiveness** is here, always visible on first entry, but with a 50% chance of not being visible subsequently.  When the rug isn't visible, the game should remind the player that they thought there was a rug in here. 
 * The pool table is set to be played, but no cue stick can be found. If the player has constructed the *Utility Stick*, they can use it to break the rack, sinking all of the balls in a single stroke. the **Cue Ball** will hop into their duffle bag.
 

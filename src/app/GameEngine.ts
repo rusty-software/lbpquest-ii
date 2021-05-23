@@ -44,8 +44,6 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.addToInventory(ItemKey.UtilityStick);
-    this.addToInventory(ItemKey.GolfBall);
   }
 
   public getEvents(): GameEvent[] {
@@ -220,7 +218,6 @@ export class GameEngine {
   }
 
   public move(direction: Direction): void {
-    console.log("neighbors", this.currentLocation.neighbors);
     const newLocation = this.currentLocation.neighbors.get(direction);
     if (newLocation) {
       newLocation.enter();
