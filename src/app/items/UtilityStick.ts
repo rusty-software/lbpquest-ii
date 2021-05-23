@@ -1,7 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { GolfCourse, LocationKey } from "../locations";
+import { GolfCourse } from "../locations";
 
 export class UtilityStick extends BaseItem {
   public id = ItemKey.UtilityStick;

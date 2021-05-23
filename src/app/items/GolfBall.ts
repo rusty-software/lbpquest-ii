@@ -1,7 +1,7 @@
 import { GameEngine } from "../GameEngine";
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
-import { GolfCourse, LocationKey } from "../locations";
+import { GolfCourse } from "../locations";
 
 export class GolfBall extends BaseItem {
   public id = ItemKey.GolfBall;

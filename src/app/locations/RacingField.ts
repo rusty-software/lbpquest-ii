@@ -13,6 +13,7 @@ export class RacingField extends BaseLocation {
     ["race", this.race],
     ["race deer", this.race],
   ]);
+
   public description(): string {
     let s =
       "You are in a wide open field. A Brown Stag is here, wearing a set of 80's warmups.";

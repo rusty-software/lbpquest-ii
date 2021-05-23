@@ -13,7 +13,7 @@ export class GolfCourse extends BaseLocation {
   ]);
 
   public descriptionText =
-    "You are on a simple golf course with a tee that is about 30 yards from the hole. There is little breeze to stave off the stifling heat, and you're reminded once again why golf was dropped as a regular LBP activity.";
+    "You are on a simple golf course with a tee that is about 30 yards from the hole. There is little breeze to stave off the stifling heat, and you're reminded once again why golf was dropped as a regular LBP activity.\n\nTo the north, you can see woods. To the south is the shore of the local pond. Southeast takes you to a bridge over the pond feeder.";
 
   public playGolf(gameEngine: GameEngine): string {
     const golfCourse = gameEngine.currentLocation as GolfCourse;
