@@ -55,6 +55,6 @@ export class NorthPondShore extends BaseLocation {
   }
 
   private swim(gameEngine: GameEngine): string {
-    return "You consider swimming across the pong, but... it's a large pond, and you're not sure what creatures might lie in its depths...";
+    return "You consider swimming across the pond, but... it's a large pond, and you're not sure what creatures might lie in its depths...";
   }
 }

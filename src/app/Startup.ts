@@ -247,6 +247,7 @@ export class Startup {
     Startup.arrangeGolfCourse();
     Startup.arrangeNorthWoods();
     Startup.arrangeNorthPondShort();
+    Startup.arrangeSouthPondShort();
   }
 
   private static arrangeFreezerPort() {
@@ -388,6 +389,7 @@ export class Startup {
   private static arrangeRacingField() {
     const field = Startup.getLocation(LocationKey.RacingField);
     field.neighbors = new NeighborMap([
+      ["nw", Startup.getLocation(LocationKey.SouthPondShore)],
       ["n", Startup.getLocation(LocationKey.Bridge)],
       ["e", Startup.getLocation(LocationKey.EastWoods)],
       ["s", Startup.getLocation(LocationKey.Pool)],
@@ -428,5 +430,13 @@ export class Startup {
       Startup.getItem(ItemKey.Reeds),
       Startup.getItem(ItemKey.Oar),
     ];
+  }
+
+  private static arrangeSouthPondShort() {
+    const shore = Startup.getLocation(LocationKey.SouthPondShore);
+    shore.neighbors = new NeighborMap([
+      ["sw", Startup.getLocation(LocationKey.RacingField)],
+    ]);
+    shore.items = [Startup.getItem(ItemKey.Canoe)];
   }
 }

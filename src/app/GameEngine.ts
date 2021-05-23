@@ -44,6 +44,7 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
+    this.addToInventory(ItemKey.AlligatorRug);
   }
 
   public getEvents(): GameEvent[] {
@@ -235,13 +236,16 @@ export class GameEngine {
     return this.items.get(itemKey)!;
   }
 
+  public availableItems(): Item[] {
+    return this.currentLocation.items.concat(this.inventory);
+  }
+
   public inventoryContains(itemKey: ItemKey): boolean {
     return this.getInventoryItemByKey(itemKey) !== undefined;
   }
 
   private getAvailableItemByName(itemName: string): Item | undefined {
-    const availableItems = this.currentLocation.items.concat(this.inventory);
-    return availableItems.find((i) => {
+    return this.availableItems().find((i) => {
       return i.name === itemName;
     });
   }

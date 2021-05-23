@@ -31,7 +31,7 @@ export class RacingField extends BaseLocation {
     }
 
     s +=
-      "\n\nTo the north, a bridge crosses over the pond feeder. To the east lie some thick woods, and to the south are the pool behind the house.";
+      "\n\nThe shore of the pond can be seen to the northwest. To the north, a bridge crosses over the pond feeder. To the east lie some thick woods, and to the south are the pool behind the house.";
 
     s += super.appendItems();
     return s;
