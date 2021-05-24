@@ -29,6 +29,10 @@ export class Pool extends BaseLocation {
   }
 
   public enterGrotto(gameEngine: GameEngine): string {
-    return "TODO: You can't hand the grotto";
+    if (!gameEngine.trophiesPlaced()) {
+      return 'A grotto troll blocks your entry to the grotto. "You must EARN your right to party, my friend. Seek ye the trophies and place them in the case, then return to claim your true reward." They look at you not unkindly, but definitely will not be letting you into the grotto.';
+    } else {
+      return `You win! Your totals:\n\nScore: ${gameEngine.score}\n\nMoves: ${gameEngine.actionCount}"`;
+    }
   }
 }

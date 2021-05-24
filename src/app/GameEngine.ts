@@ -203,6 +203,10 @@ export class GameEngine {
     }
   }
 
+  public trophiesPlaced(): boolean {
+    return false;
+  }
+
   public removeFromInventory(itemKey: ItemKey): void {
     const item = this.getItem(itemKey);
     this.inventory.splice(this.inventory.indexOf(item), 1);
