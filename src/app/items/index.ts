@@ -53,6 +53,7 @@ export { Scorecard } from "./Scorecard";
 export { ScotchTape } from "./ScotchTape";
 export { Screwdriver } from "./Screwdriver";
 export { ShrinkingPotion } from "./ShrinkingPotion";
+export { Skimmer } from "./Skimmer";
 export { SlipperyShorts } from "./SlipperyShorts";
 export { TrophyCase } from "./TrophyCase";
 export { UtilityStick } from "./UtilityStick";

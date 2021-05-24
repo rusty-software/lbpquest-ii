@@ -57,6 +57,7 @@ export enum ItemKey {
   ScotchTape,
   Screwdriver,
   ShrinkingPotion,
+  Skimmer,
   SlipperyShorts,
   TrophyCase,
   UtilityStick,

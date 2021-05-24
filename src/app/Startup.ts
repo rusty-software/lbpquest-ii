@@ -56,6 +56,7 @@ import {
   ScotchTape,
   Screwdriver,
   ShrinkingPotion,
+  Skimmer,
   SlipperyShorts,
   TrophyCase,
   UtilityStick,
@@ -220,6 +221,7 @@ export class Startup {
     Startup.items.set(ItemKey.ScotchTape, new ScotchTape());
     Startup.items.set(ItemKey.Screwdriver, new Screwdriver());
     Startup.items.set(ItemKey.ShrinkingPotion, new ShrinkingPotion());
+    Startup.items.set(ItemKey.Skimmer, new Skimmer());
     Startup.items.set(ItemKey.SlipperyShorts, new SlipperyShorts());
     Startup.items.set(ItemKey.TrophyCase, new TrophyCase());
     Startup.items.set(ItemKey.UtilityStick, new UtilityStick());
@@ -248,6 +250,7 @@ export class Startup {
     Startup.arrangeNorthWoods();
     Startup.arrangeNorthPondShort();
     Startup.arrangeSouthPondShort();
+    Startup.arrangePool();
   }
 
   private static arrangeFreezerPort() {
@@ -439,5 +442,17 @@ export class Startup {
       ["sw", Startup.getLocation(LocationKey.RacingField)],
     ]);
     shore.items = [Startup.getItem(ItemKey.Canoe)];
+  }
+
+  private static arrangePool() {
+    const pool = Startup.getLocation(LocationKey.Pool);
+    pool.neighbors = new NeighborMap([
+      ["w", Startup.getLocation(LocationKey.DiningRoom)],
+      ["n", Startup.getLocation(LocationKey.RacingField)],
+    ]);
+    pool.items = [
+      Startup.getItem(ItemKey.Skimmer),
+      Startup.getItem(ItemKey.SlipperyShorts),
+    ];
   }
 }

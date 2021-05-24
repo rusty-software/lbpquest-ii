@@ -5,6 +5,7 @@ import { GameEngine } from "../GameEngine";
 export class SlipperyShorts extends BaseItem {
   public id = ItemKey.SlipperyShorts;
   public name = "shorts";
+  public value = 5;
   public currentlyWearing = false;
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["wear", this.wear],
