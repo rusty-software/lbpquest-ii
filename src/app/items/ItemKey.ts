@@ -19,6 +19,7 @@ export enum ItemKey {
   Crayons,
   CueBall,
   DarkSweetWine,
+  Desk,
   DodgeBall,
   DuctTape,
   ExPresidentialMedal,

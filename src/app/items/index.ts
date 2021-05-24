@@ -17,6 +17,7 @@ export { CowskinRug } from "./CowskinRug";
 export { Crayons } from "./Crayons";
 export { CueBall } from "./CueBall";
 export { DarkSweetWine } from "./DarkSweetWine";
+export { Desk } from "./Desk";
 export { DodgeBall } from "./DodgeBall";
 export { DuctTape } from "./DuctTape";
 export { ExPresidentialMedal } from "./ExPresidentialMedal";

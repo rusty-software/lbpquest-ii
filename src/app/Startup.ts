@@ -19,6 +19,7 @@ import {
   Crayons,
   CueBall,
   DarkSweetWine,
+  Desk,
   DodgeBall,
   DuctTape,
   ExPresidentialMedal,
@@ -184,6 +185,7 @@ export class Startup {
     Startup.items.set(ItemKey.Crayons, new Crayons());
     Startup.items.set(ItemKey.CueBall, new CueBall());
     Startup.items.set(ItemKey.DarkSweetWine, new DarkSweetWine());
+    Startup.items.set(ItemKey.Desk, new Desk());
     Startup.items.set(ItemKey.DodgeBall, new DodgeBall());
     Startup.items.set(ItemKey.DuctTape, new DuctTape());
     Startup.items.set(ItemKey.ExPresidentialMedal, new ExPresidentialMedal());
@@ -277,8 +279,16 @@ export class Startup {
   private static arrangeEntryway() {
     const entryway = Startup.getLocation(LocationKey.Entryway);
     entryway.neighbors = new NeighborMap([
+      ["n" as Direction, Startup.getLocation(LocationKey.LivingRoom)],
+      ["w" as Direction, Startup.getLocation(LocationKey.BilliardsRoom)],
       ["s" as Direction, Startup.getLocation(LocationKey.Driveway)],
+      ["up" as Direction, Startup.getLocation(LocationKey.UpstairsLanding)],
     ]);
+    entryway.items = [
+      Startup.getItem(ItemKey.Desk),
+      Startup.getItem(ItemKey.Magazine),
+      Startup.getItem(ItemKey.Pencils),
+    ];
   }
 
   private static arrangeFreezer() {
