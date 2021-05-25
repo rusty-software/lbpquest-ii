@@ -254,6 +254,7 @@ export class Startup {
     Startup.arrangeSouthPondShort();
     Startup.arrangePool();
     Startup.arrangeLanding();
+    Startup.arrangeStagedBedroom();
   }
 
   private static arrangeFreezerPort() {
@@ -476,5 +477,16 @@ export class Startup {
       ["down", Startup.getLocation(LocationKey.Entryway)],
     ]);
     landing.items = [Startup.getItem(ItemKey.Balusters)];
+  }
+
+  private static arrangeStagedBedroom() {
+    const bedroom = Startup.getLocation(LocationKey.StagedBedroom);
+    bedroom.neighbors = new NeighborMap([
+      ["e", Startup.getLocation(LocationKey.UpstairsLanding)],
+    ]);
+    bedroom.items = [
+      Startup.getItem(ItemKey.RedCandle),
+      Startup.getItem(ItemKey.Matches),
+    ];
   }
 }

@@ -1,7 +1,7 @@
 import { GameEngine } from "../GameEngine";
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
-import { GolfCourse } from "../locations";
+import { GolfCourse, LocationKey } from "../locations";
 
 export class GolfBall extends BaseItem {
   public id = ItemKey.GolfBall;
@@ -24,8 +24,11 @@ export class GolfBall extends BaseItem {
     return "The golf ball looks pristine. It's a brand you haven't heard of -- Lucky -- and has a number of 1.";
   }
 
-  // TODO: test using not at the golf course
   public use(gameEngine: GameEngine): string {
-    return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
+    if (gameEngine.currentLocation.id === LocationKey.GolfCourse) {
+      return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
+    } else {
+      return "You mess around with the golf ball a bit but realize this isn't really the place to try to use it...";
+    }
   }
 }

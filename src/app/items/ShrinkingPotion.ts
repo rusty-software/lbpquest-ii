@@ -6,6 +6,7 @@ import { LocationKey, Splashpad } from "../locations";
 export class ShrinkingPotion extends BaseItem {
   public id = ItemKey.ShrinkingPotion;
   public name = "potion";
+  public value = 5;
   public currentlyConsumed = false;
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["drink", this.drink],
@@ -16,15 +17,15 @@ export class ShrinkingPotion extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "You pick up the chastity belt. It feels heavier than you expected, and looks snug. You put it into your duffle bag.";
+    return "You pick up the Shrinking Potion and put it carefully into your duffle bag. You're not sure what would happen if it dumped over in there.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "Dropped. Chastity belts at LBP are definitely NOT on the menu.";
+    return "You carefully put the Shrinking Potion down on the ground. Its dark red liquids swirl gently.";
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The potion is a dark red color, and smells like cherry cough syrup.";
+    return "The potion is a dark red color, and smells like a mix between spiced apples and cherry cough syrup.";
   }
 
   public use(gameEngine: GameEngine): string {
