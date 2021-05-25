@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class ScotchTape extends BaseItem {
+export class ScotchTape extends ArtsAndCraftsSupply {
   public id = ItemKey.ScotchTape;
   public name = "scotch tape";
   public value = 5;
@@ -22,9 +22,5 @@ export class ScotchTape extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "The scotch tape appears to be in good condition and feels very sticky, like it's meant to adhere to things.";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used in combination with other arts and crafts supplies";
   }
 }

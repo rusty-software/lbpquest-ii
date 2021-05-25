@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class DuctTape extends BaseItem {
+export class DuctTape extends ArtsAndCraftsSupply {
   public id = ItemKey.DuctTape;
   public name = "duct tape";
   public value = 5;
@@ -25,6 +25,7 @@ export class DuctTape extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    // TODO: can be used for more than arts and crafts...
     return "TODO: how to intelligently handle duct tape usage";
   }
 }

@@ -15,6 +15,7 @@ import { ItemKey } from "./items";
 import { Location } from "./Location";
 import { LocationKey } from "./locations";
 import { Startup } from "./Startup";
+import { ArtsAndCraftsSupply } from "./items/ArtsAndCraftsSupply";
 
 export class GameEngine {
   public currentLocation: Location;
@@ -46,6 +47,11 @@ export class GameEngine {
     // HACK ZONE
     this.addToInventory(ItemKey.AlligatorRug);
     this.addToInventory(ItemKey.Oar);
+    this.addToInventory(ItemKey.Pencils);
+    this.addToInventory(ItemKey.Magazine);
+    this.addToInventory(ItemKey.DuctTape);
+    this.addToInventory(ItemKey.Scissors);
+    this.addToInventory(ItemKey.PipeCleaners);
   }
 
   public getEvents(): GameEvent[] {
@@ -247,6 +253,24 @@ export class GameEngine {
 
   public inventoryContains(itemKey: ItemKey): boolean {
     return this.getInventoryItemByKey(itemKey) !== undefined;
+  }
+
+  public inventoryArtsAndCraftsSupplies(): Item[] {
+    const artsAndCraftsItems = [
+      this.getItem(ItemKey.ConstructionPaper),
+      this.getItem(ItemKey.Crayons),
+      this.getItem(ItemKey.DuctTape),
+      this.getItem(ItemKey.Glitter),
+      this.getItem(ItemKey.Glue),
+      this.getItem(ItemKey.GooglyEyes),
+      this.getItem(ItemKey.Magazine),
+      this.getItem(ItemKey.Pencils),
+      this.getItem(ItemKey.PipeCleaners),
+      this.getItem(ItemKey.Scissors),
+      this.getItem(ItemKey.ScotchTape),
+      this.getItem(ItemKey.Yarn),
+    ];
+    return this.inventory.filter((i) => artsAndCraftsItems.includes(i));
   }
 
   private getAvailableItemByName(itemName: string): Item | undefined {

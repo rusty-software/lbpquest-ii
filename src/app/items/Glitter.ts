@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class Glitter extends BaseItem {
+export class Glitter extends ArtsAndCraftsSupply {
   public id = ItemKey.Glitter;
   public name = "glitter";
   public isShown = true;
@@ -22,9 +22,5 @@ export class Glitter extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "The glitter brightly reflects every color of the rainbow in tiny shiny squares.";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used in combination with other arts and crafts supplies";
   }
 }

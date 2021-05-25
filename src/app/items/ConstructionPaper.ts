@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class ConstructionPaper extends BaseItem {
+export class ConstructionPaper extends ArtsAndCraftsSupply {
   public id = ItemKey.ConstructionPaper;
   public name = "construction paper";
   public value = 5;
@@ -22,9 +22,5 @@ export class ConstructionPaper extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "The construction paper is sturdy and roughly textured. Everything that plain ol' construction paper should be...";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used in combination with other arts and crafts supplies";
   }
 }

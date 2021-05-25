@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class Pencils extends BaseItem {
+export class Pencils extends ArtsAndCraftsSupply {
   public id = ItemKey.Pencils;
   public name = "pencils";
   public value = 5;
@@ -21,9 +21,5 @@ export class Pencils extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "The pencils are limited in selection, but all have enough tips exposed to do some serious coloring.";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used for arts and crafts";
   }
 }

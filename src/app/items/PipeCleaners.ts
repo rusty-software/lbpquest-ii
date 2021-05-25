@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class PipeCleaners extends BaseItem {
+export class PipeCleaners extends ArtsAndCraftsSupply {
   public id = ItemKey.PipeCleaners;
   public name = "pipe cleaners";
   public value = 5;
@@ -21,9 +21,5 @@ export class PipeCleaners extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "The pipe cleaners are fuzzy, bendy little things. You realize after a moment that you've never actually seen them used to clean a pipe.";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used in combination with other arts and crafts supplies";
   }
 }

@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class Magazine extends BaseItem {
+export class Magazine extends ArtsAndCraftsSupply {
   public id = ItemKey.Magazine;
   public name = "magazine";
   public value = 5;
@@ -21,9 +21,5 @@ export class Magazine extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "The magazine is pretty typical of LBP fare -- the content is zebra-centric and entirely questionable.";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used for arts and crafts";
   }
 }

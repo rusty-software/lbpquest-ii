@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class Scissors extends BaseItem {
+export class Scissors extends ArtsAndCraftsSupply {
   public id = ItemKey.Scissors;
   public name = "scissors";
   public value = 5;
@@ -21,9 +21,5 @@ export class Scissors extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "The scissors are the type used in sewing, and were quite shiny at one point. They look moderately sharp.";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used in combination with other arts and crafts supplies";
   }
 }

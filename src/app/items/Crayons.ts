@@ -1,8 +1,8 @@
-import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { ArtsAndCraftsSupply } from "./ArtsAndCraftsSupply";
 
-export class Crayons extends BaseItem {
+export class Crayons extends ArtsAndCraftsSupply {
   public id = ItemKey.Crayons;
   public name = "crayons";
   public value = 5;
@@ -22,9 +22,5 @@ export class Crayons extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     return "While the collection of crayons is not prolific, they all appear to be in good repair.";
-  }
-
-  public use(gameEngine: GameEngine): string {
-    return "TODO: can be used in combination with other arts and crafts supplies";
   }
 }
