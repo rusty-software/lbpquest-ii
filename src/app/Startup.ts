@@ -8,6 +8,7 @@ import {
   BlueBook,
   BlueRibbon,
   Bow,
+  BunkbedBedroomDormerSeat,
   Canoe,
   CaptainsHat,
   ChastityBelt,
@@ -107,6 +108,7 @@ import {
 import { NeighborMap } from "./NeighborMap";
 import { Direction } from "./Direction";
 import { Reeds } from "./items/Reeds";
+import { VCR } from "./items/VCR";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
@@ -175,6 +177,10 @@ export class Startup {
     Startup.items.set(ItemKey.BlueBook, new BlueBook());
     Startup.items.set(ItemKey.BlueRibbon, new BlueRibbon());
     Startup.items.set(ItemKey.Bow, new Bow());
+    Startup.items.set(
+      ItemKey.BunkbedBedroomDormerSeat,
+      new BunkbedBedroomDormerSeat()
+    );
     Startup.items.set(ItemKey.Canoe, new Canoe());
     Startup.items.set(ItemKey.CaptainsHat, new CaptainsHat());
     Startup.items.set(ItemKey.ChastityBelt, new ChastityBelt());
@@ -232,6 +238,7 @@ export class Startup {
     );
     Startup.items.set(ItemKey.TrophyCase, new TrophyCase());
     Startup.items.set(ItemKey.UtilityStick, new UtilityStick());
+    Startup.items.set(ItemKey.VCR, new VCR());
     Startup.items.set(ItemKey.VHSTape, new VHSTape());
     Startup.items.set(ItemKey.WingedShoes, new WingedShoes());
     Startup.items.set(ItemKey.Yarn, new Yarn());
@@ -260,6 +267,7 @@ export class Startup {
     Startup.arrangePool();
     Startup.arrangeLanding();
     Startup.arrangeStagedBedroom();
+    Startup.arrangeBunkbedBedroom();
   }
 
   private static arrangeFreezerPort() {
@@ -494,6 +502,20 @@ export class Startup {
       Startup.getItem(ItemKey.PSDs),
       Startup.getItem(ItemKey.RedCandle),
       Startup.getItem(ItemKey.Matches),
+    ];
+  }
+
+  private static arrangeBunkbedBedroom() {
+    const bedroom = Startup.getLocation(LocationKey.BunkbedBedroom);
+    bedroom.neighbors = new NeighborMap([
+      ["n", Startup.getLocation(LocationKey.UpstairsLanding)],
+    ]);
+    bedroom.items = [
+      Startup.getItem(ItemKey.BunkbedBedroomDormerSeat),
+      Startup.getItem(ItemKey.BlueBook),
+      Startup.getItem(ItemKey.VCR),
+      Startup.getItem(ItemKey.VHSTape),
+      Startup.getItem(ItemKey.Cheetos),
     ];
   }
 }

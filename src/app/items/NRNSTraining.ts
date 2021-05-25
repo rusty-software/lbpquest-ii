@@ -20,10 +20,10 @@ export class NRNSTraining extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "";
+    return "What is the sound of one hand clapping?";
   }
 
   public use(gameEngine: GameEngine): string {
-    return "";
+    return "You don't need to actively use the training. It will emerge as needed, when the time is right.";
   }
 }
