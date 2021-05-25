@@ -21,9 +21,7 @@ export class ArtsAndCraftsSupply extends BaseItem {
       gameEngine.addToInventory(ItemKey.ArtsAndCrafts);
       gameEngine.score += artsAndCrafts.value;
       let s = "Using the ";
-      supplies.map((supply) => {
-        s += supply.name + ", ";
-      });
+      supplies.map((supply) => (s += supply.name + ", "));
       s +=
         "you construct what is probably the best piece of arts and crafts ever constructed, worthy of being hung in a place of honor in a museum or something. You carefully put it and all of the supplies into your duffle bag.";
       return s;

@@ -41,8 +41,8 @@ export class SouthPondShore extends BaseLocation {
       const southShore = gameEngine.getLocation(LocationKey.SouthPondShore);
       const northShore = gameEngine.getLocation(LocationKey.NorthPondShore);
       gameEngine.changeLocation(northShore);
-      southShore.removeItem(canoe);
-      northShore.addItem(canoe);
+      southShore.removeItem(ItemKey.Canoe);
+      northShore.addItem(ItemKey.Canoe);
 
       let s =
         "You strike out from the south shore at a breakneck pace, aiming towards the north shore, and arriving mere moments later.";

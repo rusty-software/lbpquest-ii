@@ -14,7 +14,8 @@ export interface Location {
 
   enter(): void;
   description(): string;
-  addItem(item: Item): void;
-  removeItem(item: Item): void;
+  addItem(itemKey: ItemKey): void;
+  removeItem(itemKey: ItemKey): void;
   showItem(itemKey: ItemKey): void;
+  hasItem(itemKey: ItemKey): boolean;
 }

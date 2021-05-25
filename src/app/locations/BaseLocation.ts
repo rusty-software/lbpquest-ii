@@ -38,11 +38,17 @@ export abstract class BaseLocation implements Location {
     return s;
   }
 
-  public addItem(item: Item): void {
+  public hasItem(itemKey: ItemKey): boolean {
+    return this.items.find((i) => i.id === itemKey) !== undefined;
+  }
+
+  public addItem(itemKey: ItemKey): void {
+    const item = this.items.find((i) => i.id === itemKey)!;
     this.items.push(item);
   }
 
-  public removeItem(item: Item): void {
+  public removeItem(itemKey: ItemKey): void {
+    const item = this.items.find((i) => i.id === itemKey)!;
     this.items.splice(this.items.indexOf(item), 1);
   }
 

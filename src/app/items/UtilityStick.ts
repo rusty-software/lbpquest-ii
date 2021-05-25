@@ -1,7 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { GolfCourse } from "../locations";
+import { GolfCourse, LocationKey } from "../locations";
 
 export class UtilityStick extends BaseItem {
   public id = ItemKey.UtilityStick;
@@ -25,6 +25,13 @@ export class UtilityStick extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
+    // TODO: based on location, either play golf or play pool
+    if (gameEngine.currentLocation.id === LocationKey.GolfCourse) {
+      return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
+    } else if (gameEngine.currentLocation.id === LocationKey.BilliardsRoom) {
+      return "time to make billiards work";
+    } else {
+      return "You attempt to use the utility stick, and while it does seem useful in multiple ways, it is not so here...";
+    }
   }
 }

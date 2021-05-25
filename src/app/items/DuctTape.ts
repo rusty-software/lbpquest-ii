@@ -25,7 +25,26 @@ export class DuctTape extends ArtsAndCraftsSupply {
   }
 
   public use(gameEngine: GameEngine): string {
-    // TODO: can be used for more than arts and crafts...
-    return "TODO: how to intelligently handle duct tape usage";
+    const artsAndCraftsUsage = super.use(gameEngine);
+
+    if (
+      gameEngine.inventoryContains(ItemKey.Balusters) ||
+      gameEngine.currentLocation.hasItem(ItemKey.Balusters)
+    ) {
+      const utilityStick = gameEngine.getItem(ItemKey.UtilityStick);
+      gameEngine.score += utilityStick.value;
+      gameEngine.addToInventory(ItemKey.UtilityStick);
+      if (gameEngine.inventoryContains(ItemKey.Balusters)) {
+        gameEngine.removeFromInventory(ItemKey.Balusters);
+      } else if (gameEngine.currentLocation.hasItem(ItemKey.Balusters)) {
+        gameEngine.currentLocation.removeItem(ItemKey.Balusters);
+      }
+      const stick =
+        "You suddenly realize that you can use the duct tape to attach the balusters together, which you do. It looks like you've created a long stick of some utility.";
+
+      return artsAndCraftsUsage + "\n\n" + stick;
+    } else {
+      return artsAndCraftsUsage;
+    }
   }
 }

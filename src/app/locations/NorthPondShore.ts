@@ -1,6 +1,6 @@
 import { BaseLocation } from "./BaseLocation";
 import { LocationKey } from "./LocationKey";
-import { Canoe, ItemKey } from "../items";
+import { ItemKey } from "../items";
 import { GameEngine } from "../GameEngine";
 
 export class NorthPondShore extends BaseLocation {
@@ -35,10 +35,9 @@ export class NorthPondShore extends BaseLocation {
     if (canoeHere && hasOar) {
       const southShore = gameEngine.getLocation(LocationKey.SouthPondShore);
       const northShore = gameEngine.getLocation(LocationKey.NorthPondShore);
-      const canoe = gameEngine.getItem(ItemKey.Canoe) as Canoe;
       gameEngine.changeLocation(southShore);
-      northShore.removeItem(canoe);
-      southShore.addItem(canoe);
+      northShore.removeItem(ItemKey.Canoe);
+      southShore.addItem(ItemKey.Canoe);
       return "You strike out from the north shore at a breakneck pace, aiming towards the south shore, arriving mere moments later.";
     } else {
       if (!canoeHere && hasOar) {
