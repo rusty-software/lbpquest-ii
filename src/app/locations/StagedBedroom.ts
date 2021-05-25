@@ -1,7 +1,6 @@
 import { BaseLocation } from "./BaseLocation";
 import { LocationKey } from "./LocationKey";
 import { ItemKey } from "../items";
-import { GameEngine } from "../GameEngine";
 
 export class StagedBedroom extends BaseLocation {
   public id = LocationKey.StagedBedroom;
@@ -20,10 +19,7 @@ export class StagedBedroom extends BaseLocation {
     s +=
       " The dormer seat is the only oddly decorated thing, as it sports no seat cushion.";
 
+    s += super.appendItems();
     return s;
-  }
-
-  public examine(gameEngine: GameEngine): string {
-    return "examining the staged bedroom dormer seat";
   }
 }

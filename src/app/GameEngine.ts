@@ -44,8 +44,6 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.addToInventory(ItemKey.Matches);
-    this.addToInventory(ItemKey.RedCandle);
     this.addToInventory(ItemKey.PeachCandle);
   }
 
@@ -99,6 +97,7 @@ export class GameEngine {
         break;
       }
 
+      case CommandType.inv:
       case CommandType.inventory: {
         this.events.push(new InventoryEvent(this.inventory));
         break;

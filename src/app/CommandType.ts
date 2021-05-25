@@ -17,6 +17,7 @@ export class CommandType {
   public static readonly go = new CommandType("go");
   public static readonly take = new CommandType("take");
   public static readonly drop = new CommandType("drop");
+  public static readonly inv = new CommandType("inv");
   public static readonly inventory = new CommandType("inventory");
   public static readonly use = new CommandType("use");
   public static readonly l = new CommandType("l");

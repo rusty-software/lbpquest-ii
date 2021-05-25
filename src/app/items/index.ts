@@ -56,6 +56,7 @@ export { Screwdriver } from "./Screwdriver";
 export { ShrinkingPotion } from "./ShrinkingPotion";
 export { Skimmer } from "./Skimmer";
 export { SlipperyShorts } from "./SlipperyShorts";
+export { StagedBedroomDormerSeat } from "./StagedBedroomDormerSeat";
 export { TrophyCase } from "./TrophyCase";
 export { UtilityStick } from "./UtilityStick";
 export { VHSTape } from "./VHSTape";

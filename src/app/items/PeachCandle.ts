@@ -34,7 +34,8 @@ export class PeachCandle extends BaseItem {
       gameEngine.score += loko.value;
       if (gameEngine.inventoryContains(ItemKey.PeachCandle)) {
         gameEngine.removeFromInventory(ItemKey.PeachCandle);
-      } else if (gameEngine.currentLocation.hasItem(ItemKey.PeachCandle)) {
+      }
+      if (gameEngine.currentLocation.hasItem(ItemKey.PeachCandle)) {
         gameEngine.currentLocation.removeItem(ItemKey.PeachCandle);
       }
       return 'You light the peach candle using the matches. A moment later, the candle has burned away enough to reveal a wild looking can with the label "Peach Four Loko" on it. Realizing the treasure you\'ve just discovered, you quickly stash it in your duffle bag as the rest of the candle melts away.';

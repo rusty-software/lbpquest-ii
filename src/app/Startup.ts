@@ -59,6 +59,7 @@ import {
   ShrinkingPotion,
   Skimmer,
   SlipperyShorts,
+  StagedBedroomDormerSeat,
   TrophyCase,
   UtilityStick,
   VHSTape,
@@ -225,6 +226,10 @@ export class Startup {
     Startup.items.set(ItemKey.ShrinkingPotion, new ShrinkingPotion());
     Startup.items.set(ItemKey.Skimmer, new Skimmer());
     Startup.items.set(ItemKey.SlipperyShorts, new SlipperyShorts());
+    Startup.items.set(
+      ItemKey.StagedBedroomDormerSeat,
+      new StagedBedroomDormerSeat()
+    );
     Startup.items.set(ItemKey.TrophyCase, new TrophyCase());
     Startup.items.set(ItemKey.UtilityStick, new UtilityStick());
     Startup.items.set(ItemKey.VHSTape, new VHSTape());
@@ -485,6 +490,8 @@ export class Startup {
       ["e", Startup.getLocation(LocationKey.UpstairsLanding)],
     ]);
     bedroom.items = [
+      Startup.getItem(ItemKey.StagedBedroomDormerSeat),
+      Startup.getItem(ItemKey.PSDs),
       Startup.getItem(ItemKey.RedCandle),
       Startup.getItem(ItemKey.Matches),
     ];

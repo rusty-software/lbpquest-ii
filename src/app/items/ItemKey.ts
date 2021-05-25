@@ -60,6 +60,7 @@ export enum ItemKey {
   ShrinkingPotion,
   Skimmer,
   SlipperyShorts,
+  StagedBedroomDormerSeat,
   TrophyCase,
   UtilityStick,
   VHSTape,

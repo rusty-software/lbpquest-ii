@@ -7,6 +7,9 @@ export class RedCandle extends BaseItem {
   public name = "red candle";
   public value = 5;
   public isShown = true;
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+    ["light", this.use],
+  ]);
 
   public canTake(gameEngine: GameEngine): boolean {
     return true;
@@ -34,7 +37,8 @@ export class RedCandle extends BaseItem {
       gameEngine.score += potion.value;
       if (gameEngine.inventoryContains(ItemKey.RedCandle)) {
         gameEngine.removeFromInventory(ItemKey.RedCandle);
-      } else if (gameEngine.currentLocation.hasItem(ItemKey.RedCandle)) {
+      }
+      if (gameEngine.currentLocation.hasItem(ItemKey.RedCandle)) {
         gameEngine.currentLocation.removeItem(ItemKey.RedCandle);
       }
       return 'You light the red candle using the matches. A moment later, the candle has burned away enough to reveal a vial of dark red liquid hidden inside. You think at first that this is a strange trick, that the melted wax is somehow accumulating in the vial, but then realize that the vial is sealed and has a very tiny label on it: "Shrinking Potion". You promptly put the Shrinking Potion into your duffle bag as the rest of the candle melts away.';
