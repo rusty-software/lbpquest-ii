@@ -1,6 +1,8 @@
 import { GameEngine } from "../GameEngine";
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
+import { LocationKey } from "../locations";
+import { VHSTape } from "./VHSTape";
 
 export class Screwdriver extends BaseItem {
   public id = ItemKey.Screwdriver;
@@ -24,6 +26,21 @@ export class Screwdriver extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "TODO: can be used on the VCR";
+    if (gameEngine.currentLocation.id === LocationKey.BunkbedBedroom) {
+      const vhsTape = gameEngine.getItem(ItemKey.VHSTape) as VHSTape;
+      const s = "You jam the screwdriver into the Eject button hole.";
+      if (vhsTape.isInVCR) {
+        vhsTape.isInVCR = false;
+        vhsTape.isShown = true;
+        return s + " It does the trick as the VHS tape comes free.";
+      } else {
+        return (
+          s +
+          " The gears whir a bit, but nothing comes out. Turns out there's no tape in the VCR."
+        );
+      }
+    } else {
+      return "You wave the screwdriver around, magic wand style. Unfortunately, nothing more exciting happens.";
+    }
   }
 }

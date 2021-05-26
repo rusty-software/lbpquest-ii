@@ -24,27 +24,20 @@ export class Matches extends BaseItem {
     return "The match box is about half full and is of the simple striking variety, perfect for making the smallest imaginable fires.";
   }
 
-  private itemAvailable(gameEngine: GameEngine, itemKey: ItemKey): boolean {
-    return (
-      gameEngine.inventoryContains(itemKey) ||
-      gameEngine.currentLocation.hasItem(itemKey)
-    );
-  }
-
   public use(gameEngine: GameEngine): string {
     if (
-      !this.itemAvailable(gameEngine, ItemKey.RedCandle) &&
-      !this.itemAvailable(gameEngine, ItemKey.PeachCandle)
+      !gameEngine.isItemAvailable(ItemKey.RedCandle) &&
+      !gameEngine.isItemAvailable(ItemKey.PeachCandle)
     ) {
       return "You take out a match and strike it. For a moment, it provides the palest light and the merest warmth. Then it snuffs itself out.";
     }
 
     let s = "You take out a match and strike it.";
-    if (this.itemAvailable(gameEngine, ItemKey.RedCandle)) {
+    if (gameEngine.isItemAvailable(ItemKey.RedCandle)) {
       const redCandle = gameEngine.getItem(ItemKey.RedCandle);
       s += "\n\n" + redCandle.use(gameEngine);
     }
-    if (this.itemAvailable(gameEngine, ItemKey.PeachCandle)) {
+    if (gameEngine.isItemAvailable(ItemKey.PeachCandle)) {
       const peachCandle = gameEngine.getItem(ItemKey.PeachCandle);
       s += "\n\n" + peachCandle.use(gameEngine);
     }

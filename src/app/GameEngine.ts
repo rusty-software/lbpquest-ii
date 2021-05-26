@@ -45,6 +45,7 @@ export class GameEngine {
     this.events = [];
     // HACK ZONE
     this.addToInventory(ItemKey.PeachCandle);
+    this.addToInventory(ItemKey.Screwdriver);
   }
 
   public getEvents(): GameEvent[] {
@@ -234,6 +235,12 @@ export class GameEngine {
 
   public availableItems(): Item[] {
     return this.currentLocation.items.concat(this.inventory);
+  }
+
+  public isItemAvailable(itemKey: ItemKey): boolean {
+    return (
+      this.inventoryContains(itemKey) || this.currentLocation.hasItem(itemKey)
+    );
   }
 
   public inventoryContains(itemKey: ItemKey): boolean {

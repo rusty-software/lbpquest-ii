@@ -1,10 +1,17 @@
 import { BaseLocation } from "./BaseLocation";
 import { LocationKey } from "./LocationKey";
-import { ItemKey } from "../items";
+import { ItemKey, VCR } from "../items";
+import { GameEngine } from "../GameEngine";
 
 export class BunkbedBedroom extends BaseLocation {
   public id = LocationKey.BunkbedBedroom;
   public title = "Bunkbed Bedroom";
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+    ["play", this.play],
+    ["play movie", this.play],
+    ["watch", this.play],
+    ["watch movie", this.play],
+  ]);
 
   public description(): string {
     let s =
@@ -22,5 +29,14 @@ export class BunkbedBedroom extends BaseLocation {
 
     s += super.appendItems();
     return s;
+  }
+
+  private play(gameEngine: GameEngine): string {
+    if (gameEngine.isItemAvailable(ItemKey.VCR)) {
+      const vcr = gameEngine.getItem(ItemKey.VCR) as VCR;
+      return vcr.use(gameEngine);
+    } else {
+      return "Somehow you've managed to displace the VCR, so you won't be able to watch a movie.";
+    }
   }
 }

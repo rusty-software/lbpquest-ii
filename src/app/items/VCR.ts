@@ -1,6 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { VHSTape } from "./VHSTape";
 
 export class VCR extends BaseItem {
   public id = ItemKey.VCR;
@@ -38,6 +39,11 @@ export class VCR extends BaseItem {
   }
 
   private play(gameEngine: GameEngine): string {
-    return "playing";
+    if (gameEngine.isItemAvailable(ItemKey.VHSTape)) {
+      const tape = gameEngine.getItem(ItemKey.VHSTape) as VHSTape;
+      return tape.use(gameEngine);
+    } else {
+      return 'You press "Play" on the VCR, but quickly realize there\'s no tape available to watch.';
+    }
   }
 }
