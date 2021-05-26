@@ -28,10 +28,7 @@ export class RedCandle extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    if (
-      gameEngine.inventoryContains(ItemKey.Matches) ||
-      gameEngine.currentLocation.hasItem(ItemKey.Matches)
-    ) {
+    if (gameEngine.isItemAvailable(ItemKey.Matches)) {
       const potion = gameEngine.getItem(ItemKey.ShrinkingPotion);
       gameEngine.addToInventory(ItemKey.ShrinkingPotion);
       gameEngine.score += potion.value;

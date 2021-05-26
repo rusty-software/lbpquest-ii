@@ -25,10 +25,7 @@ export class PeachCandle extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    if (
-      gameEngine.inventoryContains(ItemKey.Matches) ||
-      gameEngine.currentLocation.hasItem(ItemKey.Matches)
-    ) {
+    if (gameEngine.isItemAvailable(ItemKey.Matches)) {
       const loko = gameEngine.getItem(ItemKey.PeachFourLoko);
       gameEngine.addToInventory(ItemKey.PeachFourLoko);
       gameEngine.score += loko.value;

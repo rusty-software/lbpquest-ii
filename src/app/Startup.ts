@@ -286,6 +286,7 @@ export class Startup {
     Startup.arrangeLivingRoom();
     Startup.arrangeBilliardsRoom();
     Startup.arrangeKitchen();
+    Startup.arrangeBar();
   }
 
   private static arrangeFreezerPort() {
@@ -587,5 +588,14 @@ export class Startup {
       Startup.getItem(ItemKey.Fridge),
       Startup.getItem(ItemKey.CookieDough),
     ];
+  }
+
+  private static arrangeBar() {
+    const bar = Startup.getLocation(LocationKey.Bar);
+    bar.neighbors = new NeighborMap([
+      ["nw", Startup.getLocation(LocationKey.Kitchen)],
+      ["ne", Startup.getLocation(LocationKey.LivingRoom)],
+    ]);
+    bar.items = [Startup.getItem(ItemKey.PeachCandle)];
   }
 }
