@@ -18,6 +18,8 @@ export enum ItemKey {
   CookieDough,
   CowskinRug,
   Crayons,
+  CrossesBedroomDormerSeat,
+  CrossesBedroomNightstand,
   CueBall,
   DarkSweetWine,
   Desk,

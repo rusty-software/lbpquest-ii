@@ -27,7 +27,7 @@ export abstract class BaseLocation implements Location {
     let s = "";
     this.items
       .filter((item) => item.isShown)
-      .map((item) => (s += `\n\nThere is a(n) ${item.name} here.`));
+      .map((item) => (s += `\n\nThere ${item.getName()} here.`));
 
     return s;
   }

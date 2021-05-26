@@ -18,6 +18,8 @@ import {
   CookieDough,
   CowskinRug,
   Crayons,
+  CrossesBedroomDormerSeat,
+  CrossesBedroomNightstand,
   CueBall,
   DarkSweetWine,
   Desk,
@@ -51,6 +53,7 @@ import {
   PSDs,
   Pulpit,
   RedCandle,
+  Reeds,
   ReligiousIcons,
   RightSmoker,
   Scissors,
@@ -63,6 +66,7 @@ import {
   StagedBedroomDormerSeat,
   TrophyCase,
   UtilityStick,
+  VCR,
   VHSTape,
   WingedShoes,
   Yarn,
@@ -107,8 +111,6 @@ import {
 } from "./locations";
 import { NeighborMap } from "./NeighborMap";
 import { Direction } from "./Direction";
-import { Reeds } from "./items/Reeds";
-import { VCR } from "./items/VCR";
 
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
@@ -190,6 +192,14 @@ export class Startup {
     Startup.items.set(ItemKey.CookieDough, new CookieDough());
     Startup.items.set(ItemKey.CowskinRug, new CowskinRug());
     Startup.items.set(ItemKey.Crayons, new Crayons());
+    Startup.items.set(
+      ItemKey.CrossesBedroomDormerSeat,
+      new CrossesBedroomDormerSeat()
+    );
+    Startup.items.set(
+      ItemKey.CrossesBedroomNightstand,
+      new CrossesBedroomNightstand()
+    );
     Startup.items.set(ItemKey.CueBall, new CueBall());
     Startup.items.set(ItemKey.DarkSweetWine, new DarkSweetWine());
     Startup.items.set(ItemKey.Desk, new Desk());
@@ -268,6 +278,7 @@ export class Startup {
     Startup.arrangeLanding();
     Startup.arrangeStagedBedroom();
     Startup.arrangeBunkbedBedroom();
+    Startup.arrangeCrossesBedroom();
   }
 
   private static arrangeFreezerPort() {
@@ -516,6 +527,20 @@ export class Startup {
       Startup.getItem(ItemKey.VCR),
       Startup.getItem(ItemKey.VHSTape),
       Startup.getItem(ItemKey.Cheetos),
+    ];
+  }
+
+  private static arrangeCrossesBedroom() {
+    const bedroom = Startup.getLocation(LocationKey.CrossesBedroom);
+    bedroom.neighbors = new NeighborMap([
+      ["w", Startup.getLocation(LocationKey.UpstairsLanding)],
+    ]);
+    bedroom.items = [
+      Startup.getItem(ItemKey.CrossesBedroomDormerSeat),
+      Startup.getItem(ItemKey.CrossesBedroomNightstand),
+      Startup.getItem(ItemKey.ReligiousIcons),
+      Startup.getItem(ItemKey.ChastityBelt),
+      Startup.getItem(ItemKey.Yarn),
     ];
   }
 }

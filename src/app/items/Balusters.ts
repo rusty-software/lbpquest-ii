@@ -7,6 +7,10 @@ export class Balusters extends BaseItem {
   public name = "balusters";
   public value = 5;
 
+  public getName(): string {
+    return "are some " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     return true;
   }

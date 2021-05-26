@@ -11,6 +11,10 @@ export class BaseItem implements Item {
   public customVerbs: Map<string, (gameEngine: GameEngine) => string> =
     new Map();
 
+  public getName(): string {
+    return "is a(n) " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     throw new Error("Method not implemented.");
   }

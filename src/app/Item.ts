@@ -7,6 +7,7 @@ export interface Item {
   value: number;
   taken: boolean;
   customVerbs: Map<string, (gameEngine: GameEngine) => string>;
+  getName(): string;
   canTake(gameEngine: GameEngine): boolean;
   take(gameEngine: GameEngine): string;
   drop(gameEngine: GameEngine): string;
