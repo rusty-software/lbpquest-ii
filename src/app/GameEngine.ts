@@ -11,7 +11,7 @@ import {
 } from "./events";
 import { GameError } from "./GameError";
 import { Item } from "./Item";
-import { GoogleMap, ItemKey } from "./items";
+import { ItemKey } from "./items";
 import { Location } from "./Location";
 import { LivingRoom, LocationKey } from "./locations";
 import { Startup } from "./Startup";
@@ -45,7 +45,7 @@ export class GameEngine {
     this.events = [];
     // HACK ZONE
     this.addToInventory(ItemKey.Screwdriver);
-    this.addToInventory(ItemKey.UtilityStick);
+    this.addToInventory(ItemKey.DuctTape);
   }
 
   public getEvents(): GameEvent[] {

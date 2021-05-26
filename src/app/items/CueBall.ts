@@ -7,6 +7,7 @@ export class CueBall extends BaseItem {
   public id = ItemKey.CueBall;
   public name = "cue ball";
   public value = 10;
+  public isShown = true;
 
   public canTake(gameEngine: GameEngine): boolean {
     return true;

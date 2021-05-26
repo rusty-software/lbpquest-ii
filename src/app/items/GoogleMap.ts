@@ -1,6 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { BilliardsRoom, LocationKey } from "../locations";
 
 export class GoogleMap extends BaseItem {
   public id = ItemKey.GoogleMap;
@@ -13,11 +14,17 @@ export class GoogleMap extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "You take the cowskin rug, roll it up, and put it into your duffle bag. You notice that it's hard to see in there.";
+    if (gameEngine.currentLocation.id === LocationKey.BilliardsRoom) {
+      const billiardsRoom = gameEngine.currentLocation as BilliardsRoom;
+      if (!billiardsRoom.mapTaken) {
+        billiardsRoom.mapTaken = true;
+      }
+    }
+    return "You take the Google Maps ALPHA and put it into your duffle bag. It mutters under its electronic breath about how it preferred being on the wall.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "You drop the cowskin rug on the ground. You take your eyes off of it for a moment and it's gone, then there again.";
+    return "You drop the Google Maps ALPHA to the ground. It gives and exasperated sigh, then seems to shrug its shoulders. At least, that's the impression you get, since technically maps don't have shoulders.";
   }
 
   public examine(gameEngine: GameEngine): string {

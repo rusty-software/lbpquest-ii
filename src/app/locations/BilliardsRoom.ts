@@ -1,5 +1,7 @@
 import { BaseLocation } from "./BaseLocation";
 import { LocationKey } from "./LocationKey";
+import { GameEngine } from "../GameEngine";
+import { CueBall, ItemKey } from "../items";
 
 export class BilliardsRoom extends BaseLocation {
   public id = LocationKey.BilliardsRoom;
@@ -7,6 +9,12 @@ export class BilliardsRoom extends BaseLocation {
   private rugVisible = false;
   public rugTaken = false;
   public mapTaken = false;
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+    ["shoot", this.shootPool],
+    ["shoot pool", this.shootPool],
+    ["play", this.shootPool],
+    ["play pool", this.shootPool],
+  ]);
 
   public description(): string {
     this.rugVisible = !this.rugVisible;
@@ -30,5 +38,19 @@ export class BilliardsRoom extends BaseLocation {
       "\n\nA door to the north leads to the kitchen, and the entryway is to the east.";
     s += super.appendItems();
     return s;
+  }
+
+  public shootPool(gameEngine: GameEngine): string {
+    if (gameEngine.getItem(ItemKey.CueBall).taken) {
+      return "You've already played a game of pool solo AND picked up the cue ball. You should probably find something better to do.";
+    }
+    if (!gameEngine.inventoryContains(ItemKey.UtilityStick)) {
+      return "You attempt to shoot some pool, but quickly realize that you're not going to be able to break the rack without a stick of some kind.";
+    }
+    const cueBall = gameEngine.getItem(ItemKey.CueBall) as CueBall;
+    cueBall.taken = true;
+    gameEngine.addToInventory(ItemKey.CueBall);
+    gameEngine.score += cueBall.value;
+    return "Using the utility stick, you line up a perfect break. The cue ball strikes the lead ball in the rack with such force that each ball immediately flies into one of the various pockets, clearing the table. The cue ball itself flies into your duffle bag. After shaking your head a bit to make sure you weren't imagining things, you confirm your mastery of billiards.";
   }
 }

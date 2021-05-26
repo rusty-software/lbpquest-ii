@@ -1,6 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { BilliardsRoom, LocationKey } from "../locations";
 
 export class CowskinRug extends BaseItem {
   public id = ItemKey.CowskinRug;
@@ -17,6 +18,10 @@ export class CowskinRug extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
+    const billiardsRoom = gameEngine.getLocation(
+      LocationKey.BilliardsRoom
+    ) as BilliardsRoom;
+    billiardsRoom.rugTaken = true;
     return "You take the cowskin rug, roll it up, and put it into your duffle bag. You notice that it's hard to see in there.";
   }
 
