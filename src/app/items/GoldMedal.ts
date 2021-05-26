@@ -7,7 +7,6 @@ export class GoldMedal extends BaseItem {
   public id = ItemKey.GoldMedal;
   public name = "gold medal";
   public value = 15;
-  public isShown = true;
 
   public canTake(gameEngine: GameEngine): boolean {
     return true;
@@ -30,6 +29,6 @@ export class GoldMedal extends BaseItem {
       const livingRoom = gameEngine.currentLocation as LivingRoom;
       return livingRoom.addTrophy(gameEngine, this.id);
     }
-    return "You hold the gold medal aloft. It reflects the sunlight dimly, but otherwise doesn't seem useful here.";
+    return "You hold the gold medal aloft. It reflects the sunlight dimly, but otherwise doesn't seem useful here. Maybe somewhere else?";
   }
 }

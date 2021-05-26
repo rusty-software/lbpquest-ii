@@ -109,6 +109,7 @@ export class Splashpad extends BaseLocation {
     gameEngine.addToInventory(ItemKey.GoldMedal);
     gameEngine.score += !medal.taken ? medal.value : 0;
     medal.taken = true;
+    medal.isShown = true;
     splashpad.challengeWon = true;
     return 'In your more diminutive stature, you wriggle through the bridge with no problem, sliding down the tiny slide on the other side. As you head back to the splash pad, you return to your normal size.\n\nThe children are howling and cheering their approval, and the gold medal bearer is smiling at you. "Here," they say, taking off the medal and handing it to you. "You earned it!" With that, the children let forth one more cheer for you, then return to their splash pad games.';
   }

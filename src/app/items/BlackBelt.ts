@@ -1,6 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { LivingRoom, LocationKey } from "../locations";
 
 export class BlackBelt extends BaseItem {
   public id = ItemKey.BlackBelt;
@@ -25,6 +26,10 @@ export class BlackBelt extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "TODO: using the black belt should place it on the trophy case.";
+    if (gameEngine.currentLocation.id === LocationKey.LivingRoom) {
+      const livingRoom = gameEngine.currentLocation as LivingRoom;
+      return livingRoom.addTrophy(gameEngine, this.id);
+    }
+    return "You tie the black belt around your waist, but it doesn't seem to do anything. Maybe if you were somewhere else?";
   }
 }

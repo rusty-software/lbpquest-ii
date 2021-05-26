@@ -46,6 +46,11 @@ export class GameEngine {
     // HACK ZONE
     this.addToInventory(ItemKey.GoldMedal);
     this.addToInventory(ItemKey.Screwdriver);
+    this.addToInventory(ItemKey.CaptainsHat);
+    this.addToInventory(ItemKey.DarkSweetWine);
+    this.addToInventory(ItemKey.DodgeBall);
+    this.addToInventory(ItemKey.Log);
+    this.addToInventory(ItemKey.Scorecard);
   }
 
   public getEvents(): GameEvent[] {

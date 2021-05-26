@@ -1,6 +1,7 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
+import { LivingRoom, LocationKey } from "../locations";
 
 export class Scorecard extends BaseItem {
   public id = ItemKey.Scorecard;
@@ -21,6 +22,10 @@ export class Scorecard extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "TODO: can be put in the trophy case";
+    if (gameEngine.currentLocation.id === LocationKey.LivingRoom) {
+      const livingRoom = gameEngine.currentLocation as LivingRoom;
+      return livingRoom.addTrophy(gameEngine, this.id);
+    }
+    return "Really? Just what do you intend to do with that scorecard, buddy? Whatever it is, you'd better hold off until you get to somewhere else.";
   }
 }
