@@ -13,7 +13,7 @@ import { GameError } from "./GameError";
 import { Item } from "./Item";
 import { ItemKey } from "./items";
 import { Location } from "./Location";
-import { LocationKey } from "./locations";
+import { LivingRoom, LocationKey } from "./locations";
 import { Startup } from "./Startup";
 
 export class GameEngine {
@@ -44,7 +44,7 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.addToInventory(ItemKey.PeachCandle);
+    this.addToInventory(ItemKey.GoldMedal);
     this.addToInventory(ItemKey.Screwdriver);
   }
 
@@ -205,7 +205,8 @@ export class GameEngine {
   }
 
   public trophiesPlaced(): boolean {
-    return false;
+    const livingRoom = this.getLocation(LocationKey.LivingRoom) as LivingRoom;
+    return livingRoom.trophyPlacementSatisfied();
   }
 
   public changeLocation(location: Location): void {
@@ -293,5 +294,14 @@ export class GameEngine {
 
   private getInventoryItemByKey(itemKey: ItemKey): Item | undefined {
     return this.inventory.find((i) => i.id === itemKey);
+  }
+
+  public maxScore(): number {
+    let max = 0;
+    for (let itemObject of this.items.values()) {
+      const item = itemObject as Item;
+      max += item.value;
+    }
+    return max;
   }
 }

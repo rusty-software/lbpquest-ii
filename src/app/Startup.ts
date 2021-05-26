@@ -279,6 +279,7 @@ export class Startup {
     Startup.arrangeStagedBedroom();
     Startup.arrangeBunkbedBedroom();
     Startup.arrangeCrossesBedroom();
+    Startup.arrangeLivingRoom();
   }
 
   private static arrangeFreezerPort() {
@@ -542,5 +543,16 @@ export class Startup {
       Startup.getItem(ItemKey.ChastityBelt),
       Startup.getItem(ItemKey.Yarn),
     ];
+  }
+
+  private static arrangeLivingRoom() {
+    const livingRoom = Startup.getLocation(LocationKey.LivingRoom);
+    livingRoom.neighbors = new NeighborMap([
+      ["sw", Startup.getLocation(LocationKey.Bar)],
+      ["w", Startup.getLocation(LocationKey.Kitchen)],
+      ["e", Startup.getLocation(LocationKey.MasterBedroom)],
+      ["s", Startup.getLocation(LocationKey.Entryway)],
+    ]);
+    livingRoom.items = [Startup.getItem(ItemKey.TrophyCase)];
   }
 }

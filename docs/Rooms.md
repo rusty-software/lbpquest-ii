@@ -74,6 +74,7 @@ The desk is here. Hidden in the desk is a **Magazine of Questionable Content** a
 
 ### Kitchen
 * **Undead Lord of the Mounted Bulls** is here.
+	* Tells about the black belt, the dodgeball, and blue ribbon
 * **Cookie Dough** is in the fridge.
 
 ### Bar
@@ -85,6 +86,7 @@ The desk is here. Hidden in the desk is a **Magazine of Questionable Content** a
 
 ### Master Bedroom
 * **Lord of the Mounted Antelopes** is here.
+	* Tells of captains hat, *
 * **Alligator rug** is here.
 * **Winged Shoes** are hidden in the chest covered by the animal skin.
 
