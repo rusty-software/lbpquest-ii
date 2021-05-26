@@ -8,6 +8,7 @@ import {
   BlueBook,
   BlueRibbon,
   Bow,
+  BullSkull,
   BunkbedBedroomDormerSeat,
   Canoe,
   CaptainsHat,
@@ -27,6 +28,7 @@ import {
   DuctTape,
   ExPresidentialMedal,
   Fireball,
+  Fridge,
   Glitter,
   Glue,
   GoldMedal,
@@ -179,6 +181,7 @@ export class Startup {
     Startup.items.set(ItemKey.BlueBook, new BlueBook());
     Startup.items.set(ItemKey.BlueRibbon, new BlueRibbon());
     Startup.items.set(ItemKey.Bow, new Bow());
+    Startup.items.set(ItemKey.BullSkull, new BullSkull());
     Startup.items.set(
       ItemKey.BunkbedBedroomDormerSeat,
       new BunkbedBedroomDormerSeat()
@@ -207,6 +210,7 @@ export class Startup {
     Startup.items.set(ItemKey.DuctTape, new DuctTape());
     Startup.items.set(ItemKey.ExPresidentialMedal, new ExPresidentialMedal());
     Startup.items.set(ItemKey.Fireball, new Fireball());
+    Startup.items.set(ItemKey.Fridge, new Fridge());
     Startup.items.set(ItemKey.Glitter, new Glitter());
     Startup.items.set(ItemKey.Glue, new Glue());
     Startup.items.set(ItemKey.GoldMedal, new GoldMedal());
@@ -281,6 +285,7 @@ export class Startup {
     Startup.arrangeCrossesBedroom();
     Startup.arrangeLivingRoom();
     Startup.arrangeBilliardsRoom();
+    Startup.arrangeKitchen();
   }
 
   private static arrangeFreezerPort() {
@@ -566,6 +571,21 @@ export class Startup {
     billiardsRoom.items = [
       Startup.getItem(ItemKey.CowskinRug),
       Startup.getItem(ItemKey.GoogleMap),
+    ];
+  }
+
+  private static arrangeKitchen() {
+    const kitchen = Startup.getLocation(LocationKey.Kitchen);
+    kitchen.neighbors = new NeighborMap([
+      ["n", Startup.getLocation(LocationKey.DiningRoom)],
+      ["e", Startup.getLocation(LocationKey.LivingRoom)],
+      ["se", Startup.getLocation(LocationKey.Bar)],
+      ["s", Startup.getLocation(LocationKey.BilliardsRoom)],
+    ]);
+    kitchen.items = [
+      Startup.getItem(ItemKey.BullSkull),
+      Startup.getItem(ItemKey.Fridge),
+      Startup.getItem(ItemKey.CookieDough),
     ];
   }
 }
