@@ -14,7 +14,6 @@ export class CommandType {
   public static readonly up = new CommandType("up" as Direction);
   public static readonly down = new CommandType("down" as Direction);
 
-  public static readonly go = new CommandType("go");
   public static readonly take = new CommandType("take");
   public static readonly drop = new CommandType("drop");
   public static readonly inv = new CommandType("inv");
@@ -25,6 +24,8 @@ export class CommandType {
   public static readonly ex = new CommandType("ex");
   public static readonly examine = new CommandType("examine");
   public static readonly help = new CommandType("help");
+
+  public static readonly google = new CommandType("ok google locate");
 
   private constructor(public readonly name: string) {
     CommandType.values.push(this);

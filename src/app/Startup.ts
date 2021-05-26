@@ -280,6 +280,7 @@ export class Startup {
     Startup.arrangeBunkbedBedroom();
     Startup.arrangeCrossesBedroom();
     Startup.arrangeLivingRoom();
+    Startup.arrangeBilliardsRoom();
   }
 
   private static arrangeFreezerPort() {
@@ -554,5 +555,17 @@ export class Startup {
       ["s", Startup.getLocation(LocationKey.Entryway)],
     ]);
     livingRoom.items = [Startup.getItem(ItemKey.TrophyCase)];
+  }
+
+  private static arrangeBilliardsRoom() {
+    const billiardsRoom = Startup.getLocation(LocationKey.BilliardsRoom);
+    billiardsRoom.neighbors = new NeighborMap([
+      ["n", Startup.getLocation(LocationKey.Kitchen)],
+      ["e", Startup.getLocation(LocationKey.Entryway)],
+    ]);
+    billiardsRoom.items = [
+      Startup.getItem(ItemKey.CowskinRug),
+      Startup.getItem(ItemKey.GoogleMap),
+    ];
   }
 }

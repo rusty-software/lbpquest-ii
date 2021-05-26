@@ -11,7 +11,7 @@ import {
 } from "./events";
 import { GameError } from "./GameError";
 import { Item } from "./Item";
-import { ItemKey } from "./items";
+import { GoogleMap, ItemKey } from "./items";
 import { Location } from "./Location";
 import { LivingRoom, LocationKey } from "./locations";
 import { Startup } from "./Startup";
@@ -44,27 +44,28 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    this.addToInventory(ItemKey.GoldMedal);
     this.addToInventory(ItemKey.Screwdriver);
-    this.addToInventory(ItemKey.CaptainsHat);
-    this.addToInventory(ItemKey.DarkSweetWine);
-    this.addToInventory(ItemKey.DodgeBall);
-    this.addToInventory(ItemKey.Log);
-    this.addToInventory(ItemKey.Scorecard);
+    this.addToInventory(ItemKey.UtilityStick);
   }
 
   public getEvents(): GameEvent[] {
     return this.events;
   }
 
+  private parseCommand(input: string): CommandType | undefined {
+    if (input.startsWith(CommandType.google.name.toLowerCase())) {
+      return CommandType.google;
+    } else {
+      const cmdText = input.split(" ").shift()!;
+      return CommandType.values.find(
+        (type) => cmdText === type.name.toLowerCase()
+      );
+    }
+  }
   public send(input: string) {
     this.actionCount++;
     const lowerInput = input.toLowerCase().trim();
-    const inputSplit = lowerInput.split(" ");
-    const cmdText = inputSplit.shift()!;
-    const cmd = CommandType.values.find(
-      (type) => cmdText === type.name.toLowerCase()
-    );
+    const cmd = this.parseCommand(lowerInput);
     const rest = lowerInput.substr(!!cmd ? cmd.name.length + 1 : 0);
 
     this.events.push(new NewInputEvent(input));
@@ -80,11 +81,6 @@ export class GameEngine {
       case CommandType.up:
       case CommandType.down: {
         this.move(lowerInput as Direction);
-        break;
-      }
-
-      case CommandType.go: {
-        this.move(rest as Direction);
         break;
       }
 
@@ -177,6 +173,39 @@ export class GameEngine {
             new GameErrorEvent(
               GameError.NoItem,
               `Sorry, there is no ${rest} here.`
+            )
+          );
+        }
+        break;
+      }
+
+      case CommandType.google: {
+        if (this.isItemAvailable(ItemKey.GoogleMap)) {
+          let targetItem: Item | null = null;
+          for (let itemObject of this.items.values()) {
+            const item = itemObject as Item;
+            if (item.name === rest) {
+              targetItem = item;
+            }
+          }
+
+          let s = "Google Maps ALPHA replies:";
+          if (targetItem) {
+            this.events.push(new ItemEvent(s + this.locateItem(targetItem)));
+          } else {
+            this.events.push(
+              new GameErrorEvent(
+                GameError.NoItem,
+                s +
+                  ` Nope, there's no such thing as a "${rest}", and there never will be.`
+              )
+            );
+          }
+        } else {
+          this.events.push(
+            new GameErrorEvent(
+              GameError.NoItem,
+              "It appears the Google Maps function is not available."
             )
           );
         }
@@ -308,5 +337,31 @@ export class GameEngine {
       max += item.value;
     }
     return max;
+  }
+
+  private locateItem(item: Item): string {
+    const itemKey: ItemKey = item.id;
+
+    if (this.inventoryContains(itemKey)) {
+      return ` "I don't know how to put this gently: look in your duffle bag for the ${item.name}. On second thought, you... ah... probably forgot it at home. You should leave LBP now to fetch it."`;
+    } else if (this.currentLocation.hasItem(itemKey)) {
+      return `"Well, I've got some good news and some bad news. Good news: the ${item.name} is here. Bad news: you apparently can't see it. Maybe it really is time to get those glasses?"`;
+    } else {
+      const location = this.itemLocation(itemKey);
+      if (location !== undefined) {
+        return ` The ${item.name} appears to be in the ${location.title}. Good luck finding that spot.`;
+      } else {
+        return ` The best I can tell, there is no "${item.name}" anywhere in the universe. Apparently, you'll need to invent it or otherwise earn it from the party hiding it from my location service.`;
+      }
+    }
+  }
+
+  private itemLocation(itemKey: ItemKey): Location | undefined {
+    for (let location of this.locations.values()) {
+      if (location.hasItem(itemKey)) {
+        return location;
+      }
+    }
+    return undefined;
   }
 }

@@ -5,7 +5,6 @@ import { GameEngine } from "../GameEngine";
 export class CowskinRug extends BaseItem {
   public id = ItemKey.CowskinRug;
   public name = "cowskin rug";
-
   public value = 5;
   public currentlyWearing = false;
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
