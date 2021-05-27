@@ -12,11 +12,11 @@ export class Desk extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "You struggle to fit the desk into the duffle bag, eventually giving up.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "";
+    return "Given that you never really picked it up, you wisely decide not to drop the desk.";
   }
 
   public examine(gameEngine: GameEngine): string {
@@ -29,7 +29,6 @@ export class Desk extends BaseItem {
       s +=
         " Rolling the top up, you immediately notice a magazine of questionable content and some map pencils inside.";
     }
-
     return s;
   }
 

@@ -7,6 +7,10 @@ export class Pencils extends ArtsAndCraftsSupply {
   public name = "pencils";
   public value = 5;
 
+  public getName(): string {
+    return "are some " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
