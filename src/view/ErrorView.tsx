@@ -29,10 +29,10 @@ const errorMessage = (error: GameError, customText: string): string => {
     case GameError.InvalidPath:
       return customText ? customText : "You can't move that way...";
     case GameError.UnknownCommand:
-      return customText
+      return customText.length > 0
         ? customText
         : unknowns[Math.floor(Math.random() * unknowns.length)] +
-            "\n\nFor a list of common commands, type HELP.";
+            '\n\nFor a list of common commands, type "help".';
     case GameError.NoItem:
       return customText ? customText : "Sorry, I don't see that item.";
   }

@@ -1,7 +1,6 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { Mothers } from "./Mothers";
 import { NutterButters } from "./NutterButters";
 
 export class RedDrawer extends BaseItem {

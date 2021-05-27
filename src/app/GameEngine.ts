@@ -104,8 +104,10 @@ export class GameEngine {
       }
 
       case CommandType.help: {
-        const commands = CommandType.values.map((type) => type.name);
-        this.events.push(new HelpEvent(commands));
+        const visibleCommands = CommandType.values
+          .filter((cmd) => cmd.visible)
+          .map((cmd) => cmd.name);
+        this.events.push(new HelpEvent(visibleCommands));
         break;
       }
 
@@ -229,6 +231,8 @@ export class GameEngine {
           if (customVerb) {
             // TODO: ItemEvent from Location verb feels odd
             this.events.push(new ItemEvent(customVerb(this)));
+          } else {
+            this.events.push(new GameErrorEvent(GameError.UnknownCommand, ""));
           }
         }
         break;
