@@ -12,11 +12,11 @@ export class AllTerrainGolfCart extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "Placing your duffle bag on the ground, you attempt to push the golf cart into it. It, predictably, doesn't work.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "";
+    return "Your attempts to drop the golf cart are met with... failure.";
   }
 
   public examine(gameEngine: GameEngine): string {

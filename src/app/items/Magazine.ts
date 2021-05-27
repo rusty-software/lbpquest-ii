@@ -12,6 +12,7 @@ export class Magazine extends ArtsAndCraftsSupply {
   }
 
   public take(gameEngine: GameEngine): string {
+    this.isShown = true;
     return "You take the magazine and put it into your duffle bag. Plenty of time to read that later...";
   }
 

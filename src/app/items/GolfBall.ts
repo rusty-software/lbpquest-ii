@@ -13,6 +13,7 @@ export class GolfBall extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
+    this.isShown = true;
     return "You take the Lucky golf ball and put it in your duffle bag.";
   }
 

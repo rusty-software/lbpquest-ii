@@ -16,6 +16,7 @@ export class Pencils extends ArtsAndCraftsSupply {
   }
 
   public take(gameEngine: GameEngine): string {
+    this.isShown = true;
     return "You put the pencils into your duffle bag, careful to make sure they don't leave marks on the inside.";
   }
 

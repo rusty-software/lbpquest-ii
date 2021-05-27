@@ -19,6 +19,7 @@ export class PSDs extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
+    this.isShown = true;
     return "You put the bag of PSDs into your duffle bag, saving them for later. Or now. Whenever.";
   }
 

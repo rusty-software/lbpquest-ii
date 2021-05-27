@@ -7,7 +7,7 @@
 	* pencils.getName() like Balusters
 	* Add desk.take return that says you can't take it~~
 ~~* Upstairs landing description anemic~~
-* Staged bedroom: 
+~~* Staged bedroom: 
 	* add prints and non-takable with description
 	* consider adding sconce as object
 	* consider switching "dormer seat" to just "seat"
@@ -16,4 +16,5 @@
 	* psds.getName()
 	* red candle examine anemic
 	* red candle.take should indicate the duffle bag smells like spiced apples more clearly
-	* NO NAVIGATION DISPLAY
+	* NO NAVIGATION DISPLAY~~
+	
