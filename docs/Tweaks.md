@@ -18,3 +18,32 @@
 	* red candle.take should indicate the duffle bag smells like spiced apples more clearly
 	* NO NAVIGATION DISPLAY~~
 	
+# 2021-05-27 p.m. TODO
+* GameEngine
+	* Change action count to only increment on movement, item actions, and google
+* Bunkbed Bedroom
+	* VCR needs a take admonition
+	* Typo in play vhs tape
+		* "...quick jump to Chinese Theatre..." missing "the"
+		* "...more special..." should be "...special..."
+	* NO NAVIGATION DISPLAY
+* Religious Bedroom
+	* NO NAVIGATION DISPLAY
+* Billiards Room
+	* examine map missing commas
+	* also needs an explanation of the map's purpose: "Apparently, the map can be used to locate items, but not actually determine how to get to them."
+	* refactor CueBall.canTake() to check for whether or not the Billiards challenge is won, similar to VHSTape
+	* Add isShown to CowskinRug.take
+* Living Room
+	* Typo in navigation "entrway"
+	* fill in TrophyCase.take
+	* TrophyCase.examine could use a little more description up front.
+* Bar
+	* Kitchen is capitalized
+	* Peach candle take should make duffle bag smell
+	* Peach examine should be wordier
+* Kitchen
+	* Skull.take needs something
+	* Fridge.take needs something
+* Freezer
+	* change name to just "Walk-in Freezer"
