@@ -1,5 +1,6 @@
 export { AllTerrainGolfCart } from "./AllTerrainGolfCart";
 export { AlligatorRug } from "./AlligatorRug";
+export { Antelope } from "./Antelope";
 export { ArtsAndCrafts } from "./ArtsAndCrafts";
 export { Balusters } from "./Balusters";
 export { BlackBelt } from "./BlackBelt";
@@ -41,6 +42,7 @@ export { Log } from "./Log";
 export { Magazine } from "./Magazine";
 export { GoogleMap } from "./GoogleMap";
 export { Marg } from "./Marg";
+export { MasterBedroomChest } from "./MasterBedroomChest";
 export { Matches } from "./Matches";
 export { Mothers } from "./Mothers";
 export { NRNSTraining } from "./NRNSTraining";

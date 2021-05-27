@@ -2,6 +2,7 @@ import { Item } from "./Item";
 import {
   AlligatorRug,
   AllTerrainGolfCart,
+  Antelope,
   ArtsAndCrafts,
   Balusters,
   BlackBelt,
@@ -44,6 +45,7 @@ import {
   Log,
   Magazine,
   Marg,
+  MasterBedroomChest,
   Matches,
   Mothers,
   NRNSTraining,
@@ -178,6 +180,7 @@ export class Startup {
   private static instantiateItems() {
     Startup.items.set(ItemKey.AllTerrainGolfCart, new AllTerrainGolfCart());
     Startup.items.set(ItemKey.AlligatorRug, new AlligatorRug());
+    Startup.items.set(ItemKey.Antelope, new Antelope());
     Startup.items.set(ItemKey.ArtsAndCrafts, new ArtsAndCrafts());
     Startup.items.set(ItemKey.Balusters, new Balusters());
     Startup.items.set(ItemKey.BlackBelt, new BlackBelt());
@@ -228,6 +231,7 @@ export class Startup {
     Startup.items.set(ItemKey.Log, new Log());
     Startup.items.set(ItemKey.Magazine, new Magazine());
     Startup.items.set(ItemKey.Marg, new Marg());
+    Startup.items.set(ItemKey.MasterBedroomChest, new MasterBedroomChest());
     Startup.items.set(ItemKey.Matches, new Matches());
     Startup.items.set(ItemKey.Mothers, new Mothers());
     Startup.items.set(ItemKey.NRNSTraining, new NRNSTraining());
@@ -295,6 +299,7 @@ export class Startup {
     Startup.arrangeBar();
     Startup.arrangeDiningRoom();
     Startup.arrangeMismatchedBedroom();
+    Startup.arrangeMasterBedroom();
   }
 
   private static arrangeFreezerPort() {
@@ -622,17 +627,28 @@ export class Startup {
   }
 
   private static arrangeMismatchedBedroom() {
-    const mismatchedBedroom = Startup.getLocation(
-      LocationKey.MismatchedBedroom
-    );
-    mismatchedBedroom.neighbors = new NeighborMap([
+    const bedroom = Startup.getLocation(LocationKey.MismatchedBedroom);
+    bedroom.neighbors = new NeighborMap([
       ["e", Startup.getLocation(LocationKey.DiningRoom)],
     ]);
-    mismatchedBedroom.items = [
+    bedroom.items = [
       Startup.getItem(ItemKey.RedDrawer),
       Startup.getItem(ItemKey.StripedDrawer),
       Startup.getItem(ItemKey.Mothers),
       Startup.getItem(ItemKey.NutterButters),
+    ];
+  }
+
+  private static arrangeMasterBedroom() {
+    const bedroom = Startup.getLocation(LocationKey.MasterBedroom);
+    bedroom.neighbors = new NeighborMap([
+      ["w", Startup.getLocation(LocationKey.LivingRoom)],
+    ]);
+    bedroom.items = [
+      Startup.getItem(ItemKey.Antelope),
+      Startup.getItem(ItemKey.AlligatorRug),
+      Startup.getItem(ItemKey.MasterBedroomChest),
+      Startup.getItem(ItemKey.WingedShoes),
     ];
   }
 }
