@@ -35,6 +35,8 @@ const errorMessage = (error: GameError, customText: string): string => {
             '\n\nFor a list of common commands, type "help".';
     case GameError.NoItem:
       return customText ? customText : "Sorry, I don't see that item.";
+    case GameError.UnknownItem:
+      return customText ? customText : "Sorry, that is not a real item.";
   }
 };
 

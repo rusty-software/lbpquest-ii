@@ -112,54 +112,78 @@ export class GameEngine {
       }
 
       case CommandType.take: {
-        // TODO: consider adding "all" option
-        const item = this.getLocationItemByName(rest);
-        if (item) {
-          if (item.canTake(this)) {
-            this.score += !item.taken ? item.value : 0;
-            item.taken = true;
-            this.inventory.push(item);
+        const locationItem = this.getLocationItemByName(rest);
+        if (locationItem) {
+          if (locationItem.canTake(this)) {
+            this.score += !locationItem.taken ? locationItem.value : 0;
+            locationItem.taken = true;
+            this.inventory.push(locationItem);
             this.currentLocation.items.splice(
-              this.currentLocation.items.indexOf(item),
+              this.currentLocation.items.indexOf(locationItem),
               1
             );
           }
-          this.events.push(new ItemEvent(item.take(this)));
+          this.events.push(new ItemEvent(locationItem.take(this)));
         } else if (this.getInventoryItemByName(rest)) {
           this.events.push(
             new ItemEvent(`You're already carrying the ${rest}.`)
           );
         } else {
-          this.events.push(
-            new GameErrorEvent(
-              GameError.NoItem,
-              `Sorry, there is no ${rest} here.`
-            )
-          );
+          if (this.getItemByName(rest)) {
+            this.events.push(
+              new GameErrorEvent(
+                GameError.NoItem,
+                `Sorry, there is no ${rest} here.`
+              )
+            );
+          } else {
+            this.events.push(
+              new GameErrorEvent(
+                GameError.UnknownItem,
+                `Sorry, ${rest} is not a real item.`
+              )
+            );
+          }
         }
         break;
       }
 
       case CommandType.drop: {
-        const item = this.getInventoryItemByName(rest);
-        if (item) {
-          this.currentLocation.items.push(item);
-          this.inventory.splice(this.inventory.indexOf(item), 1);
-          this.events.push(new ItemEvent(item.drop(this)));
-        } else if (
-          () => {
-            const locationItem = this.getLocationItemByName(rest);
-            return locationItem && locationItem.canTake(this);
-          }
-        ) {
-          this.events.push(
-            new GameErrorEvent(
-              GameError.NoItem,
-              "Maybe try taking it first...?"
-            )
-          );
+        const inventoryItem = this.getInventoryItemByName(rest);
+        if (inventoryItem) {
+          this.currentLocation.items.push(inventoryItem);
+          this.inventory.splice(this.inventory.indexOf(inventoryItem), 1);
+          this.events.push(new ItemEvent(inventoryItem.drop(this)));
         } else {
-          this.events.push(new GameErrorEvent(GameError.NoItem, ""));
+          const locationItem = this.getLocationItemByName(rest);
+          if (locationItem) {
+            if (locationItem.canTake(this)) {
+              this.events.push(
+                new GameErrorEvent(
+                  GameError.NoItem,
+                  "Maybe try taking it first...?"
+                )
+              );
+            } else {
+              this.events.push(
+                new GameErrorEvent(
+                  GameError.NoItem,
+                  `You cannot drop the ${locationItem.name}. Ever.`
+                )
+              );
+            }
+          } else {
+            if (this.getItemByName(rest)) {
+              this.events.push(new GameErrorEvent(GameError.NoItem, ""));
+            } else {
+              this.events.push(
+                new GameErrorEvent(
+                  GameError.UnknownItem,
+                  `Sorry, ${rest} is not a real item.`
+                )
+              );
+            }
+          }
         }
         break;
       }
@@ -169,12 +193,21 @@ export class GameEngine {
         if (item) {
           this.events.push(new ItemEvent(item.use(this)));
         } else {
-          this.events.push(
-            new GameErrorEvent(
-              GameError.NoItem,
-              `Sorry, there is no ${rest} here.`
-            )
-          );
+          if (this.getItemByName(rest)) {
+            this.events.push(
+              new GameErrorEvent(
+                GameError.NoItem,
+                `Sorry, there is no ${rest} here.`
+              )
+            );
+          } else {
+            this.events.push(
+              new GameErrorEvent(
+                GameError.UnknownItem,
+                `Sorry, ${rest} is not a real item.`
+              )
+            );
+          }
         }
         break;
       }
@@ -309,6 +342,16 @@ export class GameEngine {
       this.getItem(ItemKey.Yarn),
     ];
     return this.inventory.filter((i) => artsAndCraftsItems.includes(i));
+  }
+
+  private getItemByName(itemName: string): Item | undefined {
+    for (let itemObject of this.items.values()) {
+      const item = itemObject as Item;
+      if (item.name === itemName) {
+        return item;
+      }
+    }
+    return undefined;
   }
 
   private getAvailableItemByName(itemName: string): Item | undefined {
