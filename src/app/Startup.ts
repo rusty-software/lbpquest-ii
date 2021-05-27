@@ -56,6 +56,7 @@ import {
   PSDs,
   Pulpit,
   RedCandle,
+  RedDrawer,
   Reeds,
   ReligiousIcons,
   RightSmoker,
@@ -67,6 +68,7 @@ import {
   Skimmer,
   SlipperyShorts,
   StagedBedroomDormerSeat,
+  StripedDrawer,
   TrophyCase,
   UtilityStick,
   VCR,
@@ -238,6 +240,7 @@ export class Startup {
     Startup.items.set(ItemKey.PipeCleaners, new PipeCleaners());
     Startup.items.set(ItemKey.Pulpit, new Pulpit());
     Startup.items.set(ItemKey.RedCandle, new RedCandle());
+    Startup.items.set(ItemKey.RedDrawer, new RedDrawer());
     Startup.items.set(ItemKey.Reeds, new Reeds());
     Startup.items.set(ItemKey.ReligiousIcons, new ReligiousIcons());
     Startup.items.set(ItemKey.RightSmoker, new RightSmoker());
@@ -248,6 +251,7 @@ export class Startup {
     Startup.items.set(ItemKey.ShrinkingPotion, new ShrinkingPotion());
     Startup.items.set(ItemKey.Skimmer, new Skimmer());
     Startup.items.set(ItemKey.SlipperyShorts, new SlipperyShorts());
+    Startup.items.set(ItemKey.StripedDrawer, new StripedDrawer());
     Startup.items.set(
       ItemKey.StagedBedroomDormerSeat,
       new StagedBedroomDormerSeat()
@@ -290,6 +294,7 @@ export class Startup {
     Startup.arrangeKitchen();
     Startup.arrangeBar();
     Startup.arrangeDiningRoom();
+    Startup.arrangeMismatchedBedroom();
   }
 
   private static arrangeFreezerPort() {
@@ -613,6 +618,21 @@ export class Startup {
       Startup.getItem(ItemKey.Eagle),
       Startup.getItem(ItemKey.Glue),
       Startup.getItem(ItemKey.GooglyEyes),
+    ];
+  }
+
+  private static arrangeMismatchedBedroom() {
+    const mismatchedBedroom = Startup.getLocation(
+      LocationKey.MismatchedBedroom
+    );
+    mismatchedBedroom.neighbors = new NeighborMap([
+      ["e", Startup.getLocation(LocationKey.DiningRoom)],
+    ]);
+    mismatchedBedroom.items = [
+      Startup.getItem(ItemKey.RedDrawer),
+      Startup.getItem(ItemKey.StripedDrawer),
+      Startup.getItem(ItemKey.Mothers),
+      Startup.getItem(ItemKey.NutterButters),
     ];
   }
 }
