@@ -7,6 +7,10 @@ import { NutterButters } from "./NutterButters";
 export class RedDrawer extends BaseItem {
   public id = ItemKey.RedDrawer;
   public name = "red drawer";
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+    ["open", this.examine],
+  ]);
+
   public canTake(gameEngine: GameEngine): boolean {
     return false;
   }

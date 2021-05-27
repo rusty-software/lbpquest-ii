@@ -1,12 +1,15 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { NutterButters } from "./NutterButters";
 import { WingedShoes } from "./WingedShoes";
 
 export class MasterBedroomChest extends BaseItem {
   public id = ItemKey.MasterBedroomChest;
   public name = "chest";
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+    ["open", this.examine],
+  ]);
+
   public canTake(gameEngine: GameEngine): boolean {
     return false;
   }

@@ -5,6 +5,9 @@ import { GameEngine } from "../GameEngine";
 export class StagedBedroomDormerSeat extends BaseItem {
   public id = ItemKey.StagedBedroomDormerSeat;
   public name = "dormer seat";
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+    ["sit on", this.use],
+  ]);
 
   public canTake(gameEngine: GameEngine): boolean {
     return false;

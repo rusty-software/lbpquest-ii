@@ -6,6 +6,10 @@ import { Mothers } from "./Mothers";
 export class StripedDrawer extends BaseItem {
   public id = ItemKey.StripedDrawer;
   public name = "striped drawer";
+  public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
+    ["open", this.examine],
+  ]);
+
   public canTake(gameEngine: GameEngine): boolean {
     return false;
   }
