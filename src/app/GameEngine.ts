@@ -44,9 +44,6 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
-    console.log("max possible score", this.maxScore());
-    this.addToInventory(ItemKey.Screwdriver);
-    this.addToInventory(ItemKey.DuctTape);
   }
 
   public getEvents(): GameEvent[] {
