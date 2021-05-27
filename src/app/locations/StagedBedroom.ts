@@ -19,6 +19,7 @@ export class StagedBedroom extends BaseLocation {
     s +=
       " The dormer seat is the only oddly decorated thing, as it sports no seat cushion.";
 
+    s += "\n\nThere is only one exit: east, back to the upstairs landing.";
     s += super.appendItems();
     return s;
   }

@@ -8,6 +8,10 @@ export class Matches extends BaseItem {
   public value = 5;
   public isShown = true;
 
+  public getName(): string {
+    return "are some " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     return true;
   }

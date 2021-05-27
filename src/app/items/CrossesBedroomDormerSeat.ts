@@ -4,7 +4,7 @@ import { GameEngine } from "../GameEngine";
 
 export class CrossesBedroomDormerSeat extends BaseItem {
   public id = ItemKey.CrossesBedroomDormerSeat;
-  public name = "dormer seat";
+  public name = "seat";
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["sit on", this.use],
   ]);
@@ -14,11 +14,11 @@ export class CrossesBedroomDormerSeat extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "There is absolutely no way you're going to be able to pull that thing out of the wall.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "";
+    return "Excellent notion, only you can't actually pick the seat up.";
   }
 
   public examine(gameEngine: GameEngine): string {

@@ -4,7 +4,7 @@ import { GameEngine } from "../GameEngine";
 
 export class BunkbedBedroomDormerSeat extends BaseItem {
   public id = ItemKey.BunkbedBedroomDormerSeat;
-  public name = "dormer seat";
+  public name = "seat";
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["sit on", this.use],
   ]);
@@ -14,11 +14,11 @@ export class BunkbedBedroomDormerSeat extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "You pull out your non-existent crowbar and start pretending to pry the seat out of the wall. Then you return to reality and stop what you're doing.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "";
+    return "Dropping the seat is much like taking it -- an exercise in fantasy.";
   }
 
   public examine(gameEngine: GameEngine): string {

@@ -4,7 +4,7 @@ import { GameEngine } from "../GameEngine";
 
 export class StagedBedroomDormerSeat extends BaseItem {
   public id = ItemKey.StagedBedroomDormerSeat;
-  public name = "dormer seat";
+  public name = "seat";
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["sit on", this.use],
   ]);
@@ -14,11 +14,11 @@ export class StagedBedroomDormerSeat extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "It would be a shame to ruin such a well-staged bedroom by taking its dormer seat. Your aesthetics decide against it.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "";
+    return "Dropping the seat would require taking it first, which you are firmly resolved against doing.";
   }
 
   public examine(gameEngine: GameEngine): string {

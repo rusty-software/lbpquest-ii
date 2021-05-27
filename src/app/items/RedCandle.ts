@@ -16,15 +16,15 @@ export class RedCandle extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "You take the red candle and put it into your duffle bag. It smells of spiced apples.";
+    return "You take the red candle and put it into your duffle bag. The duffle bag immediately begins smelling of spiced apples.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "You remove the red candle from your duffle bag. The smell of spiced apples remains, but will fade with time.";
+    return "You remove the red candle from your duffle bag. The smell of spiced apples remains, but will fade with time or replacement by something else smelly.";
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The red candle smells of spiced apples and feels heftier than you expected.";
+    return "The red candle of the wax variety, is as wide as it is tall, and smells of spiced apples. Even given its substantial size, it feels heftier than you expected.";
   }
 
   public use(gameEngine: GameEngine): string {
