@@ -140,7 +140,7 @@ export class GameEngine {
             this.events.push(
               new GameErrorEvent(
                 GameError.UnknownItem,
-                `Sorry, ${rest} is not a real item.`
+                `Sorry, ${rest} is not a real or take-able item.`
               )
             );
           }
@@ -179,7 +179,7 @@ export class GameEngine {
               this.events.push(
                 new GameErrorEvent(
                   GameError.UnknownItem,
-                  `Sorry, ${rest} is not a real item.`
+                  `Sorry, ${rest} is not a real or droppable item.`
                 )
               );
             }
@@ -204,7 +204,7 @@ export class GameEngine {
             this.events.push(
               new GameErrorEvent(
                 GameError.UnknownItem,
-                `Sorry, ${rest} is not a real item.`
+                `Sorry, ${rest} is not a real or usable item.`
               )
             );
           }
