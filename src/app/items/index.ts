@@ -24,6 +24,7 @@ export { DarkSweetWine } from "./DarkSweetWine";
 export { Desk } from "./Desk";
 export { DodgeBall } from "./DodgeBall";
 export { DuctTape } from "./DuctTape";
+export { Eagle } from "./Eagle";
 export { ExPresidentialMedal } from "./ExPresidentialMedal";
 export { Fireball } from "./Fireball";
 export { Fridge } from "./Fridge";

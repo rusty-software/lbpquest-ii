@@ -24,7 +24,7 @@ export class BullSkull extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return 'The skull sits atop the cabinetry, its empty sockets seeming to gaze down over the area, as if was a lord and the kitchen its domain.\n\nA moment later, the skull\'s jawbone creaks open and asks "Would ye speak with the Undead Lord of the Bulls?"';
+    return 'The skull sits atop the cabinetry, its empty sockets seeming to gaze down over the area, as if was a lord and the kitchen its domain.\n\nA moment later, the skull\'s jawbone creaks open and asks "Would ye speak with the Undead Lord of the Mounted Bulls?"';
   }
 
   public use(gameEngine: GameEngine): string {

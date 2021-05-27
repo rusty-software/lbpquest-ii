@@ -26,6 +26,7 @@ export enum ItemKey {
   Desk,
   DodgeBall,
   DuctTape,
+  Eagle,
   ExPresidentialMedal,
   Fireball,
   Fridge,

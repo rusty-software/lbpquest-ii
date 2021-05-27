@@ -26,6 +26,7 @@ import {
   Desk,
   DodgeBall,
   DuctTape,
+  Eagle,
   ExPresidentialMedal,
   Fireball,
   Fridge,
@@ -208,6 +209,7 @@ export class Startup {
     Startup.items.set(ItemKey.Desk, new Desk());
     Startup.items.set(ItemKey.DodgeBall, new DodgeBall());
     Startup.items.set(ItemKey.DuctTape, new DuctTape());
+    Startup.items.set(ItemKey.Eagle, new Eagle());
     Startup.items.set(ItemKey.ExPresidentialMedal, new ExPresidentialMedal());
     Startup.items.set(ItemKey.Fireball, new Fireball());
     Startup.items.set(ItemKey.Fridge, new Fridge());
@@ -287,6 +289,7 @@ export class Startup {
     Startup.arrangeBilliardsRoom();
     Startup.arrangeKitchen();
     Startup.arrangeBar();
+    Startup.arrangeDiningRoom();
   }
 
   private static arrangeFreezerPort() {
@@ -597,5 +600,19 @@ export class Startup {
       ["ne", Startup.getLocation(LocationKey.LivingRoom)],
     ]);
     bar.items = [Startup.getItem(ItemKey.PeachCandle)];
+  }
+
+  private static arrangeDiningRoom() {
+    const diningRoom = Startup.getLocation(LocationKey.DiningRoom);
+    diningRoom.neighbors = new NeighborMap([
+      ["s", Startup.getLocation(LocationKey.Kitchen)],
+      ["w", Startup.getLocation(LocationKey.MismatchedBedroom)],
+      ["e", Startup.getLocation(LocationKey.Pool)],
+    ]);
+    diningRoom.items = [
+      Startup.getItem(ItemKey.Eagle),
+      Startup.getItem(ItemKey.Glue),
+      Startup.getItem(ItemKey.GooglyEyes),
+    ];
   }
 }
