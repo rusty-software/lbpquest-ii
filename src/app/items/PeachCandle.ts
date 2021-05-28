@@ -13,7 +13,7 @@ export class PeachCandle extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "You take the peach candle and put it into your duffle bag. It smells of spiced peaches.";
+    return "You take the peach candle and put it into your duffle bag. It immediately makes the duffle bag smell of spiced peaches.";
   }
 
   public drop(gameEngine: GameEngine): string {
@@ -21,7 +21,7 @@ export class PeachCandle extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The peach candle smells of spiced peaches and feels heftier than you expected.";
+    return "The peach candle is tall, peach-colored, smells of spiced peaches, and feels heftier than you expected.";
   }
 
   public use(gameEngine: GameEngine): string {

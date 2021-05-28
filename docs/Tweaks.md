@@ -38,10 +38,10 @@
 	* Typo in navigation "entrway"
 	* fill in TrophyCase.take
 	* TrophyCase.examine could use a little more description up front.~~
-* Bar
+~~* Bar
 	* Kitchen is capitalized
 	* Peach candle take should make duffle bag smell
-	* Peach examine should be wordier
+	* Peach examine should be wordier~~
 * Kitchen
 	* Skull.take needs something
 	* Fridge.take needs something
