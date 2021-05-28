@@ -33,7 +33,7 @@ export class LivingRoom extends BaseLocation {
     }
 
     s +=
-      "\n\nTo the southwest is a bar area. Directly west is the kitchen. What looks like the master bedroom is to the east, and the manor's entrway is to the south.";
+      "\n\nTo the southwest is a bar area. Directly west is the kitchen. What looks like the master bedroom is to the east, and the manor's entryway is to the south.";
     s += super.appendItems();
     return s;
   }

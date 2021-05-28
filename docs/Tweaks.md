@@ -34,10 +34,10 @@
 	* also needs an explanation of the map's purpose: "Apparently, the map can be used to locate items, but not actually determine how to get to them."
 	* refactor CueBall.canTake() to check for whether or not the Billiards challenge is won, similar to VHSTape
 	* Add isShown to CowskinRug.take~~
-* Living Room
+~~* Living Room
 	* Typo in navigation "entrway"
 	* fill in TrophyCase.take
-	* TrophyCase.examine could use a little more description up front.
+	* TrophyCase.examine could use a little more description up front.~~
 * Bar
 	* Kitchen is capitalized
 	* Peach candle take should make duffle bag smell

@@ -13,7 +13,7 @@ export class TrophyCase extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "You pick up the trophy case and put it into your duffle bag. Wait, no you don't. The trophy case stays obstinately where it is.";
   }
 
   public drop(gameEngine: GameEngine): string {
@@ -25,10 +25,12 @@ export class TrophyCase extends BaseItem {
       LocationKey.LivingRoom
     ) as LivingRoom;
     const trophiesPlaced = livingRoom.trophiesPlaced();
+    let s =
+      "The trophy case is about six feet tall, is built into the wall, and has two large shelves on which to put trophies.\n\n";
     if (trophiesPlaced.length === 0) {
-      return "The trophy case is currently empty.";
+      return s + "It is currently empty.";
     }
-    let s = "The trophy case currently contains:";
+    s += "It currently contains:";
     trophiesPlaced.map(
       (itemKey) => (s += `\n${gameEngine.getItem(itemKey).name}`)
     );
