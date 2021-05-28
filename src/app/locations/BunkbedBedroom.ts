@@ -27,6 +27,7 @@ export class BunkbedBedroom extends BaseLocation {
     s +=
       " The dormer seat has a thin cushion, probably just enough to make you not entirely uncomfortable as you gaze out the window between rounds in the pillow fights. Also, it looks like a tiny storage area is beneath the seat.";
 
+    s += "\n\nThe upstairs landing is back through the door to the north.";
     s += super.appendItems();
     return s;
   }

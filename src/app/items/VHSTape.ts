@@ -40,7 +40,7 @@ export class VHSTape extends BaseItem {
       if (!gameEngine.inventoryContains(ItemKey.NRNSTraining)) {
         gameEngine.addToInventory(ItemKey.NRNSTraining);
         gameEngine.score += gameEngine.getItem(ItemKey.NRNSTraining).value;
-        return 'You press the "Play" button on the VCR. The familiar opening, panning over the LA skyline at night, with a quick jump to Chinese Theatre and the Walk of Fame... you lose yourself in the viewing. You do, however, pay more special attention to the moves RJ is laying down, and Jason\'s entire training regimen. By the end of the movie, you really feel like you could take on the world! Or at least, a random syndicate from the east that uses karate dojos as fronts for organized crime...';
+        return 'You press the "Play" button on the VCR. The familiar opening, panning over the LA skyline at night, with a quick jump to the Chinese Theatre and the Walk of Fame... you lose yourself in the viewing. You do, however, feel compelled to pay extra special attention to the moves RJ is laying down, and Jason\'s entire training regimen for some reason. By the end of the movie, you really feel like you could take on the world! Or at least, a random evil syndicate from the east that uses karate dojos as fronts for organized crime...';
       } else {
         return "You've already watched the movie once. You should probably wait for everyone else before viewing it again.";
       }

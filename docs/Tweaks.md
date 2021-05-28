@@ -21,14 +21,14 @@
 # 2021-05-27 p.m. TODO
 ~~* GameEngine
 	* Change action count to only increment on movement, item actions, and google~~
-* Bunkbed Bedroom
+~~* Bunkbed Bedroom
 	* VCR needs a take admonition
 	* Typo in play vhs tape
 		* "...quick jump to Chinese Theatre..." missing "the"
 		* "...more special..." should be "...special..."
-	* NO NAVIGATION DISPLAY
-* Religious Bedroom
-	* NO NAVIGATION DISPLAY
+	* NO NAVIGATION DISPLAY~~
+~~* Religious Bedroom
+	* NO NAVIGATION DISPLAY~~
 * Billiards Room
 	* examine map missing commas
 	* also needs an explanation of the map's purpose: "Apparently, the map can be used to locate items, but not actually determine how to get to them."

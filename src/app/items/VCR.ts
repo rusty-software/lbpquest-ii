@@ -15,7 +15,7 @@ export class VCR extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "You consider taking the VCR, but what would the other people that stay in the bunkbeds use for entertainment in that case?";
   }
 
   public drop(gameEngine: GameEngine): string {
