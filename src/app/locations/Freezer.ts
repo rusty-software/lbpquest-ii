@@ -4,7 +4,7 @@ import { BaseLocation } from "./BaseLocation";
 
 export class Freezer extends BaseLocation {
   public id = LocationKey.Freezer;
-  public title = "Inside Freezer";
+  public title = "Walk-in Freezer";
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["exit", this.exit],
     ["exit freezer", this.exit],

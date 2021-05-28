@@ -16,7 +16,7 @@ export class BullSkull extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "You reach up, attempting to take the skull from its vantage point. It sees you coming a mile away, and points its very large, very menacing horn at you. You think better of trying to stuff it into your duffle bag.";
   }
 
   public drop(gameEngine: GameEngine): string {
