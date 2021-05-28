@@ -48,9 +48,13 @@ export class BilliardsRoom extends BaseLocation {
       return "You attempt to shoot some pool, but quickly realize that you're not going to be able to break the rack without a stick of some kind.";
     }
     const cueBall = gameEngine.getItem(ItemKey.CueBall) as CueBall;
+    cueBall.billiardsWon = true;
     cueBall.taken = true;
     gameEngine.addToInventory(ItemKey.CueBall);
     gameEngine.score += cueBall.value;
+    if (gameEngine.currentLocation.hasItem(ItemKey.CueBall)) {
+      gameEngine.currentLocation.removeItem(ItemKey.CueBall);
+    }
     return "Using the utility stick, you line up a perfect break. The cue ball strikes the lead ball in the rack with such force that each ball immediately flies into one of the various pockets, clearing the table. The cue ball itself flies into your duffle bag. After shaking your head a bit to make sure you weren't imagining things, you confirm your mastery of billiards.";
   }
 }

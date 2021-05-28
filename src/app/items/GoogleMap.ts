@@ -28,7 +28,7 @@ export class GoogleMap extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The map has some stickers on it that as it turns out are completely meaningless. A small map key is in the corner and reads:\n\n--Google Maps ALPHA--\nProject Status:\n* Item Locator: COMPLETE\n* Routing: ABORTED";
+    return "The map has some stickers on it that, as it turns out, are completely meaningless. A small map key is in the corner and reads:\n\n--Google Maps ALPHA--\nProject Status:\n* Item Locator: COMPLETE\n* Routing: ABORTED\n\nNote: project abandoned in favor of map that can do routing; market research indicates directions to locations are more important than just the locations. Since this map refused to learn to take or give directions, a new project was started from the ground up.";
   }
 
   public use(gameEngine: GameEngine): string {

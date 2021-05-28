@@ -18,6 +18,7 @@ export class CowskinRug extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
+    this.isShown = true;
     const billiardsRoom = gameEngine.getLocation(
       LocationKey.BilliardsRoom
     ) as BilliardsRoom;

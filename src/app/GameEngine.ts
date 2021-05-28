@@ -44,6 +44,7 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
+    this.addToInventory(ItemKey.UtilityStick);
   }
 
   public getEvents(): GameEvent[] {

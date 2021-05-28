@@ -8,13 +8,20 @@ export class CueBall extends BaseItem {
   public name = "cue ball";
   public value = 10;
   public isShown = true;
+  public billiardsWon = false;
 
   public canTake(gameEngine: GameEngine): boolean {
-    return true;
+    return this.billiardsWon;
   }
 
   public take(gameEngine: GameEngine): string {
-    return "You put the cue ball into your duffle bag. It rolls around pleasantly.";
+    if (this.billiardsWon) {
+      if (gameEngine.currentLocation.hasItem(ItemKey.CueBall)) {
+        gameEngine.currentLocation.removeItem(ItemKey.CueBall);
+      }
+      return "You put the cue ball into your duffle bag. It rolls around pleasantly trying to knock everything else into side and corner pockets.";
+    }
+    return "Try as you might, you can't seem to remove the cue ball from the table. Perhaps if the rack has been cleared...?";
   }
 
   public drop(gameEngine: GameEngine): string {

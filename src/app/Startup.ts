@@ -583,6 +583,7 @@ export class Startup {
       ["e", Startup.getLocation(LocationKey.Entryway)],
     ]);
     billiardsRoom.items = [
+      Startup.getItem(ItemKey.CueBall),
       Startup.getItem(ItemKey.CowskinRug),
       Startup.getItem(ItemKey.GoogleMap),
     ];
