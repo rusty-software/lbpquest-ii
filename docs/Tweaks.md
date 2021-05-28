@@ -19,8 +19,8 @@
 	* NO NAVIGATION DISPLAY~~
 	
 # 2021-05-27 p.m. TODO
-* GameEngine
-	* Change action count to only increment on movement, item actions, and google
+~~* GameEngine
+	* Change action count to only increment on movement, item actions, and google~~
 * Bunkbed Bedroom
 	* VCR needs a take admonition
 	* Typo in play vhs tape

@@ -61,7 +61,6 @@ export class GameEngine {
     }
   }
   public send(input: string) {
-    this.actionCount++;
     const lowerInput = input.toLowerCase().trim();
     const cmd = this.parseCommand(lowerInput);
     const rest = lowerInput.substr(!!cmd ? cmd.name.length + 1 : 0);
@@ -78,6 +77,7 @@ export class GameEngine {
       case CommandType.sw:
       case CommandType.up:
       case CommandType.down: {
+        this.actionCount++;
         this.move(lowerInput as Direction);
         break;
       }
@@ -90,6 +90,7 @@ export class GameEngine {
 
       case CommandType.ex:
       case CommandType.examine: {
+        this.actionCount++;
         const item = this.getAvailableItemByName(rest);
         if (item) {
           this.events.push(new ItemEvent(item!.examine(this)));
@@ -112,6 +113,7 @@ export class GameEngine {
       }
 
       case CommandType.take: {
+        this.actionCount++;
         const locationItem = this.getLocationItemByName(rest);
         if (locationItem) {
           if (locationItem.canTake(this)) {
@@ -149,6 +151,7 @@ export class GameEngine {
       }
 
       case CommandType.drop: {
+        this.actionCount++;
         const inventoryItem = this.getInventoryItemByName(rest);
         if (inventoryItem) {
           this.currentLocation.items.push(inventoryItem);
@@ -189,6 +192,7 @@ export class GameEngine {
       }
 
       case CommandType.use: {
+        this.actionCount++;
         const item = this.getAvailableItemByName(rest);
         if (item) {
           this.events.push(new ItemEvent(item.use(this)));
@@ -213,6 +217,7 @@ export class GameEngine {
       }
 
       case CommandType.google: {
+        this.actionCount++;
         if (this.isItemAvailable(ItemKey.GoogleMap)) {
           let targetItem: Item | null = null;
           for (let itemObject of this.items.values()) {
@@ -257,12 +262,14 @@ export class GameEngine {
           );
           const customVerb = targetItem.customVerbs.get(customVerbText);
           if (customVerb) {
+            this.actionCount++;
             this.events.push(new ItemEvent(customVerb(this)));
           }
         } else {
           const customVerb = this.currentLocation.customVerbs.get(lowerInput);
           if (customVerb) {
             // TODO: ItemEvent from Location verb feels odd
+            this.actionCount++;
             this.events.push(new ItemEvent(customVerb(this)));
           } else {
             this.events.push(new GameErrorEvent(GameError.UnknownCommand, ""));
