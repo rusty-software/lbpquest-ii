@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/lbpquest-ii/static/css/main.5c0f7bf5.chunk.css",
+    "main.js": "/lbpquest-ii/static/js/main.f4a65efb.chunk.js",
+    "main.js.map": "/lbpquest-ii/static/js/main.f4a65efb.chunk.js.map",
+    "runtime-main.js": "/lbpquest-ii/static/js/runtime-main.adc034be.js",
+    "runtime-main.js.map": "/lbpquest-ii/static/js/runtime-main.adc034be.js.map",
+    "static/js/2.1051babf.chunk.js": "/lbpquest-ii/static/js/2.1051babf.chunk.js",
+    "static/js/2.1051babf.chunk.js.map": "/lbpquest-ii/static/js/2.1051babf.chunk.js.map",
+    "index.html": "/lbpquest-ii/index.html",
+    "static/css/main.5c0f7bf5.chunk.css.map": "/lbpquest-ii/static/css/main.5c0f7bf5.chunk.css.map",
+    "static/js/2.1051babf.chunk.js.LICENSE.txt": "/lbpquest-ii/static/js/2.1051babf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.adc034be.js",
+    "static/js/2.1051babf.chunk.js",
+    "static/css/main.5c0f7bf5.chunk.css",
+    "static/js/main.f4a65efb.chunk.js"
+  ]
+}
