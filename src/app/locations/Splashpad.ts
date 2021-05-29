@@ -44,8 +44,7 @@ export class Splashpad extends BaseLocation {
     }
 
     s +=
-      "\n\nTo your south, there is a kid's fort. To the southeast is some kind of covered sitting area.";
-
+      "\n\nTo your south, there is a kid's fort. To the southeast is some kind of covered sitting area. Northwest leads back to the driveway.";
     s += super.appendItems();
 
     return s;

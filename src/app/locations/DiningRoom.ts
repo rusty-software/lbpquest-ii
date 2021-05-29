@@ -18,7 +18,7 @@ export class DiningRoom extends BaseLocation {
     }
 
     s +=
-      "\n\nTo the west is a bedroom with two mismatched beds in it. The east wall has a doorway which leads to the pool.";
+      "\n\nTo the west is a bedroom with two mismatched beds in it. The east wall has a doorway which leads to the pool. South leads back to the kitchen.";
     s += super.appendItems();
     return s;
   }

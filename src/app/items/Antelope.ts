@@ -16,7 +16,7 @@ export class Antelope extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "You consider taking the antelope, but don't want the other taxidermy to get jealous. Leaving it there is a better choice.";
   }
 
   public drop(gameEngine: GameEngine): string {

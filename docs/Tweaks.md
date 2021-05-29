@@ -42,8 +42,41 @@
 	* Kitchen is capitalized
 	* Peach candle take should make duffle bag smell
 	* Peach examine should be wordier~~
-* Kitchen
+~~* Kitchen
 	* Skull.take needs something
-	* Fridge.take needs something
-* Freezer
-	* change name to just "Walk-in Freezer"
+	* Fridge.take needs something~~
+~~* Freezer
+	* change name to just "Walk-in Freezer"~~
+	
+# 2021-05-28 p.m. TODO
+~~* CookieDough.use should be "baked cookies"~~
+~~* Eagle.take verbiage~~
+~~* NRNS Training. all verbs are lower, so need to change name to lower~~
+~~* DiningRoom NAVIGATION is missing s~~
+~~* Antelope.take~~
+~~* Chest.take~~
+~~* KeyboardBench.name should just be "bench"~~
+~~* KidsFort NAVIGATION is missing n~~
+~~* Splashpad NAVIGATION is missing nw~~
+~~* ReligiousBedroom. "night stand" in text, "nightstand" in item ~~
+* Fridge.take
+* Shorts.getName()
+* SplashPad "swing" instead of _swing_, "bridge" instead of _bridge_, "quit" instead of _quit_
+* SouthWoods. 
+	* add "fight stag" and "fight tan stag" to custom verbs
+	* NAVIGATION
+* Trailer. 
+	* "more important fact, though," needs the extra comma
+	* NAVIGATION
+* Screwdriver examine needs work
+* Open field, add "race stag" and "race brown stag" to custom verbs
+* BUG in using arts and crafts supplies... continues to create it after it's already created.
+* PlayGolf. "before falling." should be "before falling in."
+* NorthWoods "doge" instead of "dodge"
+* BUG: playing dodgeball without wearing the rug but *having* the rug makes it to where they won't play again yet you haven't won.
+	* Actually, you WON, but you got the loser messaging
+* Reeds.take verbiage
+* SouthShore.
+	* Spacing after first sentence
+* Using canoe from the south returns the north shore description BEFORE the center pond desc
+* look at north shore after canoe blows up

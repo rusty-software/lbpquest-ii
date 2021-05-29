@@ -11,7 +11,7 @@ export class CrossesBedroomNightstand extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "The nightstand seems to be attached to the wall by force of faith.";
   }
 
   public drop(gameEngine: GameEngine): string {

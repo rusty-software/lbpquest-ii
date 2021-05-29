@@ -4,7 +4,7 @@ import { GameEngine } from "../GameEngine";
 
 export class NRNSTraining extends BaseItem {
   public id = ItemKey.NRNSTraining;
-  public name = "NRNS training";
+  public name = "nrns training";
   public value = 5;
 
   public canTake(gameEngine: GameEngine): boolean {
@@ -12,15 +12,15 @@ export class NRNSTraining extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "You can't take what has already been given. Or at least seen on a vhs tape.";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "";
+    return "You can't drop what cannot be taken.";
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "What is the sound of one hand clapping?";
+    return "You introspect for a moment on all of the dance moves you learned from RJ, and how much karate you know from all of Jason's training.";
   }
 
   public use(gameEngine: GameEngine): string {

@@ -16,7 +16,7 @@ export class Eagle extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "Your attempts to take the eagle are thwarted by the very secure glue holding it firmly to the stand.";
   }
 
   public drop(gameEngine: GameEngine): string {

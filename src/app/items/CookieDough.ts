@@ -31,6 +31,6 @@ export class CookieDough extends BaseItem {
   }
 
   private eat(gameEngine: GameEngine): string {
-    return "Who needs cooked cookies when you can have them straight from the doughy nipple? You break off a chunk with your teeth and eat it. You regret nothing. You will always regret nothing.";
+    return "Who needs baked cookies when you can have them straight from the doughy nipple? You break off a chunk with your teeth and eat it. You regret nothing. You will always regret nothing.";
   }
 }

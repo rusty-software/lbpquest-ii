@@ -15,7 +15,7 @@ export class MasterBedroomChest extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "Given the smell emanating from the chest, as well as the style-less thing draped over it, you wisely decide against taking the chest.";
   }
 
   public drop(gameEngine: GameEngine): string {
