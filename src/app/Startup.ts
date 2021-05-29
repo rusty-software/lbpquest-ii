@@ -389,7 +389,6 @@ export class Startup {
       ["n" as Direction, Startup.getLocation(LocationKey.EastWoods)],
       ["e" as Direction, Startup.getLocation(LocationKey.FirePit)],
       ["sw" as Direction, Startup.getLocation(LocationKey.Driveway)],
-      ["w" as Direction, Startup.getLocation(LocationKey.Entryway)],
     ]);
     dirtPath.items = [
       Startup.getItem(ItemKey.ConstructionPaper),

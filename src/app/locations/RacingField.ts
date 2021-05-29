@@ -25,7 +25,7 @@ export class RacingField extends BaseLocation {
         " The Brown Stag gives you a friendly wave just before attaching ankle weights to its hind feet. It takes off on a brisk jog.";
     } else if (this.challengeGiven) {
       s +=
-        "\n\nThe Brown Stag looks you up and down and says \"Well well well... look's like you've got nowhere left to run... Except racing against me in a 40 yard dash. Let me know when you want to race.\"";
+        "\n\nThe Brown Stag looks you up and down and says \"Well, Peewee... look's like you don't have anywhere else to run... Except racing against me in a 40 yard dash. Let me know when you want to race.\"";
     } else {
       this.challengeGiven = true;
       s +=

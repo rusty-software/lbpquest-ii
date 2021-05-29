@@ -12,6 +12,10 @@ export class ArtsAndCrafts extends BaseItem {
     ["give", this.give],
   ]);
 
+  public getName(): string {
+    return "are some " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
@@ -41,7 +45,7 @@ export class ArtsAndCrafts extends BaseItem {
       gameEngine.score += !medal.taken ? medal.value : 0;
       medal.taken = true;
       library.artsGiven = true;
-      return 'She accepts the book lovingly, stroking a semi-skeletal hand over the cover. "Thank you. You have done me a great service. In return, please take this..." She hands you a bottle of Dark Sweet Wine, which you gently put into your duffle bag.';
+      return 'He takes a look at the arts and crafts you\'ve constructed, turning it upside down and flipping it over. "Wow, I\'ve never seen something so... expressive! This is going right here," he says, hanging your arts and crafts in a place of prestige on the library wall. "You\'ve earned yourself an Ex-Presidential Medal!" He withdraws from his pocket a medal that reminds you of something from one of the Olympics. You bend down slightly as he places the medal over your head. "Wear it with pride wherever you go!" With that, he turns to admire the arts and crafts again, seeming to forget that you\'re even there.';
     } else {
       return "There is no one here interested in receiving the arts and crafts.";
     }

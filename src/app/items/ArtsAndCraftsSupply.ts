@@ -11,7 +11,7 @@ export class ArtsAndCraftsSupply extends BaseItem {
     }
 
     const supplies = gameEngine.inventoryArtsAndCraftsSupplies();
-    if (supplies.length < 5) {
+    if (supplies.length < 7) {
       return "Hmm, it looks like you could make a really cool arts and crafts project if you just had a few more supplies...";
     } else if (ArtsAndCraftsSupply.assembled) {
       return "You have already constructed what is certainly the most important piece of arts and crafts in the form. Probably better to rest on your laurels here.";

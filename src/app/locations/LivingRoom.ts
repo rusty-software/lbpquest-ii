@@ -56,6 +56,9 @@ export class LivingRoom extends BaseLocation {
         }
 
         const item = gameEngine.getItem(itemKey);
+        if (this.trophiesRemaining() === 0) {
+          return `You place the ${item.name} into the trophy case. The stag notices.\n\n"You have filled the trophy case with worthy contributions, thereby earning your just reward. Seek ye out your friends in the grotto!"`;
+        }
         return `You place the ${
           item.name
         } into the trophy case. The stag notices.\n\n"You still require ${this.trophiesRemaining()} more trophies ere earning your just reward. Venture onward!"`;

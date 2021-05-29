@@ -22,7 +22,7 @@ export class ExPresidentialMedal extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The presidential medal is a shiny golden plastic in the shape of George Bush's head on a cheap red, white, and blue ribbon.";
+    return "The presidential medal is a shiny golden plastic piece in the shape of George Bush's head on a cheap red, white, and blue ribbon.";
   }
 
   public use(gameEngine: GameEngine): string {

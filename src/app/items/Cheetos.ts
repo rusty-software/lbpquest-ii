@@ -10,6 +10,10 @@ export class Cheetos extends BaseItem {
     ["eat", this.eat],
   ]);
 
+  public getName(): string {
+    return "are some " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     return true;
   }

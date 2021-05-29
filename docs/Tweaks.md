@@ -80,3 +80,20 @@
 	* Spacing after first sentence~~
 ~~* Using canoe from the south returns the north shore description BEFORE the center pond desc~~
 ~~* look at north shore after canoe blows up~~
+
+# 2021-05-29 a.m. TODO
+~~* cheetos getName()~~
+~~* googlyEyes getName()~~
+~~* Mothers getName()~~
+~~* WingedShoes getName()~~
+* Pool add "go into grotto", "swim" as custom verbs
+~~* RacingField "well well well should say peewee"~~
+~~* Add "when worn" to WingedShoes~~
+~~* PipeCleaners getName()~~
+~~* NAVIGATION: Disconnect DirtPath from House~~
+* Consider: Freezer: instruction about exiting
+~~* Library Giving arts and crafts to george bush results in winery talk?~~
+~~* Getting to 0 trophies says 0 are required~~
+* Fill in Ending text
+* Moves at end has extra double quote
+* 

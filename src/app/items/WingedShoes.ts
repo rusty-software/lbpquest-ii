@@ -12,6 +12,10 @@ export class WingedShoes extends BaseItem {
     ["remove", this.remove],
   ]);
 
+  public getName(): string {
+    return "are some " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     return true;
   }
@@ -26,7 +30,7 @@ export class WingedShoes extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The shoes have wings sticking out of the upper sides. Literal wings. They look like they could make you run pretty dang quickly, especially compared to riding a Huffy one-speed.";
+    return "The shoes have wings sticking out of the upper sides. Literal wings. They look like that, when worn, they could make you run pretty dang quickly, especially compared to riding a Huffy one-speed.";
   }
 
   public use(gameEngine: GameEngine): string {

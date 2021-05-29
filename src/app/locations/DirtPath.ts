@@ -8,7 +8,7 @@ export class DirtPath extends BaseLocation {
 
   public description(): string {
     let s =
-      "You are on a dirt path in the midst of some trees. A crude sign has been attached to a stick here, pointing the way to locations from here. It indicates:\n\nN -> East Woods\nE -> Fire Pit\nSW -> Driveway\nW -> House\n\n";
+      "You are on a dirt path in the midst of some trees. A crude sign has been attached to a stick here, pointing the way to locations from here. It indicates:\n\nN -> East Woods\nE -> Fire Pit\nSW -> Driveway\n\n";
     if (
       this.items.find(
         (i) => i.id === ItemKey.Crayons || i.id === ItemKey.ConstructionPaper

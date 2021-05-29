@@ -11,9 +11,9 @@ export class Library extends BaseLocation {
 
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["exit", this.exit],
-    ["exit winery", this.exit],
+    ["exit library", this.exit],
     ["leave", this.exit],
-    ["leave winery", this.exit],
+    ["leave library", this.exit],
   ]);
 
   public description(): string {
