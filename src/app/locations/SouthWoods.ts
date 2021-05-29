@@ -12,6 +12,8 @@ export class SouthWoods extends BaseLocation {
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["fight", this.fight],
     ["fight deer", this.fight],
+    ["fight stag", this.fight],
+    ["fight tan stag", this.fight],
   ]);
 
   public description(): string {
@@ -27,6 +29,8 @@ export class SouthWoods extends BaseLocation {
         '\n\n"WHAT..." it yells at you as it finishes a swift roundhouse kick. "...ARE YOU DOING?! If you can beat me in a sparring match, I\'ll hand over my black belt. Do you want to fight me?';
     }
 
+    s +=
+      "\n\nYou can leave the south woods by traveling north back to the kids fort.";
     s += super.appendItems();
     return s;
   }

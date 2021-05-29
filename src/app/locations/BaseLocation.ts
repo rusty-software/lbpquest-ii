@@ -42,8 +42,8 @@ export abstract class BaseLocation implements Location {
     return this.items.find((i) => i.id === itemKey) !== undefined;
   }
 
-  public addItem(itemKey: ItemKey): void {
-    const item = this.items.find((i) => i.id === itemKey)!;
+  public addItem(gameEngine: GameEngine, itemKey: ItemKey): void {
+    const item = gameEngine.getItem(itemKey);
     this.items.push(item);
   }
 

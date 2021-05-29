@@ -70,7 +70,7 @@ export class Splashpad extends BaseLocation {
 
     splashpad.slideDone = true;
     shorts.currentlyWearing = false;
-    return "The shorts make your butt as slippery as an eel, and you slip down the slide in slightly less than nothing, flat! Removing the shorts and storing them in the duffle bag, you notice the gold medal bearer raising their eyebrows in mild surprise, but still looking skeptical that you'll successfully complete the next challenge: loop-diddy-loop on the swings!\n\nTo proceed to the swings, type _swing_. You can also perform other actions, or _quit_ The Gauntlet.";
+    return 'The shorts make your butt as slippery as an eel, and you slip down the slide in slightly less than nothing, flat! Removing the shorts and storing them in the duffle bag, you notice the gold medal bearer raising their eyebrows in mild surprise, but still looking skeptical that you\'ll successfully complete the next challenge: loop-diddy-loop on the swings!\n\nTo proceed to the swings, type "swing". You can also perform other actions, or "quit" The Gauntlet.';
   }
 
   private swing(gameEngine: GameEngine): string {
@@ -88,7 +88,7 @@ export class Splashpad extends BaseLocation {
     splashpad.swingsDone = true;
     belt.currentlyWearing = false;
     s +=
-      " you find that the chastity belt holds you firmly in place as your feet point straight up, then backwards as your head points to the earth below, then finally, with the blood rushing to your head from the massive g-forces, you glide to a gentle stop. You remove the chastity belt and tuck it into your duffle bag. Cheers come from the children as the gold medal bearer screams in mock outrage. They point to the bridge between the kiddy forts and look at you expectantly.\n\nTo proceed to the bridge, type _bridge_. You can also perform other actions, or _quit_ The Gauntlet.";
+      ' you find that the chastity belt holds you firmly in place as your feet point straight up, then backwards as your head points to the earth below, then finally, with the blood rushing to your head from the massive g-forces, you glide to a gentle stop. You remove the chastity belt and tuck it into your duffle bag. Cheers come from the children as the gold medal bearer screams in mock outrage. They point to the bridge between the kiddy forts and look at you expectantly.\n\nTo proceed to the bridge, type "bridge". You can also perform other actions, or "quit" The Gauntlet.';
     return s;
   }
 

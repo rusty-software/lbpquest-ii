@@ -14,7 +14,7 @@ export interface Location {
 
   enter(): void;
   description(): string;
-  addItem(itemKey: ItemKey): void;
+  addItem(gameEngine: GameEngine, itemKey: ItemKey): void;
   removeItem(itemKey: ItemKey): void;
   showItem(itemKey: ItemKey): void;
   hasItem(itemKey: ItemKey): boolean;

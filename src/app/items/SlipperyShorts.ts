@@ -12,6 +12,10 @@ export class SlipperyShorts extends BaseItem {
     ["remove", this.remove],
   ]);
 
+  public getName(): string {
+    return "are some " + this.name;
+  }
+
   public canTake(gameEngine: GameEngine): boolean {
     return true;
   }

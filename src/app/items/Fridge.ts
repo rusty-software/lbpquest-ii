@@ -12,7 +12,7 @@ export class Fridge extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "Are you sick? The fridge's brother's my sensei! They're spoken for... by ME!";
   }
 
   public drop(gameEngine: GameEngine): string {

@@ -14,15 +14,15 @@ export class Screwdriver extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "You have successfully put the screwdriver into your duffle bag!";
+    return "You have successfully put the screwdriver into your duffle bag! Nice work!";
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "You have successfully dropped the screwdriver.";
+    return "You have successfully dropped the screwdriver. Way to go!";
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The screwdriver looks like it can be used to screw or poke things.";
+    return "The screwdriver is well used, but the philips head is still toothy. It looks like it can be used to screw or poke things as necessary.";
   }
 
   public use(gameEngine: GameEngine): string {

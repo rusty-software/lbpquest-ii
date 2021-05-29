@@ -13,7 +13,7 @@ export class NorthPondShore extends BaseLocation {
 
   public description(): string {
     let s =
-      "You are on the north shore of the pond. There is a thicket of reeds here, just past the water line.";
+      "You are on the north shore of the pond. The pond, while not large, is murky enough that swimming it seems an ill-advised option. There is a thicket of reeds here, just past the water line.";
 
     const oar = this.items.find((i) => i.id === ItemKey.Oar);
     if (oar && !oar.isShown) {
@@ -37,8 +37,8 @@ export class NorthPondShore extends BaseLocation {
       const northShore = gameEngine.getLocation(LocationKey.NorthPondShore);
       gameEngine.changeLocation(southShore);
       northShore.removeItem(ItemKey.Canoe);
-      southShore.addItem(ItemKey.Canoe);
-      return "You strike out from the north shore at a breakneck pace, aiming towards the south shore, arriving mere moments later.";
+      southShore.addItem(gameEngine, ItemKey.Canoe);
+      return "You struck out from the north shore at a breakneck pace, aiming towards the south shore, and arrived mere moments later.";
     } else {
       if (!canoeHere && hasOar) {
         return "You wave the oar around a bit, but it doesn't seem as useful on its own. Maybe if you had a watercraft...?";
@@ -51,6 +51,6 @@ export class NorthPondShore extends BaseLocation {
   }
 
   private swim(gameEngine: GameEngine): string {
-    return "You consider swimming across the pond, but... it's a large pond, and you're not sure what creatures might lie in its depths...";
+    return "You consider swimming across the pond, but... it's a large-ish pond, and you're not sure what creatures might lie in its depths...";
   }
 }

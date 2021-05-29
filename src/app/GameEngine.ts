@@ -44,6 +44,8 @@ export class GameEngine {
     this.inventory = [];
     this.events = [];
     // HACK ZONE
+    this.addToInventory(ItemKey.AlligatorRug);
+    this.currentLocation = this.getLocation(LocationKey.NorthPondShore);
   }
 
   public getEvents(): GameEvent[] {

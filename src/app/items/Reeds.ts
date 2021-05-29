@@ -12,7 +12,7 @@ export class Reeds extends BaseItem {
   }
 
   public take(gameEngine: GameEngine): string {
-    return "";
+    return "Hmm, just what are you planning to do with those reeds? Item NOT taken.";
   }
 
   public drop(gameEngine: GameEngine): string {

@@ -496,7 +496,7 @@ export class Startup {
   private static arrangeSouthPondShort() {
     const shore = Startup.getLocation(LocationKey.SouthPondShore);
     shore.neighbors = new NeighborMap([
-      ["sw", Startup.getLocation(LocationKey.RacingField)],
+      ["se", Startup.getLocation(LocationKey.RacingField)],
     ]);
     shore.items = [Startup.getItem(ItemKey.Canoe)];
   }

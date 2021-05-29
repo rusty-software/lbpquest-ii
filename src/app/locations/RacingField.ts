@@ -12,6 +12,8 @@ export class RacingField extends BaseLocation {
   public customVerbs = new Map<string, (gameEngine: GameEngine) => string>([
     ["race", this.race],
     ["race deer", this.race],
+    ["race stag", this.race],
+    ["race brown stag", this.race],
   ]);
 
   public description(): string {

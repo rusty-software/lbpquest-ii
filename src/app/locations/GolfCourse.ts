@@ -42,7 +42,7 @@ export class GolfCourse extends BaseLocation {
         const scorecard = gameEngine.getItem(ItemKey.Scorecard);
         gameEngine.score += !scorecard.taken ? scorecard.value : 0;
         scorecard.taken = true;
-        return 'You tee up the lucky golf ball and take a swing at it using the utility stick. The strike is true, or true enough, as the ball curves around and onto the tiny green, rolling to a precarious stop on the lip of the hole before falling. You quickly reclaim the ball and see that the bottom of the hole is lined with a score card. The card has your name and a mark of "1" next to the only hole listed. Smiling, you put the scorecard into your duffle bag.';
+        return 'You tee up the lucky golf ball and take a swing at it using the utility stick. The strike is true, or true enough, as the ball curves around and onto the tiny green, rolling to a precarious stop on the lip of the hole before falling in. You quickly reclaim the ball and see that the bottom of the hole is lined with a score card. The card has your name and a mark of "1" next to the only hole listed. Smiling, you put the scorecard into your duffle bag.';
       }
     }
   }
