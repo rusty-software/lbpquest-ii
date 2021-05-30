@@ -13,7 +13,7 @@ export class FreezerPort extends BaseLocation {
   ]);
 
   public descriptionText =
-    "You are in what appears to be a small, empty car port with a walk-in freezer in the back. The freezer emits a happy hum and a more questionable smell. The freezer door looks unlocked and inviting.\n\nThe driveway is back to the southeast.";
+    "You are in what appears to be a small, empty car port with a walk-in freezer in the back. The freezer emits a happy hum and a more questionable smell. The freezer door looks unlocked and inviting, like you could enter it.\n\nThe driveway is back to the southeast.";
 
   private enterFreezer(gameEngine: GameEngine): string {
     const freezer = gameEngine.getLocation(LocationKey.Freezer);

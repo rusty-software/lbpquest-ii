@@ -21,7 +21,7 @@ export class Freezer extends BaseLocation {
   ]);
 
   public descriptionText =
-    "You are inside the freezer. It's not as cold as you expected, but chilly enough to not want to remain for too long. It smells of uncured meats, but none are hanging from the hooks along the walls.\n\nOn the back wall of the freezer are two buttons: they are labeled 'Library' and 'Winery' respectively.";
+    "You are inside the freezer. It's not as cold as you expected, but chilly enough to not want to remain for too long. It smells of uncured meats, but none are hanging from the hooks along the walls.\n\nOn the back wall of the freezer are two buttons: they are labeled 'Library' and 'Winery' respectively.\n\nYou will probably have to exit the freezer before you get too cold.";
 
   private pushLibraryButton(gameEngine: GameEngine): string {
     return super.enterLocation(gameEngine, LocationKey.Library);

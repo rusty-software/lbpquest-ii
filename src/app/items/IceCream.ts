@@ -29,7 +29,7 @@ export class IceCream extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "Aside from eating it, there doesn't seem to be another use for the ice cream.";
+    return this.eat(gameEngine);
   }
 
   // getting a reference to the ice cream object since "this" semantics are vague here
