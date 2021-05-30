@@ -63,7 +63,7 @@ export class LivingRoom extends BaseLocation {
           item.name
         } into the trophy case. The stag notices.\n\n"You still require ${this.trophiesRemaining()} more trophies ere earning your just reward. Venture onward!"`;
       } else {
-        return 'The deer head glares at you with consternation. "That meager offering? INADEQUATE! Seek ye out the TRUE trophies of the ranch! Should ye need advice, solicit from the other Lords of the Mounts."';
+        return 'The deer head glares at you with consternation. "That meager offering? INADEQUATE! Seek ye out the TRUE trophies of the ranch! Should ye need advice, solicit from the other Mounted Lords."';
       }
     }
   }

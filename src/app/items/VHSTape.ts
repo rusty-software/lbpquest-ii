@@ -24,15 +24,15 @@ export class VHSTape extends BaseItem {
   }
 
   public drop(gameEngine: GameEngine): string {
-    return "";
+    return "You drop the VHS tape. It clatters to the ground like the sounds of shelves being knocked down from someone trying to climb them. What gives, anyway?";
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "";
+    return "The VHS tape looks like it's had at least a couple of things recorded on it, if the markouts on the label are any indication. \"NRNS\" is the final entry, and you can see that the tab that allows recording has been broken off. Whoever recorded last wanted to make sure it wasn't accidentally overwritten. You completely understand why.";
   }
 
   public use(gameEngine: GameEngine): string {
-    return this.play(gameEngine);
+    return super.useInLivingRoom(gameEngine) || this.play(gameEngine);
   }
 
   private play(gameEngine: GameEngine): string {

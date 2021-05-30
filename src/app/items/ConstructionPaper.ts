@@ -21,6 +21,9 @@ export class ConstructionPaper extends ArtsAndCraftsSupply {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The construction paper is sturdy and roughly textured. Everything that plain ol' construction paper should be...";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "The construction paper is sturdy and roughly textured. Everything that plain ol' construction paper should be..."
+    );
   }
 }

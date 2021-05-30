@@ -25,6 +25,11 @@ export class PeachCandle extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     if (gameEngine.isItemAvailable(ItemKey.Matches)) {
       const loko = gameEngine.getItem(ItemKey.PeachFourLoko);
       gameEngine.addToInventory(ItemKey.PeachFourLoko);

@@ -28,6 +28,11 @@ export class Balusters extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     if (gameEngine.inventoryContains(ItemKey.DuctTape)) {
       const utilityStick = gameEngine.getItem(ItemKey.UtilityStick);
       gameEngine.score += utilityStick.value;

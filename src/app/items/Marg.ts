@@ -28,7 +28,7 @@ export class Marg extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return this.drink(gameEngine);
+    return super.useInLivingRoom(gameEngine) || this.drink(gameEngine);
   }
 
   private drink(gameEngine: GameEngine): string {

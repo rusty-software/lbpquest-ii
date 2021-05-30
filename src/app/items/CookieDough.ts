@@ -27,7 +27,7 @@ export class CookieDough extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return this.eat(gameEngine);
+    return super.useInLivingRoom(gameEngine) || this.eat(gameEngine);
   }
 
   private eat(gameEngine: GameEngine): string {

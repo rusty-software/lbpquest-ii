@@ -30,7 +30,7 @@ export class Bow extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return this.fire(gameEngine);
+    return super.useInLivingRoom(gameEngine) || this.fire(gameEngine);
   }
 
   private fire(gameEngine: GameEngine): string {

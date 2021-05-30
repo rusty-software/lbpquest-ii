@@ -25,6 +25,11 @@ export class UtilityStick extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     if (gameEngine.currentLocation.id === LocationKey.GolfCourse) {
       return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
     } else if (gameEngine.currentLocation.id === LocationKey.BilliardsRoom) {

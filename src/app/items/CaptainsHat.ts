@@ -29,6 +29,9 @@ export class CaptainsHat extends BaseItem {
       const livingRoom = gameEngine.currentLocation as LivingRoom;
       return livingRoom.addTrophy(gameEngine, this.id);
     }
-    return "You put the captains hat on your head, but it just doesn't feel right. Maybe it can be used in another place?";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "You put the captains hat on your head, but it just doesn't feel right. Maybe it can be used in another place?"
+    );
   }
 }

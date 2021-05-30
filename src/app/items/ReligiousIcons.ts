@@ -29,6 +29,9 @@ export class ReligiousIcons extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "You use your religious icons as part of the observance of your faith. You and $DEITY feel much better.";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "You use your religious icons as part of the observance of your faith. You and $DEITY feel much better."
+    );
   }
 }

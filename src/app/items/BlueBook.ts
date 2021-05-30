@@ -30,7 +30,10 @@ export class BlueBook extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "You try to make use of the book, but aside from reading it, it's pretty useless.";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "You try to make use of the book, but aside from reading it, it's pretty useless."
+    );
   }
 
   private give(gameEngine: GameEngine): string {

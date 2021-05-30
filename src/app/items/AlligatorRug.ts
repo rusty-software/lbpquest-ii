@@ -31,6 +31,11 @@ export class AlligatorRug extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomReturn = super.useInLivingRoom(gameEngine);
+    if (livingRoomReturn) {
+      return livingRoomReturn;
+    }
+
     if (
       gameEngine.currentLocation.id === LocationKey.SouthPondShore &&
       gameEngine.availableItems().find((i) => i.id === this.id)

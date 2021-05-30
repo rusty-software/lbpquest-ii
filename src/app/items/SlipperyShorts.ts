@@ -44,6 +44,11 @@ export class SlipperyShorts extends BaseItem {
   }
 
   private remove(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     const shorts = gameEngine.getItem(ItemKey.SlipperyShorts) as SlipperyShorts;
     shorts.currentlyWearing = false;
     return "You remove the shorts. Your butt cheeks feel much more touchable than it did a moment ago.";

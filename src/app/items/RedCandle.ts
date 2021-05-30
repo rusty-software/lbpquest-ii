@@ -28,6 +28,11 @@ export class RedCandle extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     if (gameEngine.isItemAvailable(ItemKey.Matches)) {
       const potion = gameEngine.getItem(ItemKey.ShrinkingPotion);
       gameEngine.addToInventory(ItemKey.ShrinkingPotion);

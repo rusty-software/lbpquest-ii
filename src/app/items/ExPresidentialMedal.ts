@@ -1,7 +1,6 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { LivingRoom, LocationKey } from "../locations";
 
 export class ExPresidentialMedal extends BaseItem {
   public id = ItemKey.ExPresidentialMedal;
@@ -26,10 +25,9 @@ export class ExPresidentialMedal extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    if (gameEngine.currentLocation.id === LocationKey.LivingRoom) {
-      const livingRoom = gameEngine.currentLocation as LivingRoom;
-      return livingRoom.addTrophy(gameEngine, this.id);
-    }
-    return "You slip the presidential medal over your head. You feel like a winner for a few moments, but otherwise there's no change. Maybe you can find another use for it somewhere else.";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "You slip the presidential medal over your head. You feel like a winner for a few moments, but otherwise there's no change. Maybe you can find another use for it somewhere else."
+    );
   }
 }

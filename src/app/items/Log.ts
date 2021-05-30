@@ -1,7 +1,6 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { LivingRoom, LocationKey } from "../locations";
 
 export class Log extends BaseItem {
   public id = ItemKey.Log;
@@ -26,10 +25,9 @@ export class Log extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    if (gameEngine.currentLocation.id === LocationKey.LivingRoom) {
-      const livingRoom = gameEngine.currentLocation as LivingRoom;
-      return livingRoom.addTrophy(gameEngine, this.id);
-    }
-    return "You try to use the log, but realize that it probably isn't meant for whatever activity for which you intended it. Perhaps you should try again in a different spot?";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "You try to use the log, but realize that it probably isn't meant for whatever activity for which you intended it. Perhaps you should try again in a different spot?"
+    );
   }
 }

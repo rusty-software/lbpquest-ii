@@ -1,7 +1,6 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { LivingRoom, LocationKey } from "../locations";
 
 export class CueBall extends BaseItem {
   public id = ItemKey.CueBall;
@@ -33,10 +32,9 @@ export class CueBall extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    if (gameEngine.currentLocation.id === LocationKey.LivingRoom) {
-      const livingRoom = gameEngine.currentLocation as LivingRoom;
-      return livingRoom.addTrophy(gameEngine, this.id);
-    }
-    return "You toss the cue ball from hand to hand, hoping for some magic. None happens. Maybe if you were somewhere else?";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "You toss the cue ball from hand to hand, hoping for some magic. None happens. Maybe if you were somewhere else?"
+    );
   }
 }

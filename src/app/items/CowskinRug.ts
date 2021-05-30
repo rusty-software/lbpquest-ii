@@ -36,7 +36,7 @@ export class CowskinRug extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return this.wear(gameEngine);
+    return super.useInLivingRoom(gameEngine) || this.wear(gameEngine);
   }
 
   private wear(gameEngine: GameEngine): string {

@@ -122,6 +122,7 @@ import { Direction } from "./Direction";
 export class Startup {
   public static readonly items: Map<ItemKey, Item> = new Map();
   public static readonly locations: Map<LocationKey, Location> = new Map();
+  public static readonly version = "1.1.0";
 
   private static getItem(itemKey: ItemKey): Item {
     return Startup.items.get(itemKey)!;

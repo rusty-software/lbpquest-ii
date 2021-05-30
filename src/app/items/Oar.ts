@@ -25,6 +25,11 @@ export class Oar extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     // TODO: parent Shore class?
     const northShore = gameEngine.currentLocation as NorthPondShore;
     const southShore = gameEngine.currentLocation as SouthPondShore;

@@ -29,6 +29,11 @@ export class Matches extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     if (
       !gameEngine.isItemAvailable(ItemKey.RedCandle) &&
       !gameEngine.isItemAvailable(ItemKey.PeachCandle)

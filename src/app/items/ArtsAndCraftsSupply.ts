@@ -6,6 +6,11 @@ import { ArtsAndCrafts } from "./ArtsAndCrafts";
 export class ArtsAndCraftsSupply extends BaseItem {
   public static assembled = false;
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     if (ArtsAndCraftsSupply.assembled) {
       return "You've already constructed the best arts and crafts you could possibly make. You decide to save your supplies for next year.";
     }

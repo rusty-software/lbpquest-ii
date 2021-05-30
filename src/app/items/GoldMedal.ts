@@ -1,7 +1,6 @@
 import { BaseItem } from "./BaseItem";
 import { ItemKey } from "./ItemKey";
 import { GameEngine } from "../GameEngine";
-import { LivingRoom, LocationKey } from "../locations";
 
 export class GoldMedal extends BaseItem {
   public id = ItemKey.GoldMedal;
@@ -25,10 +24,9 @@ export class GoldMedal extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    if (gameEngine.currentLocation.id === LocationKey.LivingRoom) {
-      const livingRoom = gameEngine.currentLocation as LivingRoom;
-      return livingRoom.addTrophy(gameEngine, this.id);
-    }
-    return "You hold the gold medal aloft. It reflects the sunlight dimly, but otherwise doesn't seem useful here. Maybe somewhere else?";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "You hold the gold medal aloft. It reflects the sunlight dimly, but otherwise doesn't seem useful here. Maybe somewhere else?"
+    );
   }
 }

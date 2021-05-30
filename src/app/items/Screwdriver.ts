@@ -26,6 +26,11 @@ export class Screwdriver extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     if (gameEngine.currentLocation.id === LocationKey.BunkbedBedroom) {
       const vhsTape = gameEngine.getItem(ItemKey.VHSTape) as VHSTape;
       const s = "You jam the screwdriver into the Eject button hole.";

@@ -34,6 +34,11 @@ export class IceCream extends BaseItem {
 
   // getting a reference to the ice cream object since "this" semantics are vague here
   private eat(gameEngine: GameEngine) {
+    const livingRoomUse = super.useInLivingRoom(gameEngine);
+    if (livingRoomUse) {
+      return livingRoomUse;
+    }
+
     const iceCream = gameEngine.getItem(ItemKey.IceCream) as IceCream;
     iceCream.bitesEaten++;
     if (iceCream.bitesEaten === 5) {

@@ -33,7 +33,10 @@ export class ArtsAndCrafts extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    return "There's no using this... It's sublimity is such that using it would be considered a crime.";
+    return (
+      super.useInLivingRoom(gameEngine) ||
+      "Using the arts and crafts would only reduce its sublimity. You cannot bring yourself to do so..."
+    );
   }
 
   private give(gameEngine: GameEngine): string {
