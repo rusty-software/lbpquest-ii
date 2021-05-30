@@ -1,6 +1,7 @@
 import { GameEngine } from "../GameEngine";
 import { Item } from "../Item";
 import { ItemKey } from "./ItemKey";
+import { LivingRoom, LocationKey } from "../locations";
 
 export class BaseItem implements Item {
   public id = ItemKey._Nothing;
@@ -30,6 +31,14 @@ export class BaseItem implements Item {
 
   public examine(gameEngine: GameEngine): string {
     throw new Error("Method not implemented.");
+  }
+
+  protected useInLivingRoom(gameEngine: GameEngine): string | undefined {
+    if (gameEngine.currentLocation.id === LocationKey.LivingRoom) {
+      const livingRoom = gameEngine.currentLocation as LivingRoom;
+      return livingRoom.addTrophy(gameEngine, this.id);
+    }
+    return undefined;
   }
 
   public use(gameEngine: GameEngine): string {

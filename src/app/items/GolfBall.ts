@@ -26,10 +26,10 @@ export class GolfBall extends BaseItem {
   }
 
   public use(gameEngine: GameEngine): string {
-    if (gameEngine.currentLocation.id === LocationKey.GolfCourse) {
-      return (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine);
-    } else {
-      return "You mess around with the golf ball a bit but realize this isn't really the place to try to use it...";
-    }
+    const s =
+      gameEngine.currentLocation.id === LocationKey.GolfCourse
+        ? (gameEngine.currentLocation as GolfCourse).playGolf(gameEngine)
+        : "You mess around with the golf ball a bit but realize this isn't really the place to try to use it...";
+    return super.useInLivingRoom(gameEngine) || s;
   }
 }
