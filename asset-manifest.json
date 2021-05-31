@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lbpquest-ii/static/css/main.5c0f7bf5.chunk.css",
-    "main.js": "/lbpquest-ii/static/js/main.c248921e.chunk.js",
-    "main.js.map": "/lbpquest-ii/static/js/main.c248921e.chunk.js.map",
+    "main.js": "/lbpquest-ii/static/js/main.1f360045.chunk.js",
+    "main.js.map": "/lbpquest-ii/static/js/main.1f360045.chunk.js.map",
     "runtime-main.js": "/lbpquest-ii/static/js/runtime-main.adc034be.js",
     "runtime-main.js.map": "/lbpquest-ii/static/js/runtime-main.adc034be.js.map",
     "static/js/2.bc64b40f.chunk.js": "/lbpquest-ii/static/js/2.bc64b40f.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.adc034be.js",
     "static/js/2.bc64b40f.chunk.js",
     "static/css/main.5c0f7bf5.chunk.css",
-    "static/js/main.c248921e.chunk.js"
+    "static/js/main.1f360045.chunk.js"
   ]
 }
