@@ -31,6 +31,7 @@ export class GameEngine {
     Startup.init();
     this.items = Startup.items;
     this.locations = Startup.locations;
+    console.log("lbpquest-ii v", Startup.version);
   }
 
   public constructor() {

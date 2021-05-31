@@ -2,7 +2,6 @@ import AsciiImage from "./AsciiImage";
 import { Title } from "./Title";
 
 export const SplashView = () => {
-  const packageJson = require("../../package.json");
   return (
     <div className="game-intro">
       <AsciiImage
@@ -20,7 +19,6 @@ export const SplashView = () => {
         Press Enter to start the game
       </h3>
       <h3 className="game-intro-credits">Dev'd by: rusty-software </h3>
-      <div className="tiny-font">version: {packageJson.version}</div>
     </div>
   );
 };
