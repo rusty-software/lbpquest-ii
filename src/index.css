@@ -47,6 +47,11 @@ button {
   text-align: center;
 }
 
+.tiny-font {
+  font-weight: normal;
+  font-size: 0.6em;
+}
+
 .image.intro {
   line-height: 2vw;
 }

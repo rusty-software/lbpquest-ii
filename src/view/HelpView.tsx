@@ -1,5 +1,4 @@
 const helpMapper: { [s: string]: string } = {
-  help: " : shows this help text",
   inventory: " (inv) : lists the items in your duffle bag",
   examine:
     " (ex) <object> : e.g. `examine sword` to take a closer look at the sword",
@@ -15,6 +14,7 @@ interface HelpViewProps {
 
 export const HelpView = (props: HelpViewProps) => {
   const { visibleCommands } = props;
+  const packageJson = require("../../package.json");
 
   const helpBlock = visibleCommands.map((command) => (
     <div key={command} className="command-block">
@@ -34,6 +34,7 @@ export const HelpView = (props: HelpViewProps) => {
       <div className="help-description">
         But there may be more hidden commands available. Use "logic" to figure
         it out!
+        <div className="tiny-font">version: {packageJson.version}</div>
       </div>
     </div>
   );
