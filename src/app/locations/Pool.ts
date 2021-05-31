@@ -13,13 +13,14 @@ export class Pool extends BaseLocation {
 
   public description(): string {
     let s =
-      "You have arrived at the pool. Music and sounds of frivolity emanate from the grotto here.";
+      "You have arrived at the pool. The water looks pleasant enough, although it's highly likely that someone has already peed in it. It is, however, surprisingly empty. You wonder at this a moment until you realize that music and sounds of frivolity are emanating from the grotto on the far side of the pool. The grotto's entrance is dark, obscuring what might be generating such fun sounds, although it certainly seems likely that your friends are all in there waiting for you.";
 
     const shorts = this.items.find(
       (i) => i.id === ItemKey.SlipperyShorts
     ) as SlipperyShorts;
     if (shorts && !shorts.isShown) {
-      s += " You hear a sucking, slurping sound coming from the pool skimmer.";
+      s +=
+        " You hear a sucking, slurping sound coming from the pool skimmer, as if it were clogged.";
     }
 
     s +=

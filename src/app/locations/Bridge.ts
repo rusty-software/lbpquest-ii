@@ -8,7 +8,7 @@ export class Bridge extends BaseLocation {
 
   public description(): string {
     let s =
-      "You are on a bridge that crosses over the feeder to the pond. It looks well put-together. However, on closer inspection, you see that practically every plank is wrapped in patches of duct tape at one or more points.";
+      "You are on a narrow, wooden bridge that crosses over the feeder stream to the pond. The bridge looks well put-together. However, on closer inspection, you see that the wood is weathered, and practically every plank is wrapped in patches of duct tape at one or more points.";
     if (this.items.find((item) => item.id === ItemKey.DuctTape)) {
       s +=
         " In fact, what's left of a roll of duct tape can be seen at the edge of the bridge.";

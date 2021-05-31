@@ -96,7 +96,6 @@ import {
   Freezer,
   FreezerPort,
   GolfCourse,
-  Grotto,
   Kitchen,
   Library,
   LivingRoom,
@@ -155,7 +154,6 @@ export class Startup {
     Startup.locations.set(LocationKey.Freezer, new Freezer());
     Startup.locations.set(LocationKey.FreezerPort, new FreezerPort());
     Startup.locations.set(LocationKey.GolfCourse, new GolfCourse());
-    Startup.locations.set(LocationKey.Grotto, new Grotto());
     Startup.locations.set(LocationKey.Kitchen, new Kitchen());
     Startup.locations.set(LocationKey.Library, new Library());
     Startup.locations.set(LocationKey.LivingRoom, new LivingRoom());

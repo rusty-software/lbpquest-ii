@@ -14,7 +14,6 @@ export { Fort } from "./Fort";
 export { Freezer } from "./Freezer";
 export { FreezerPort } from "./FreezerPort";
 export { GolfCourse } from "./GolfCourse";
-export { Grotto } from "./Grotto";
 export { Kitchen } from "./Kitchen";
 export { Library } from "./Library";
 export { LivingRoom } from "./LivingRoom";

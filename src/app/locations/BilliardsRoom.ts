@@ -19,7 +19,7 @@ export class BilliardsRoom extends BaseLocation {
   public description(): string {
     this.rugVisible = !this.rugVisible;
     let s =
-      "You are in the billiards room. A suitable pool table with a red velvet top dominates the center of the room.";
+      "You are in the billiards room. There's a small, round, tall bar table in the corner with a couple of stools and mirror behind it. A suitable pool table with a red velvet top dominates the center of the room.";
     if (this.rugVisible && !this.rugTaken) {
       s += " A cowskin rug is clearly visible beneath the pool table.";
     }

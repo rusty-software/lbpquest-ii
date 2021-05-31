@@ -14,7 +14,7 @@ export class Shed extends BaseLocation {
 
   public description(): string {
     let s =
-      "The inside of the shed is mostly dark, but enough light leaks in through the grimy windows to reveal a collection of mostly useless junk. A central table is covered in dust, but has a large narrow drawer that might be open-able.";
+      "The inside of the shed is mostly dark, but enough light leaks in through the grimy windows to reveal a collection of mostly useless junk. The air smells of stale gasoline and sawdust. A central table is covered in thin film of dust and cobwebs, but has a large narrow drawer that might be open-able.";
 
     const locationBow = this.items.find((item) => item.id === ItemKey.Bow);
     if (locationBow && !locationBow.taken) {

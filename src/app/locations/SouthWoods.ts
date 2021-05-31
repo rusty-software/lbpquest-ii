@@ -18,7 +18,7 @@ export class SouthWoods extends BaseLocation {
 
   public description(): string {
     let s =
-      "You are in the south woods. You are somewhat surprised to see a Tan Stag here, on its hind legs, wearing a black belt, and practicing karate.";
+      "You are in a small clearing in the south woods. You are somewhat surprised to see a Tan Stag here, on its hind legs, wearing a black belt, and practicing karate.";
 
     if (this.challengeWon) {
       s +=

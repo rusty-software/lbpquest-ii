@@ -18,18 +18,18 @@ export class RacingField extends BaseLocation {
 
   public description(): string {
     let s =
-      "You are in a wide open field. A Brown Stag is here, wearing a set of 80's warmups.";
+      "You are in a wide open field. It's about 50 yards long and looks like it has rough markers every 5 yards or so, not entirely unlike a football practice field. You're near enough to Bryan, Texas to realize that's very likely what it is intended to be, although the ground seems too rough to be very appealing for football drills.\n\nA Brown Stag is here, wearing a set of 80's warmups.";
 
     if (this.challengeWon) {
       s +=
         " The Brown Stag gives you a friendly wave just before attaching ankle weights to its hind feet. It takes off on a brisk jog.";
     } else if (this.challengeGiven) {
       s +=
-        "\n\nThe Brown Stag looks you up and down and says \"Well, Peewee... look's like you don't have anywhere else to run... Except racing against me in a 40 yard dash. Let me know when you want to race.\"";
+        " The Brown Stag looks you up and down and says \"Well, Peewee... look's like you don't have anywhere else to run... Except racing against me in a 40 yard dash. Let me know when you want to race.\"";
     } else {
       this.challengeGiven = true;
       s +=
-        '\n\nThe Brown Stag jogs over to you. "Hey there, wanna race? If you win, I\'ll let you have this blue ribbon," it says, pointing to a field day-style blue ribbon pinned to its warmup top.';
+        ' The Brown Stag jogs over to you. "Hey there, wanna race? If you win, I\'ll let you have this blue ribbon," it says, pointing to a field day-style blue ribbon pinned to its warmup top.';
     }
 
     s +=

@@ -15,12 +15,12 @@ export class BunkbedBedroom extends BaseLocation {
 
   public description(): string {
     let s =
-      "This room has a set of bunkbeds in it, perfect for creating space for more activities. Some of that space is occupied by a small side table.";
+      "This bedroom has a set of bunkbeds in it, perfect for launching yourself into the low-slung ceiling fan and/or creating space for more activities. Some of that space is occupied by a small side table.";
     if (this.hasItem(ItemKey.BlueBook)) {
       s += " There is a thin book on the side table.";
     }
     s +=
-      ' There\'s also a TV stand with an old style tube TV and an actual VHS VCR. The clock on the VCR blinks a happy "12:00", and is accurate at least twice a day.';
+      ' There\'s also a TV stand supporting an old style tube TV and an actual VHS VCR. The clock on the VCR blinks a happy "12:00", and is accurate at least twice a day.';
     if (this.hasItem(ItemKey.NRNSTraining)) {
       s += " There appears to be a tape inside the VCR.";
     }
