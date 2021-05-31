@@ -21,7 +21,7 @@ export class Desk extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     let s =
-      "The desk is made of sturdy mahogany and is of the roll top variety.";
+      "The desk is made of sturdy mahogany and is of the roll top variety. It might've belonged in a post office at one time, given its apparent age.";
     const magazine = gameEngine.getItem(ItemKey.Magazine) as Magazine;
     if (!magazine.isShown) {
       gameEngine.currentLocation.showItem(ItemKey.Magazine);

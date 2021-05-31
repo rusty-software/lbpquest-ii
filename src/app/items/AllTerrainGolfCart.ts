@@ -21,12 +21,11 @@ export class AllTerrainGolfCart extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     let s =
-      "The cart looks well used, being at least as muddy as it is swanky.";
+      "The cart looks well used, being at least as muddy as it is swanky. It's gas-powered and looks like it could just as easily cart around rifles and shotguns as it could bags of clubs.";
     const golfBall = gameEngine.getItem(ItemKey.GolfBall) as GolfBall;
     if (!golfBall.isShown) {
       gameEngine.currentLocation.showItem(ItemKey.GolfBall);
-      s +=
-        " You notice that there's a golf ball in one of the cup holders next to an empty beer can.";
+      s += " You notice that there's a golf ball in one of the cup holders.";
     }
 
     return s;

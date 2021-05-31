@@ -24,6 +24,6 @@ export class PipeCleaners extends ArtsAndCraftsSupply {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The pipe cleaners are fuzzy, bendy little things. You realize after a moment that you've never actually seen them used to clean a pipe.";
+    return "The pipe cleaners are fuzzy, bendy little things. You realize after a moment that you've never actually seen them used to clean a pipe, but you've made countless stick figures and evil eyebrows with their ilk.";
   }
 }

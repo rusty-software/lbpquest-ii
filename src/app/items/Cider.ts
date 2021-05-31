@@ -23,7 +23,7 @@ export class Cider extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return 'The can of cider reads "Austin Eastciders Spiced Sweet Corn". ';
+    return 'The can of cider reads "Austin Eastciders Spiced Sweet Corn TEST SAMPLE". Looks like you\'ve got hold of a can of experiment cider. The best kind!';
   }
 
   public use(gameEngine: GameEngine): string {

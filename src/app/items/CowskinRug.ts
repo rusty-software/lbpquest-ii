@@ -32,7 +32,7 @@ export class CowskinRug extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The cowskin rug is elusive. One moment it's there, the next it's not, then it's back again. You have no idea how the cow that sported this skin was ever actually captured such that the skin could be removed.";
+    return "The cowskin rug is elusive to the eye. One moment it's there, the next it's not, then it's back again. You have no idea how the cow that sported this skin was ever actually captured such that the skin could be removed.";
   }
 
   public use(gameEngine: GameEngine): string {

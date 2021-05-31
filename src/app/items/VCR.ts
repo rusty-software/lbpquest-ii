@@ -24,7 +24,7 @@ export class VCR extends BaseItem {
 
   public examine(gameEngine: GameEngine): string {
     let s =
-      "The VCR is of the VHS variety. The Eject button looks broken off, leaving a hole where the button should be.";
+      "The VCR is of the VHS variety. The Eject button looks broken off, leaving a hole where the button should be. The Play button seems to be in working condition.";
     const tape = gameEngine.getItem(ItemKey.VHSTape);
     if (!tape.isShown) {
       gameEngine.currentLocation.showItem(ItemKey.VHSTape);

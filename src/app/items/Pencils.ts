@@ -25,6 +25,6 @@ export class Pencils extends ArtsAndCraftsSupply {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The pencils are limited in selection, but all have enough tips exposed to do some serious coloring.";
+    return "The pencils are limited in selection, but all have enough tips exposed to do some serious coloring. Or non-serious. Silly coloring is obviously allowed.";
   }
 }

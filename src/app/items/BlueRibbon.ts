@@ -13,7 +13,7 @@ export class BlueRibbon extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return 'The blue ribbon is silky smooth and says "First Place" in gold lettering.';
+    return 'The blue ribbon is silky smooth and says "First Place" in gold lettering. It reminds you of all of those ribbons you never quite won on field day (unless you are Phil, in which case, it reminds you of all the ribbons you collected on field day).';
   }
 
   public use(gameEngine: GameEngine): string {

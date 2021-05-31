@@ -20,7 +20,7 @@ export class DodgeBall extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The dodgeball is a bright blue rubbery type. We'll tell Phil it's red.";
+    return "The dodgeball is a bright green rubbery type. We'll tell Phil it's red.";
   }
 
   public use(gameEngine: GameEngine): string {

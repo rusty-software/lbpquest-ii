@@ -23,7 +23,7 @@ export class CookieDough extends BaseItem {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "The cookie dough is Nestle Toll House Chocolate Chip and is in a sausage-like roll container. It looks partially eaten.";
+    return "The cookie dough is Nestle Toll House Chocolate Chip and is in a sausage-like roll container. It looks partially eaten, but there's still plenty left to snack on.";
   }
 
   public use(gameEngine: GameEngine): string {

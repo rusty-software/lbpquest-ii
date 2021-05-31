@@ -21,6 +21,6 @@ export class Crayons extends ArtsAndCraftsSupply {
   }
 
   public examine(gameEngine: GameEngine): string {
-    return "While the collection of crayons is not prolific, they all appear to be in good repair.";
+    return "While the collection of crayons is not prolific, they all appear to be in good repair and perfectly capable of coloring either in- or outside the lines, as you prefer.";
   }
 }
